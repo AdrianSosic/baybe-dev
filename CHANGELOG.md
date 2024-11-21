@@ -35,6 +35,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   compatible with `strtobool`
 - All arguments to `MetaRecommender.select_recommender` are now optional
 - `MetaRecommender`s can now be composed of other `MetaRecommender`s
+- `allow_repeated_recommendations` has been renamed to 
+  `allow_recommending_already_recommended` (now available for `Campaign` instead of
+  recommenders)
 
 ### Fixed
 - Rare bug arising from degenerate `SubstanceParameter.comp_df` rows that caused
@@ -47,6 +50,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   `NumericalTarget` now raises an error
 - Crash when using `ContinuousCardinalityConstraint` caused by an unintended interplay
   between constraints and dropped parameters yielding empty parameter sets
+- `allow_*` flags are now context-aware, i.e. setting them in a context where they are
+  irrelevant now raises an error instead of passing silently
 
 ### Removed
 - `botorch_function_wrapper` utility for creating lookup callables
@@ -66,6 +71,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   exclusively handled by the `Campaign` class.
 - `get_current_recommender` and `get_next_recommender` of `MetaRecommender` have become
   obsolete and calling them is no longer possible
+- Passing `allow_*` flags to recommenders is no longer supported since the necessary
+  metadata required for the flags is no longer available at that level. The
+  functionality has been taken over by `Campaign`, which is now the only stateful class.
 
 ## [0.11.3] - 2024-11-06
 ### Fixed
