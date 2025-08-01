@@ -30,7 +30,7 @@ jobs:
       - name: Install tox
         run: pip install tox-uv
       - name: Build Docs
-        run: tox -e docs-py310 -- -r
+        run: tox -e docs-py310 -- -f
       - name: Configure sphinx bot for pushing and fetch branches
         run: |
             git config --local user.email "sphinx-upload[bot]@users.noreply.github.com"
