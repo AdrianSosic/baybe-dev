@@ -15,6 +15,7 @@ qLogExpectedImprovement
    .. autosummary::
    
       ~qLogExpectedImprovement.__init__
+      ~qLogExpectedImprovement.evaluate
       ~qLogExpectedImprovement.from_dict
       ~qLogExpectedImprovement.from_json
       ~qLogExpectedImprovement.to_botorch
@@ -30,5 +31,7 @@ qLogExpectedImprovement
    .. autosummary::
    
       ~qLogExpectedImprovement.abbreviation
+      ~qLogExpectedImprovement.is_analytic
+      ~qLogExpectedImprovement.supports_multi_output
    
    

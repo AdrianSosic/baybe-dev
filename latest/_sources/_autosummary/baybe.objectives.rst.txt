@@ -31,11 +31,15 @@ baybe.objectives
 
    base
 
-   deprecation
+   botorch
 
    desirability
 
    enum
 
+   pareto
+
    single
+
+   validation
 

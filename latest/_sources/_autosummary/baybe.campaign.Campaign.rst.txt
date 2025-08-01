@@ -15,16 +15,21 @@ Campaign
    .. autosummary::
    
       ~Campaign.__init__
+      ~Campaign.acquisition_values
       ~Campaign.add_measurements
       ~Campaign.from_config
       ~Campaign.from_dict
       ~Campaign.from_json
+      ~Campaign.get_acquisition_function
       ~Campaign.get_surrogate
+      ~Campaign.joint_acquisition_value
       ~Campaign.posterior
+      ~Campaign.posterior_stats
       ~Campaign.recommend
       ~Campaign.to_dict
       ~Campaign.to_json
       ~Campaign.toggle_discrete_candidates
+      ~Campaign.update_measurements
       ~Campaign.validate_config
    
    

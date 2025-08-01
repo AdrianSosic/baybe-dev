@@ -8,6 +8,6 @@ can be applied to discrete search spaces.
 
 Exclusion <exclusion_constraints>
 Product/Sum <prodsum_constraints>
-Dependency <dependency_constraints>
 Custom <custom_constraints>
+Dependency <dependency_constraints>
 ```

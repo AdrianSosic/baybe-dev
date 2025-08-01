@@ -15,6 +15,7 @@ qLogNoisyExpectedImprovement
    .. autosummary::
    
       ~qLogNoisyExpectedImprovement.__init__
+      ~qLogNoisyExpectedImprovement.evaluate
       ~qLogNoisyExpectedImprovement.from_dict
       ~qLogNoisyExpectedImprovement.from_json
       ~qLogNoisyExpectedImprovement.to_botorch
@@ -31,5 +32,7 @@ qLogNoisyExpectedImprovement
    
       ~qLogNoisyExpectedImprovement.prune_baseline
       ~qLogNoisyExpectedImprovement.abbreviation
+      ~qLogNoisyExpectedImprovement.is_analytic
+      ~qLogNoisyExpectedImprovement.supports_multi_output
    
    

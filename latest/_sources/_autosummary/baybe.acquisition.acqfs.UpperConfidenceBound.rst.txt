@@ -15,6 +15,7 @@ UpperConfidenceBound
    .. autosummary::
    
       ~UpperConfidenceBound.__init__
+      ~UpperConfidenceBound.evaluate
       ~UpperConfidenceBound.from_dict
       ~UpperConfidenceBound.from_json
       ~UpperConfidenceBound.to_botorch
@@ -31,5 +32,7 @@ UpperConfidenceBound
    
       ~UpperConfidenceBound.beta
       ~UpperConfidenceBound.abbreviation
+      ~UpperConfidenceBound.is_analytic
+      ~UpperConfidenceBound.supports_multi_output
    
    

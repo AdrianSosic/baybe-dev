@@ -15,6 +15,7 @@ LogExpectedImprovement
    .. autosummary::
    
       ~LogExpectedImprovement.__init__
+      ~LogExpectedImprovement.evaluate
       ~LogExpectedImprovement.from_dict
       ~LogExpectedImprovement.from_json
       ~LogExpectedImprovement.to_botorch
@@ -30,5 +31,7 @@ LogExpectedImprovement
    .. autosummary::
    
       ~LogExpectedImprovement.abbreviation
+      ~LogExpectedImprovement.is_analytic
+      ~LogExpectedImprovement.supports_multi_output
    
    

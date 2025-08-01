@@ -25,12 +25,18 @@ baybe.acquisition.acqfs
       PosteriorStandardDeviation
       ProbabilityOfImprovement
       UpperConfidenceBound
+      qExpectedHypervolumeImprovement
       qExpectedImprovement
       qKnowledgeGradient
+      qLogExpectedHypervolumeImprovement
       qLogExpectedImprovement
+      qLogNParEGO
+      qLogNoisyExpectedHypervolumeImprovement
       qLogNoisyExpectedImprovement
       qNegIntegratedPosteriorVariance
+      qNoisyExpectedHypervolumeImprovement
       qNoisyExpectedImprovement
+      qPosteriorStandardDeviation
       qProbabilityOfImprovement
       qSimpleRegret
       qThompsonSampling

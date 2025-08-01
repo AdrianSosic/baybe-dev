@@ -15,6 +15,7 @@ qUpperConfidenceBound
    .. autosummary::
    
       ~qUpperConfidenceBound.__init__
+      ~qUpperConfidenceBound.evaluate
       ~qUpperConfidenceBound.from_dict
       ~qUpperConfidenceBound.from_json
       ~qUpperConfidenceBound.to_botorch
@@ -31,5 +32,7 @@ qUpperConfidenceBound
    
       ~qUpperConfidenceBound.beta
       ~qUpperConfidenceBound.abbreviation
+      ~qUpperConfidenceBound.is_analytic
+      ~qUpperConfidenceBound.supports_multi_output
    
    

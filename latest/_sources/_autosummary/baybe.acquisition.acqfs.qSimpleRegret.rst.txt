@@ -15,6 +15,7 @@ qSimpleRegret
    .. autosummary::
    
       ~qSimpleRegret.__init__
+      ~qSimpleRegret.evaluate
       ~qSimpleRegret.from_dict
       ~qSimpleRegret.from_json
       ~qSimpleRegret.to_botorch
@@ -30,5 +31,7 @@ qSimpleRegret
    .. autosummary::
    
       ~qSimpleRegret.abbreviation
+      ~qSimpleRegret.is_analytic
+      ~qSimpleRegret.supports_multi_output
    
    

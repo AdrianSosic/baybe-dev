@@ -15,6 +15,7 @@ qExpectedImprovement
    .. autosummary::
    
       ~qExpectedImprovement.__init__
+      ~qExpectedImprovement.evaluate
       ~qExpectedImprovement.from_dict
       ~qExpectedImprovement.from_json
       ~qExpectedImprovement.to_botorch
@@ -30,5 +31,7 @@ qExpectedImprovement
    .. autosummary::
    
       ~qExpectedImprovement.abbreviation
+      ~qExpectedImprovement.is_analytic
+      ~qExpectedImprovement.supports_multi_output
    
    

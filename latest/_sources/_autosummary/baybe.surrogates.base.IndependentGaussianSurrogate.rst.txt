@@ -19,6 +19,8 @@ IndependentGaussianSurrogate
       ~IndependentGaussianSurrogate.from_dict
       ~IndependentGaussianSurrogate.from_json
       ~IndependentGaussianSurrogate.posterior
+      ~IndependentGaussianSurrogate.posterior_stats
+      ~IndependentGaussianSurrogate.replicate
       ~IndependentGaussianSurrogate.to_botorch
       ~IndependentGaussianSurrogate.to_dict
       ~IndependentGaussianSurrogate.to_json
@@ -31,6 +33,7 @@ IndependentGaussianSurrogate
 
    .. autosummary::
    
+      ~IndependentGaussianSurrogate.supports_multi_output
       ~IndependentGaussianSurrogate.supports_transfer_learning
    
    

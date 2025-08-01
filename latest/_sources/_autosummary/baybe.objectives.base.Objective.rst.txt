@@ -17,6 +17,7 @@ Objective
       ~Objective.__init__
       ~Objective.from_dict
       ~Objective.from_json
+      ~Objective.to_botorch
       ~Objective.to_dict
       ~Objective.to_json
       ~Objective.transform
@@ -29,6 +30,8 @@ Objective
 
    .. autosummary::
    
+      ~Objective.n_outputs
       ~Objective.targets
+      ~Objective.is_multi_output
    
    

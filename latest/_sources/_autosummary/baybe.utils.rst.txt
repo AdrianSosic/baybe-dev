@@ -37,6 +37,8 @@ baybe.utils
 
    chemistry
 
+   clustering_algorithms
+
    conversion
 
    dataframe
@@ -46,8 +48,6 @@ baybe.utils
    memory
 
    numerical
-
-   plotting
 
    random
 

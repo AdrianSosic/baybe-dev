@@ -15,7 +15,10 @@ BotorchRecommender
    .. autosummary::
    
       ~BotorchRecommender.__init__
+      ~BotorchRecommender.acquisition_values
+      ~BotorchRecommender.get_acquisition_function
       ~BotorchRecommender.get_surrogate
+      ~BotorchRecommender.joint_acquisition_value
       ~BotorchRecommender.recommend
    
    
@@ -31,8 +34,8 @@ BotorchRecommender
       ~BotorchRecommender.sampling_percentage
       ~BotorchRecommender.n_restarts
       ~BotorchRecommender.n_raw_samples
+      ~BotorchRecommender.max_n_subspaces
       ~BotorchRecommender.acquisition_function
-      ~BotorchRecommender.acquisition_function_cls
       ~BotorchRecommender.allow_recommending_already_measured
       ~BotorchRecommender.allow_recommending_pending_experiments
       ~BotorchRecommender.allow_repeated_recommendations

@@ -15,6 +15,7 @@ qNegIntegratedPosteriorVariance
    .. autosummary::
    
       ~qNegIntegratedPosteriorVariance.__init__
+      ~qNegIntegratedPosteriorVariance.evaluate
       ~qNegIntegratedPosteriorVariance.from_dict
       ~qNegIntegratedPosteriorVariance.from_json
       ~qNegIntegratedPosteriorVariance.get_integration_points
@@ -34,5 +35,7 @@ qNegIntegratedPosteriorVariance
       ~qNegIntegratedPosteriorVariance.sampling_fraction
       ~qNegIntegratedPosteriorVariance.sampling_method
       ~qNegIntegratedPosteriorVariance.abbreviation
+      ~qNegIntegratedPosteriorVariance.is_analytic
+      ~qNegIntegratedPosteriorVariance.supports_multi_output
    
    

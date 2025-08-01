@@ -15,6 +15,7 @@ AcquisitionFunction
    .. autosummary::
    
       ~AcquisitionFunction.__init__
+      ~AcquisitionFunction.evaluate
       ~AcquisitionFunction.from_dict
       ~AcquisitionFunction.from_json
       ~AcquisitionFunction.to_botorch
@@ -29,6 +30,8 @@ AcquisitionFunction
 
    .. autosummary::
    
+      ~AcquisitionFunction.is_analytic
+      ~AcquisitionFunction.supports_multi_output
       ~AcquisitionFunction.abbreviation
    
    

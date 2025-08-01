@@ -15,6 +15,7 @@ qProbabilityOfImprovement
    .. autosummary::
    
       ~qProbabilityOfImprovement.__init__
+      ~qProbabilityOfImprovement.evaluate
       ~qProbabilityOfImprovement.from_dict
       ~qProbabilityOfImprovement.from_json
       ~qProbabilityOfImprovement.to_botorch
@@ -30,5 +31,7 @@ qProbabilityOfImprovement
    .. autosummary::
    
       ~qProbabilityOfImprovement.abbreviation
+      ~qProbabilityOfImprovement.is_analytic
+      ~qProbabilityOfImprovement.supports_multi_output
    
    

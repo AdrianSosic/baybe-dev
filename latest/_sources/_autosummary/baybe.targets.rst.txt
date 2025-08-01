@@ -33,6 +33,8 @@ baybe.targets
 
    binary
 
+   botorch
+
    enum
 
    numerical
