@@ -113,7 +113,7 @@ axs[0].plot(voltage_grid, induced_λ, color="tab:blue")
 
 
 
-    [<matplotlib.lines.Line2D at 0x7fe5aa867fd0>]
+    [<matplotlib.lines.Line2D at 0x7f01521800d0>]
 
 
 
@@ -143,7 +143,7 @@ axs[0].axhline(λ2, color="tab:red")
 
 
 
-    <matplotlib.lines.Line2D at 0x7fe5aa7035e0>
+    <matplotlib.lines.Line2D at 0x7f01a4257340>
 
 
 
