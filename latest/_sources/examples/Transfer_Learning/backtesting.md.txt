@@ -189,8 +189,6 @@ results = simulate_transfer_learning(
 
     
 
-    
-
 
 For comparison, we also compare with the baseline tasks
 
@@ -226,10 +224,6 @@ for func_name, function in test_functions.items():
 
     
 
-    
-
-
-    
 
     
 

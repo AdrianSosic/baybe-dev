@@ -246,15 +246,15 @@ print(recommendation)
     
     
     Recommended experiments: 
-             Solvent                Base                        Ligand  \
-    429     p-Xylene  Potassium pivalate  Di-tert-butylphenylphosphine   
-    369     p-Xylene     Cesium pivalate  Di-tert-butylphenylphosphine   
-    67   Butyl Ester   Potassium acetate                     BrettPhos   
+               Solvent                Base                        Ligand  \
+    267           DMAc     Cesium pivalate  Di-tert-butylphenylphosphine   
+    211  Butyornitrile  Potassium pivalate  Di-tert-butylphenylphosphine   
+    298           DMAc  Potassium pivalate                 (t-Bu)PhCPhos   
     
          Temperature  Concentration  
-    429        120.0          0.057  
-    369         90.0          0.057  
-    67         105.0          0.100  
+    267        120.0          0.057  
+    211        105.0          0.100  
+    298         90.0          0.100  
 
 
 
@@ -267,15 +267,15 @@ print(recommendation)
     
     
     Recommended experiments with fake measured values: 
-             Solvent                Base                        Ligand  \
-    429     p-Xylene  Potassium pivalate  Di-tert-butylphenylphosphine   
-    369     p-Xylene     Cesium pivalate  Di-tert-butylphenylphosphine   
-    67   Butyl Ester   Potassium acetate                     BrettPhos   
+               Solvent                Base                        Ligand  \
+    267           DMAc     Cesium pivalate  Di-tert-butylphenylphosphine   
+    211  Butyornitrile  Potassium pivalate  Di-tert-butylphenylphosphine   
+    298           DMAc  Potassium pivalate                 (t-Bu)PhCPhos   
     
          Temperature  Concentration      yield  
-    429        120.0          0.057 -15.397854  
-    369         90.0          0.057  91.985689  
-    67         105.0          0.100 -30.759983  
+    267        120.0          0.057  53.423643  
+    211        105.0          0.100  81.391012  
+    298         90.0          0.100  44.679216  
 
 
 
