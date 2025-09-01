@@ -113,7 +113,7 @@ axs[0].plot(voltage_grid, induced_λ, color="tab:blue")
 
 
 
-    [<matplotlib.lines.Line2D at 0x7fb355cb8160>]
+    [<matplotlib.lines.Line2D at 0x7fe5aa867fd0>]
 
 
 
@@ -143,7 +143,7 @@ axs[0].axhline(λ2, color="tab:red")
 
 
 
-    <matplotlib.lines.Line2D at 0x7fb398f16e00>
+    <matplotlib.lines.Line2D at 0x7fe5aa7035e0>
 
 
 
@@ -224,7 +224,7 @@ results = simulate_scenarios(
 
 Unsurprisingly, the optimization results show trajectories converging to two distinct
 clusters, corresponding to the two target wavelengths. This bimodal convergence occurs
-because both targets yield equivalent objective values:
+because both targets – by construction – yield equivalent objective values:
 
 
 ```python
@@ -241,12 +241,8 @@ sns.lineplot(
     ax=axs[1],
     legend=False,
 )
-plt.savefig("laser_tuning.svg")
 plt.show()
 ```
-
-
-
 ```{image} laser_tuning.svg
 :align: center
 ```
