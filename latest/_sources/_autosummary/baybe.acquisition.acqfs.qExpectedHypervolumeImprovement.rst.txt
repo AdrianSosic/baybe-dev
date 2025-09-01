@@ -33,7 +33,6 @@ qExpectedHypervolumeImprovement
    
       ~qExpectedHypervolumeImprovement.alpha
       ~qExpectedHypervolumeImprovement.abbreviation
-      ~qExpectedHypervolumeImprovement.is_analytic
       ~qExpectedHypervolumeImprovement.reference_point
       ~qExpectedHypervolumeImprovement.supports_multi_output
    

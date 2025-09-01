@@ -31,7 +31,6 @@ qProbabilityOfImprovement
    .. autosummary::
    
       ~qProbabilityOfImprovement.abbreviation
-      ~qProbabilityOfImprovement.is_analytic
       ~qProbabilityOfImprovement.supports_multi_output
    
    

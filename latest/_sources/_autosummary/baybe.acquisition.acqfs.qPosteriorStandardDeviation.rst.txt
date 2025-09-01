@@ -31,7 +31,6 @@ qPosteriorStandardDeviation
    .. autosummary::
    
       ~qPosteriorStandardDeviation.abbreviation
-      ~qPosteriorStandardDeviation.is_analytic
       ~qPosteriorStandardDeviation.supports_multi_output
    
    

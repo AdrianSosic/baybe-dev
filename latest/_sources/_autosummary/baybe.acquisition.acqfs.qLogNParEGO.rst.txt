@@ -32,7 +32,6 @@ qLogNParEGO
    
       ~qLogNParEGO.prune_baseline
       ~qLogNParEGO.abbreviation
-      ~qLogNParEGO.is_analytic
       ~qLogNParEGO.supports_multi_output
    
    

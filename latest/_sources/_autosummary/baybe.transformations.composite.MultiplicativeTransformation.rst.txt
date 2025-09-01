@@ -20,6 +20,7 @@ MultiplicativeTransformation
       ~MultiplicativeTransformation.clamp
       ~MultiplicativeTransformation.from_dict
       ~MultiplicativeTransformation.from_json
+      ~MultiplicativeTransformation.get_codomain
       ~MultiplicativeTransformation.get_image
       ~MultiplicativeTransformation.negate
       ~MultiplicativeTransformation.to_botorch_objective

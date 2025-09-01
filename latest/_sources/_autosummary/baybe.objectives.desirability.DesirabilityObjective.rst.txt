@@ -30,11 +30,16 @@ DesirabilityObjective
 
    .. autosummary::
    
+      ~DesirabilityObjective.description
       ~DesirabilityObjective.is_multi_output
       ~DesirabilityObjective.n_outputs
+      ~DesirabilityObjective.output_names
+      ~DesirabilityObjective.supports_partial_measurements
       ~DesirabilityObjective.targets
       ~DesirabilityObjective.weights
       ~DesirabilityObjective.scalarizer
       ~DesirabilityObjective.require_normalization
+      ~DesirabilityObjective.as_pre_transformation
+      ~DesirabilityObjective.metadata
    
    

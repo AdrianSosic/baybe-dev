@@ -31,7 +31,6 @@ LogExpectedImprovement
    .. autosummary::
    
       ~LogExpectedImprovement.abbreviation
-      ~LogExpectedImprovement.is_analytic
       ~LogExpectedImprovement.supports_multi_output
    
    

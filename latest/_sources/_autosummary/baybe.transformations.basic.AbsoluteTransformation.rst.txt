@@ -20,6 +20,7 @@ AbsoluteTransformation
       ~AbsoluteTransformation.clamp
       ~AbsoluteTransformation.from_dict
       ~AbsoluteTransformation.from_json
+      ~AbsoluteTransformation.get_codomain
       ~AbsoluteTransformation.get_image
       ~AbsoluteTransformation.negate
       ~AbsoluteTransformation.to_botorch_objective

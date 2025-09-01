@@ -32,7 +32,6 @@ PosteriorStandardDeviation
    
       ~PosteriorStandardDeviation.maximize
       ~PosteriorStandardDeviation.abbreviation
-      ~PosteriorStandardDeviation.is_analytic
       ~PosteriorStandardDeviation.supports_multi_output
    
    

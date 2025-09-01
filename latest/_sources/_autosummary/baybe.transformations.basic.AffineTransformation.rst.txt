@@ -21,6 +21,7 @@ AffineTransformation
       ~AffineTransformation.from_dict
       ~AffineTransformation.from_json
       ~AffineTransformation.from_points_mapped_to_unit_interval_bounds
+      ~AffineTransformation.get_codomain
       ~AffineTransformation.get_image
       ~AffineTransformation.negate
       ~AffineTransformation.to_botorch_objective

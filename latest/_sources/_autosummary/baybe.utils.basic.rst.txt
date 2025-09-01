@@ -47,6 +47,7 @@ baybe.utils.basic
       :template: custom-class-template.rst              
    
       Dummy
+      UncertainBool
       UnspecifiedType
       classproperty
    

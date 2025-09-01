@@ -32,7 +32,6 @@ qUpperConfidenceBound
    
       ~qUpperConfidenceBound.beta
       ~qUpperConfidenceBound.abbreviation
-      ~qUpperConfidenceBound.is_analytic
       ~qUpperConfidenceBound.supports_multi_output
    
    

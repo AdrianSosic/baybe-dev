@@ -20,6 +20,7 @@ BellTransformation
       ~BellTransformation.clamp
       ~BellTransformation.from_dict
       ~BellTransformation.from_json
+      ~BellTransformation.get_codomain
       ~BellTransformation.get_image
       ~BellTransformation.negate
       ~BellTransformation.to_botorch_objective

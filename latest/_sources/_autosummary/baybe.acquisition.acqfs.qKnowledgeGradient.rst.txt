@@ -32,7 +32,6 @@ qKnowledgeGradient
    
       ~qKnowledgeGradient.num_fantasies
       ~qKnowledgeGradient.abbreviation
-      ~qKnowledgeGradient.is_analytic
       ~qKnowledgeGradient.supports_multi_output
    
    

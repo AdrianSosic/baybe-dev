@@ -20,6 +20,7 @@ TwoSidedAffineTransformation
       ~TwoSidedAffineTransformation.clamp
       ~TwoSidedAffineTransformation.from_dict
       ~TwoSidedAffineTransformation.from_json
+      ~TwoSidedAffineTransformation.get_codomain
       ~TwoSidedAffineTransformation.get_image
       ~TwoSidedAffineTransformation.negate
       ~TwoSidedAffineTransformation.to_botorch_objective

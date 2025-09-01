@@ -33,7 +33,6 @@ qNoisyExpectedHypervolumeImprovement
    
       ~qNoisyExpectedHypervolumeImprovement.prune_baseline
       ~qNoisyExpectedHypervolumeImprovement.abbreviation
-      ~qNoisyExpectedHypervolumeImprovement.is_analytic
       ~qNoisyExpectedHypervolumeImprovement.reference_point
       ~qNoisyExpectedHypervolumeImprovement.supports_multi_output
    

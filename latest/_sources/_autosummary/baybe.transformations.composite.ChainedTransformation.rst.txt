@@ -20,6 +20,7 @@ ChainedTransformation
       ~ChainedTransformation.clamp
       ~ChainedTransformation.from_dict
       ~ChainedTransformation.from_json
+      ~ChainedTransformation.get_codomain
       ~ChainedTransformation.get_image
       ~ChainedTransformation.negate
       ~ChainedTransformation.to_botorch_objective

@@ -20,6 +20,7 @@ PowerTransformation
       ~PowerTransformation.clamp
       ~PowerTransformation.from_dict
       ~PowerTransformation.from_json
+      ~PowerTransformation.get_codomain
       ~PowerTransformation.get_image
       ~PowerTransformation.negate
       ~PowerTransformation.to_botorch_objective

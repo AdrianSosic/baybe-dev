@@ -22,6 +22,7 @@ NumericalTarget
       ~NumericalTarget.from_json
       ~NumericalTarget.from_legacy_interface
       ~NumericalTarget.from_modern_interface
+      ~NumericalTarget.get_codomain
       ~NumericalTarget.get_image
       ~NumericalTarget.log
       ~NumericalTarget.match_absolute
@@ -31,8 +32,8 @@ NumericalTarget
       ~NumericalTarget.match_triangular
       ~NumericalTarget.negate
       ~NumericalTarget.normalize
-      ~NumericalTarget.normalize_ramp
-      ~NumericalTarget.normalize_sigmoid
+      ~NumericalTarget.normalized_ramp
+      ~NumericalTarget.normalized_sigmoid
       ~NumericalTarget.power
       ~NumericalTarget.summary
       ~NumericalTarget.to_dict
@@ -48,9 +49,12 @@ NumericalTarget
 
    .. autosummary::
    
+      ~NumericalTarget.transformation
       ~NumericalTarget.minimize
+      ~NumericalTarget.description
       ~NumericalTarget.is_normalized
+      ~NumericalTarget.metadata
       ~NumericalTarget.name
-      ~NumericalTarget.total_transformation
+      ~NumericalTarget.unit
    
    

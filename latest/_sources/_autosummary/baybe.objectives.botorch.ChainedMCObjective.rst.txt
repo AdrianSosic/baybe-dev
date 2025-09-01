@@ -34,7 +34,6 @@ ChainedMCObjective
       ~ChainedMCObjective.get_submodule
       ~ChainedMCObjective.half
       ~ChainedMCObjective.ipu
-      ~ChainedMCObjective.load_state_dict
       ~ChainedMCObjective.modules
       ~ChainedMCObjective.mtia
       ~ChainedMCObjective.named_buffers

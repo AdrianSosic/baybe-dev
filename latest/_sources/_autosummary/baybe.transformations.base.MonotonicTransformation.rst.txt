@@ -20,6 +20,7 @@ MonotonicTransformation
       ~MonotonicTransformation.clamp
       ~MonotonicTransformation.from_dict
       ~MonotonicTransformation.from_json
+      ~MonotonicTransformation.get_codomain
       ~MonotonicTransformation.get_image
       ~MonotonicTransformation.negate
       ~MonotonicTransformation.to_botorch_objective

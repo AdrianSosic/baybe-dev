@@ -20,6 +20,7 @@ ClampingTransformation
       ~ClampingTransformation.clamp
       ~ClampingTransformation.from_dict
       ~ClampingTransformation.from_json
+      ~ClampingTransformation.get_codomain
       ~ClampingTransformation.get_image
       ~ClampingTransformation.negate
       ~ClampingTransformation.to_botorch_objective

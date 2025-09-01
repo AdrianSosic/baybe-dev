@@ -31,7 +31,6 @@ PosteriorMean
    .. autosummary::
    
       ~PosteriorMean.abbreviation
-      ~PosteriorMean.is_analytic
       ~PosteriorMean.supports_multi_output
    
    

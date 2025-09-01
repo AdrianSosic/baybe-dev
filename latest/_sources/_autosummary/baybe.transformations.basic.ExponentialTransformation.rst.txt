@@ -20,6 +20,7 @@ ExponentialTransformation
       ~ExponentialTransformation.clamp
       ~ExponentialTransformation.from_dict
       ~ExponentialTransformation.from_json
+      ~ExponentialTransformation.get_codomain
       ~ExponentialTransformation.get_image
       ~ExponentialTransformation.negate
       ~ExponentialTransformation.to_botorch_objective

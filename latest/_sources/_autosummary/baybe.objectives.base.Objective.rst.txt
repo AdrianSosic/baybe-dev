@@ -30,8 +30,12 @@ Objective
 
    .. autosummary::
    
+      ~Objective.description
       ~Objective.n_outputs
+      ~Objective.output_names
+      ~Objective.supports_partial_measurements
       ~Objective.targets
       ~Objective.is_multi_output
+      ~Objective.metadata
    
    

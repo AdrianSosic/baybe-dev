@@ -31,7 +31,6 @@ qLogExpectedImprovement
    .. autosummary::
    
       ~qLogExpectedImprovement.abbreviation
-      ~qLogExpectedImprovement.is_analytic
       ~qLogExpectedImprovement.supports_multi_output
    
    

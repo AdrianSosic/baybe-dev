@@ -30,7 +30,6 @@ AcquisitionFunction
 
    .. autosummary::
    
-      ~AcquisitionFunction.is_analytic
       ~AcquisitionFunction.supports_multi_output
       ~AcquisitionFunction.abbreviation
    

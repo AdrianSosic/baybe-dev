@@ -33,7 +33,6 @@ qLogNoisyExpectedHypervolumeImprovement
    
       ~qLogNoisyExpectedHypervolumeImprovement.prune_baseline
       ~qLogNoisyExpectedHypervolumeImprovement.abbreviation
-      ~qLogNoisyExpectedHypervolumeImprovement.is_analytic
       ~qLogNoisyExpectedHypervolumeImprovement.reference_point
       ~qLogNoisyExpectedHypervolumeImprovement.supports_multi_output
    

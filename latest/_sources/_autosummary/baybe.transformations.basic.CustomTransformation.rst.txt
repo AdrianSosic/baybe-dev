@@ -20,6 +20,7 @@ CustomTransformation
       ~CustomTransformation.clamp
       ~CustomTransformation.from_dict
       ~CustomTransformation.from_json
+      ~CustomTransformation.get_codomain
       ~CustomTransformation.get_image
       ~CustomTransformation.negate
       ~CustomTransformation.to_botorch_objective

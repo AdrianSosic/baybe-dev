@@ -10,22 +10,27 @@ this.
 :class: note
 Currently, transformations are only used for the
 {class}`~baybe.targets.numerical.NumericalTarget` class but it is planned to enable
-their use for {class}`~baybe.parameters.numerical.NumericalContinuousParameter` as
-well.
+their use for parameters as well.
 ```
 
-## Pre-Defined Transformations
+## Basic Transformations
 
-The following pre-defined transformation types are available via the
+The following pre-defined basic transformation types are available via the
 {mod}`baybe.transformations` module: 
 
-### Basic Transformations
 
 - {class}`~baybe.transformations.basic.IdentityTransformation`: $f(x) = x$
 - {class}`~baybe.transformations.basic.AbsoluteTransformation`: $f(x) = |x|$
 - {class}`~baybe.transformations.basic.ExponentialTransformation`: $f(x) = e^x$
 - {class}`~baybe.transformations.basic.LogarithmicTransformation`: $f(x) = \ln(x)$
 - {class}`~baybe.transformations.basic.PowerTransformation`: $f(x) = x^p$
+
+
+## Advanced Transformations
+
+In addition to the [basic transformations](#basic-transformations), the
+{mod}`baybe.transformations` module provides a number of advanced transformation types
+that allow for more customization:
 
 ### ClampingTransformation
 
@@ -146,6 +151,44 @@ t = TwoSidedAffineTransformation(slope_left=-1, slope_right=1)  # absolute value
 t = TwoSidedAffineTransformation(slope_left=-1, slope_right=0, midpoint=1)  # hinge loss
 ```
 
+### SigmoidTransformation
+The {class}`~baybe.transformations.basic.SigmoidTransformation` normalizes its input
+to the range $[0, 1]$ using a sigmoid function.
+
+`````{grid} 2
+
+````{grid-item}
+:columns: auto
+
+![Transforms](../_static/transformations/sigmoid.svg)
+````
+
+````{grid-item}
+:columns: 5
+
+**Transformation rule**
+
+```{math}
+f(x) = \frac{1}{1 + e^{-a(x - c)}}
+```
+where $c$ is the center point where the curve crosses the value 0.5 and $a$ is a
+parameter controlling the steepness. Note that the transformation can also be specified
+using anchors points instead, as demonstrated below.
+````
+`````
+
+**Example**
+
+```python
+from baybe.transformations import SigmoidTransformation
+
+t = SigmoidTransformation(center=0.0, steepness=1.0)  # vanilla sigmoid function
+t = SigmoidTransformation(center=1.0, steepness=2.0)  # shifted and steeper
+t = SigmoidTransformation.from_anchors(
+    anchors=[(1, 0.1), (2, 0.9)]  # passes through anchors
+)
+```
+
 ### BellTransformation
 
 The {class}`~baybe.transformations.basic.BellTransformation` pipes the input through a
@@ -179,7 +222,7 @@ distribution except that it does not affect the magnitude of the curve.
 ```python
 from baybe.transformations import BellTransformation
 
-t = BellTransformation(center=0, sigma=1)  # like an **unnormalized** standard normal
+t = BellTransformation(center=0, sigma=1)  # like an unnormalized standard normal
 t = BellTransformation(center=5, sigma=2)  # twice as wide and shifted to the right by 5
 ```
 
@@ -187,7 +230,7 @@ t = BellTransformation(center=5, sigma=2)  # twice as wide and shifted to the ri
 
 The {class}`~baybe.transformations.basic.TriangularTransformation` is a piecewise affine
 transformation with the shape of a triangle, useful for steering targets to a specific
-set point value.
+set point value with symmetric or asymmetric penalty.
 
 `````{grid} 2
 
@@ -212,7 +255,9 @@ f(x) =
 \end{cases}
 ```
 where $c_\text{min}$ and $c_\text{max}$ are the cutoff values of the triangle,
-respectively, and $c_\text{peak}$ is its peak location.
+respectively, and $c_\text{peak}$ is its peak location. Note that there also exist
+convenience constructors that allow for alternative parameterizations of the
+transformation, as exemplified below.
 ````
 `````
 
@@ -235,13 +280,13 @@ assert t_skew1 == t_skew2
 
 ## Composite Transformations
 
-Instead of applying [individual transformations](#pre-defined-transformations) directly,
-you can also use them as building blocks to enable more complex types of operations.
-This is enabled through the
-{class}`~baybe.transformations.composite.ChainedTransformation`
-{class}`~baybe.transformations.composite.AdditiveTransformation` and 
-{class}`~baybe.transformations.composite.MultiplicativeTransformation` classes,
-which allow you to combine multiple transformations into a single one.
+Instead of applying individual [basic](#basic-transformations) or
+[advanced](#advanced-transformations) transformations directly, you can also use them as
+building blocks to enable more complex types of operations. This is enabled through the
+{class}`~baybe.transformations.composite.ChainedTransformation`,
+{class}`~baybe.transformations.composite.AdditiveTransformation` and
+{class}`~baybe.transformations.composite.MultiplicativeTransformation` classes, which
+allow you to combine multiple transformations into a single one.
 
 ### Chaining
 
@@ -262,18 +307,7 @@ mathematical operation $(h \circ g \circ f)(x) = h(g(f(x)))$, where the order in
 notation is reversed.
 ```
 
-```{admonition} Convenience Construction
-:class: tip
-Instead of explicitly calling the
-{class}`~baybe.transformations.composite.ChainedTransformation` 
-constructor to chain transformations, you can alternatively:
-* use the overloaded pipe operator `|`  (inspired by the Unix ["pipe"](https://en.wikipedia.org/wiki/Pipeline_(Unix)) for chaining processes)
-* calling an existing transformation's
-{meth}`~baybe.transformations.base.Transformation.chain` method
-```
-
 ```python
-import torch
 from baybe.transformations import (
     AffineTransformation,
     ChainedTransformation,
@@ -293,8 +327,18 @@ t1 = ChainedTransformation([twosided, power, shift])  # explicit construction
 t2 = twosided | power | shift  # using overloaded pipe operator
 t3 = twosided.chain(power).chain(shift)  # via method chaining
 assert t1 == t2 == t3
+```
 
-# Logically, we can achieve the same result by exchanging the first two steps:
+(transformation-equality)=
+````{admonition} Equality
+:class: caution
+While several transformations can produce the same output, the corresponding objects
+are not necessarily equal because they might rely on different construction logic:
+
+```python
+import torch
+
+# Logically, we can achieve the same result as above by exchanging the first two steps:
 # 1) Here, we apply the quadratic transformation first
 # 2) Then, we cut as a second step
 # 3) Finally, we shift
@@ -306,6 +350,17 @@ values = torch.linspace(0, 2, steps=100)
 assert torch.equal(t1(values), t4(values))  # they produce the same output
 assert t1 != t4  # but they are not "equal" objects
 ```
+````
+
+```{admonition} Convenience Construction
+:class: tip
+Instead of explicitly calling the
+{class}`~baybe.transformations.composite.ChainedTransformation` 
+constructor to chain transformations, you can alternatively:
+* use the overloaded pipe operator `|`  (inspired by the Unix ["pipe"](https://en.wikipedia.org/wiki/Pipeline_(Unix)) for chaining processes)
+* calling an existing transformation's
+{meth}`~baybe.transformations.base.Transformation.chain` method
+```
 
 ````{admonition} Compression
 :class: note
@@ -314,7 +369,7 @@ BayBE is smart when it comes to chaining transformations in that it automaticall
 compresses the resulting chain to remove redundancies, by
 * dropping unnecessary identity transformations,
 * combining successive affine transformations,
-* and removing the chaining wrapper for comparison operations if not needed. 
+* and ignoring the chaining layer for comparison operations when it's not needed. 
 
 ```python
 from baybe.transformations import (
@@ -323,14 +378,23 @@ from baybe.transformations import (
     IdentityTransformation,
 )
 
-t1 = (
+t1 = ChainedTransformation(
+    [
+        IdentityTransformation(),
+        AffineTransformation(factor=2),
+        AffineTransformation(shift=3),
+    ]
+)
+t2 = (
     IdentityTransformation()
     | AffineTransformation(factor=2)
     | AffineTransformation(shift=3)
 )
-t2 = AffineTransformation(factor=2, shift=3)  # compressed version
-assert isinstance(t1, ChainedTransformation)
-assert t1 == t2  # both are equal, even though t1 is really a chained transformation
+t3 = AffineTransformation(factor=2, shift=3)  # compressed version
+
+assert isinstance(t1, ChainedTransformation)  # t1 is a explicitly constructed as chain
+assert not isinstance(t2, ChainedTransformation)  # not a chain due to auto-compression
+assert t1 == t2 == t3  # all are equal, even though t1 is a ChainedTransformation object
 ```
 ````
 
@@ -340,8 +404,6 @@ assert t1 == t2  # both are equal, even though t1 is really a chained transforma
 For common chaining operations, BayBE provides a set convenience methods that
 allow you to quickly create new transformations from existing ones
 (see {class}`~baybe.transformations.base.Transformation` for all options).
-
-For example:
 
 ```python
 t = IdentityTransformation()  # start with **any** existing transformation
@@ -386,7 +448,8 @@ assert torch.equal(t1(values), p1(values) + p2(values))
 Analogous to the [additive case above](#addition), the
 {class}`~baybe.transformations.composite.MultiplicativeTransformation` computes the
 product of the outputs of two transformations applied to the same input. More precisely,
-`MultiplicativeTransformation([f, g])` computes the transformation $h(x) := f(x)g(x)$.
+`MultiplicativeTransformation([f, g])` computes the transformation
+$h(x) := f(x) \cdot g(x)$.
 
 ```{admonition} Convenience Construction
 :class: tip
@@ -412,9 +475,10 @@ assert torch.equal(t1(values), p1(values) * p2(values))
 
 ## Custom Transformations
 
-If none of the [pre-defined transformations](#pre-defined-transformations) fit your
-needs and [composing them](#composite-transformations) does also not bring you to the
-desired result, you can easily define your custom logic using the
+If none of the pre-defined [basic](#basic-transformations) or
+[advanced](#advanced-transformations) transformations fit your needs and [composing
+them](#composite-transformations) does also not bring you to the desired result, you can
+easily define your custom logic using the
 {class}`~baybe.transformations.basic.CustomTransformation` class, which accepts any
 one-argument `torch` callable as transformation function:
 
@@ -428,7 +492,8 @@ t = CustomTransformation(torch.sin)
 ````{admonition} Automatic Wrapping
 :note:
 
-When embedding such transformations into another context, the wrapping happens
+When embedding custom transformations into another context, wrapping the `torch`
+callable into a {class}`~baybe.transformations.basic.CustomTransformation` happens
 automatically, so you can use them just like any other built-in transformation:
 
 ```python
@@ -443,9 +508,10 @@ t = NumericalTarget(name="Sinusoid Target", transformation=torch.sin)
 ````{admonition} Chaining Custom Transformations
 :class: tip
 
-A convenient feature is that you can chain custom transformations with built-in ones
-directly, without needing to explicitly wrap them. Here is an example, demonstrating the
-same chaining operation from the most concise to the most explicit construction:
+A convenient feature is that you can [chain](#chaining) custom transformations with
+built-in ones directly, without needing to explicitly wrap them. Here is an example,
+demonstrating the same chaining operation from the most concise to the most explicit
+construction:
 
 ```python
 import torch
@@ -463,5 +529,13 @@ t5 = ChainedTransformation([AbsoluteTransformation(), CustomTransformation(torch
 assert t1 == t2 == t3 == t4 == t5
 ```
 ````
+
+```{admonition} Serialization
+:class: warning
+
+Due to the arbitrary logic that can be involved, (de-)serialization
+of custom transformations not supported.
+```
+
 
 

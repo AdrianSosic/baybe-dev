@@ -2,10 +2,11 @@
 <html class="no-js" lang="en" data-content_root="../../">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" />
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Transfer Learning" href="../Transfer_Learning/Transfer_Learning.html" /><link rel="prev" title="Transformations" href="Transformations.html" />
 
     <link rel="shortcut icon" href="../../_static/favicon.ico"/><!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
-        <title>baybe.telemetry - BayBE documentation</title>
+        <title>Optimizing a Laser’s Wavelength - BayBE documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
@@ -246,7 +247,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -272,7 +273,7 @@
   <ul>
 <li class="toctree-l1"><a class=reference external href="https://emdgroup.github.io/baybe/versions">Version: latest</a></li></ul>
 <p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">Readme</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../userguide/userguide.html">User Guide</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of User Guide</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../userguide/getting_recommendations.html">Getting Recommendations</a></li>
@@ -295,71 +296,75 @@
 <li class="toctree-l2"><a class="reference internal" href="../../userguide/utils.html">Utilities</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../examples/examples.html">Examples</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Examples</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../examples/Basics/Basics.html">Basics</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Basics</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../examples/Basics/recommenders.html">Recommenders</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../examples/Basics/campaign.html">Campaign</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../examples.html">Examples</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Examples</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Basics/Basics.html">Basics</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Basics</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Basics/campaign.html">Campaign</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Basics/recommenders.html">Recommenders</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../examples/Searchspaces/Searchspaces.html">Searchspaces</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Searchspaces</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../examples/Searchspaces/hybrid_space.html">Hybrid Space</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../examples/Searchspaces/continuous_space.html">Continuous Space</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../examples/Searchspaces/discrete_space.html">Discrete Space</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Searchspaces/Searchspaces.html">Searchspaces</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Searchspaces</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Searchspaces/discrete_space.html">Discrete Space</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Searchspaces/hybrid_space.html">Hybrid Space</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Searchspaces/continuous_space.html">Continuous Space</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../examples/Constraints_Discrete/Constraints_Discrete.html">Constraints Discrete</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of Constraints Discrete</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../examples/Constraints_Discrete/exclusion_constraints.html">Exclusion</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../examples/Constraints_Discrete/prodsum_constraints.html">Product/Sum</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../examples/Constraints_Discrete/custom_constraints.html">Custom</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../examples/Constraints_Discrete/dependency_constraints.html">Dependency</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Constraints_Discrete/Constraints_Discrete.html">Constraints Discrete</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of Constraints Discrete</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Constraints_Discrete/custom_constraints.html">Custom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Constraints_Discrete/dependency_constraints.html">Dependency</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Constraints_Discrete/exclusion_constraints.html">Exclusion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Constraints_Discrete/prodsum_constraints.html">Product/Sum</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../examples/Constraints_Continuous/Constraints_Continuous.html">Constraints Continuous</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Constraints Continuous</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../examples/Constraints_Continuous/hybrid_space.html">Hybrid Space</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../examples/Constraints_Continuous/linear_constraints.html">Linear</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Constraints_Continuous/Constraints_Continuous.html">Constraints Continuous</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Constraints Continuous</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Constraints_Continuous/hybrid_space.html">Hybrid Space</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Constraints_Continuous/linear_constraints.html">Linear</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../examples/Multi_Target/Multi_Target.html">Multi Target</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Multi Target</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../examples/Multi_Target/desirability.html">Desirability</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../examples/Multi_Target/pareto.html">Pareto</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Multi_Target/Multi_Target.html">Multi Target</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Multi Target</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Multi_Target/desirability.html">Desirability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Multi_Target/pareto.html">Pareto</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../examples/Serialization/Serialization.html">Serialization</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Serialization</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../examples/Serialization/create_from_config.html">Create From Config</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../examples/Serialization/validate_config.html">Validate Config</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../examples/Serialization/basic_serialization.html">Basic Serialization</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Serialization/Serialization.html">Serialization</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Serialization</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Serialization/basic_serialization.html">Basic Serialization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Serialization/create_from_config.html">Create From Config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Serialization/validate_config.html">Validate Config</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../examples/Custom_Surrogates/Custom_Surrogates.html">Custom Surrogates</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Custom Surrogates</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../examples/Custom_Surrogates/custom_pretrained.html">Custom Pretrained</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../examples/Custom_Surrogates/surrogate_params.html">Surrogate Params</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Custom_Surrogates/Custom_Surrogates.html">Custom Surrogates</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Custom Surrogates</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Custom_Surrogates/surrogate_params.html">Surrogate Params</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Custom_Surrogates/custom_pretrained.html">Custom Pretrained</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../examples/Multi_Armed_Bandit/Multi_Armed_Bandit.html">Multi Armed Bandit</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Multi Armed Bandit</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../examples/Multi_Armed_Bandit/bernoulli_multi_armed_bandit.html">Bernoulli Multi Armed Bandit</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Multi_Armed_Bandit/Multi_Armed_Bandit.html">Multi Armed Bandit</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Multi Armed Bandit</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Multi_Armed_Bandit/bernoulli_multi_armed_bandit.html">Bernoulli Multi Armed Bandit</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../examples/Backtesting/Backtesting.html">Backtesting</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of Backtesting</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../examples/Backtesting/full_initial_data.html">Full Initial Data</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../examples/Backtesting/full_lookup.html">Full Lookup</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../examples/Backtesting/custom_blackbox.html">Custom Blackbox</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../examples/Backtesting/impute_mode.html">Impute Mode</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Backtesting/Backtesting.html">Backtesting</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of Backtesting</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Backtesting/full_initial_data.html">Full Initial Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Backtesting/custom_blackbox.html">Custom Blackbox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Backtesting/full_lookup.html">Full Lookup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Backtesting/impute_mode.html">Impute Mode</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../examples/Custom_Hooks/Custom_Hooks.html">Custom Hooks</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of Custom Hooks</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../examples/Custom_Hooks/probability_of_improvement.html">Probability Of Improvement</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../examples/Custom_Hooks/campaign_stopping.html">Campaign Stopping</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../examples/Custom_Hooks/basics.html">Basics</a></li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="Transformations.html">Transformations</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of Transformations</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Laser Tuning</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../examples/Transfer_Learning/Transfer_Learning.html">Transfer Learning</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of Transfer Learning</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../examples/Transfer_Learning/backtesting.html">Backtesting</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../examples/Transfer_Learning/basic_transfer_learning.html">Basic Transfer Learning</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Transfer_Learning/Transfer_Learning.html">Transfer Learning</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of Transfer Learning</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Transfer_Learning/backtesting.html">Backtesting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Transfer_Learning/basic_transfer_learning.html">Basic Transfer Learning</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../examples/Mixtures/Mixtures.html">Mixtures</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of Mixtures</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../examples/Mixtures/traditional.html">Traditional</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../examples/Mixtures/slot_based.html">Slot Based</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Mixtures/Mixtures.html">Mixtures</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of Mixtures</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Mixtures/slot_based.html">Slot Based</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Mixtures/traditional.html">Traditional</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Custom_Hooks/Custom_Hooks.html">Custom Hooks</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle navigation of Custom Hooks</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Custom_Hooks/probability_of_improvement.html">Probability Of Improvement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Custom_Hooks/campaign_stopping.html">Campaign Stopping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Custom_Hooks/basics.html">Basics</a></li>
 </ul>
 </li>
 </ul>
@@ -367,9 +372,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../../faq.html">FAQ</a></li>
 </ul>
 <ul>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../_autosummary/baybe.html">baybe</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle navigation of baybe</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../_autosummary/baybe.acquisition.html">baybe.acquisition</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle navigation of baybe.acquisition</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.acquisition.acqfs.html">baybe.acquisition.acqfs</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle navigation of baybe.acquisition.acqfs</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../_autosummary/baybe.html">baybe</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle navigation of baybe</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../_autosummary/baybe.acquisition.html">baybe.acquisition</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle navigation of baybe.acquisition</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.acquisition.acqfs.html">baybe.acquisition.acqfs</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle navigation of baybe.acquisition.acqfs</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.acquisition.acqfs.ExpectedImprovement.html">ExpectedImprovement</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.acquisition.acqfs.LogExpectedImprovement.html">LogExpectedImprovement</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.acquisition.acqfs.PosteriorMean.html">PosteriorMean</a></li>
@@ -394,15 +399,15 @@
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.acquisition.acqfs.qUpperConfidenceBound.html">qUpperConfidenceBound</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.acquisition.base.html">baybe.acquisition.base</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle navigation of baybe.acquisition.base</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.acquisition.base.html">baybe.acquisition.base</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle navigation of baybe.acquisition.base</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.acquisition.base.AcquisitionFunction.html">AcquisitionFunction</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.acquisition.partial.html">baybe.acquisition.partial</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle navigation of baybe.acquisition.partial</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.acquisition.partial.html">baybe.acquisition.partial</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle navigation of baybe.acquisition.partial</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.acquisition.partial.PartialAcquisitionFunction.html">PartialAcquisitionFunction</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.acquisition.utils.html">baybe.acquisition.utils</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle navigation of baybe.acquisition.utils</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.acquisition.utils.html">baybe.acquisition.utils</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle navigation of baybe.acquisition.utils</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.acquisition.utils.convert_acqf.html">baybe.acquisition.utils.convert_acqf</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.acquisition.utils.make_partitioning.html">baybe.acquisition.utils.make_partitioning</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.acquisition.utils.str_to_acqf.html">baybe.acquisition.utils.str_to_acqf</a></li>
@@ -410,12 +415,12 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../_autosummary/baybe.campaign.html">baybe.campaign</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle navigation of baybe.campaign</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../_autosummary/baybe.campaign.html">baybe.campaign</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><div class="visually-hidden">Toggle navigation of baybe.campaign</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../_autosummary/baybe.campaign.Campaign.html">Campaign</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../_autosummary/baybe.constraints.html">baybe.constraints</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><div class="visually-hidden">Toggle navigation of baybe.constraints</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.constraints.base.html">baybe.constraints.base</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" role="switch" type="checkbox"/><label for="toctree-checkbox-23"><div class="visually-hidden">Toggle navigation of baybe.constraints.base</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../_autosummary/baybe.constraints.html">baybe.constraints</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" role="switch" type="checkbox"/><label for="toctree-checkbox-23"><div class="visually-hidden">Toggle navigation of baybe.constraints</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.constraints.base.html">baybe.constraints.base</a><input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" role="switch" type="checkbox"/><label for="toctree-checkbox-24"><div class="visually-hidden">Toggle navigation of baybe.constraints.base</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.constraints.base.CardinalityConstraint.html">CardinalityConstraint</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.constraints.base.Constraint.html">Constraint</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.constraints.base.ContinuousConstraint.html">ContinuousConstraint</a></li>
@@ -423,24 +428,24 @@
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.constraints.base.DiscreteConstraint.html">DiscreteConstraint</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.constraints.conditions.html">baybe.constraints.conditions</a><input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" role="switch" type="checkbox"/><label for="toctree-checkbox-24"><div class="visually-hidden">Toggle navigation of baybe.constraints.conditions</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.constraints.conditions.html">baybe.constraints.conditions</a><input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" role="switch" type="checkbox"/><label for="toctree-checkbox-25"><div class="visually-hidden">Toggle navigation of baybe.constraints.conditions</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.constraints.conditions.Condition.html">Condition</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.constraints.conditions.SubSelectionCondition.html">SubSelectionCondition</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.constraints.conditions.ThresholdCondition.html">ThresholdCondition</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.constraints.continuous.html">baybe.constraints.continuous</a><input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" role="switch" type="checkbox"/><label for="toctree-checkbox-25"><div class="visually-hidden">Toggle navigation of baybe.constraints.continuous</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.constraints.continuous.html">baybe.constraints.continuous</a><input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" role="switch" type="checkbox"/><label for="toctree-checkbox-26"><div class="visually-hidden">Toggle navigation of baybe.constraints.continuous</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.constraints.continuous.ContinuousCardinalityConstraint.html">ContinuousCardinalityConstraint</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.constraints.continuous.ContinuousLinearConstraint.html">ContinuousLinearConstraint</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.constraints.deprecation.html">baybe.constraints.deprecation</a><input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" role="switch" type="checkbox"/><label for="toctree-checkbox-26"><div class="visually-hidden">Toggle navigation of baybe.constraints.deprecation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.constraints.deprecation.html">baybe.constraints.deprecation</a><input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" role="switch" type="checkbox"/><label for="toctree-checkbox-27"><div class="visually-hidden">Toggle navigation of baybe.constraints.deprecation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.constraints.deprecation.ContinuousLinearEqualityConstraint.html">baybe.constraints.deprecation.ContinuousLinearEqualityConstraint</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.constraints.deprecation.ContinuousLinearInequalityConstraint.html">baybe.constraints.deprecation.ContinuousLinearInequalityConstraint</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.constraints.deprecation.structure_constraints.html">baybe.constraints.deprecation.structure_constraints</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.constraints.discrete.html">baybe.constraints.discrete</a><input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" role="switch" type="checkbox"/><label for="toctree-checkbox-27"><div class="visually-hidden">Toggle navigation of baybe.constraints.discrete</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.constraints.discrete.html">baybe.constraints.discrete</a><input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" role="switch" type="checkbox"/><label for="toctree-checkbox-28"><div class="visually-hidden">Toggle navigation of baybe.constraints.discrete</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.constraints.discrete.DiscreteCardinalityConstraint.html">DiscreteCardinalityConstraint</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.constraints.discrete.DiscreteCustomConstraint.html">DiscreteCustomConstraint</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.constraints.discrete.DiscreteDependenciesConstraint.html">DiscreteDependenciesConstraint</a></li>
@@ -452,11 +457,11 @@
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.constraints.discrete.DiscreteSumConstraint.html">DiscreteSumConstraint</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.constraints.utils.html">baybe.constraints.utils</a><input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" role="switch" type="checkbox"/><label for="toctree-checkbox-28"><div class="visually-hidden">Toggle navigation of baybe.constraints.utils</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.constraints.utils.html">baybe.constraints.utils</a><input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" role="switch" type="checkbox"/><label for="toctree-checkbox-29"><div class="visually-hidden">Toggle navigation of baybe.constraints.utils</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.constraints.utils.is_cardinality_fulfilled.html">baybe.constraints.utils.is_cardinality_fulfilled</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.constraints.validation.html">baybe.constraints.validation</a><input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" role="switch" type="checkbox"/><label for="toctree-checkbox-29"><div class="visually-hidden">Toggle navigation of baybe.constraints.validation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.constraints.validation.html">baybe.constraints.validation</a><input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" role="switch" type="checkbox"/><label for="toctree-checkbox-30"><div class="visually-hidden">Toggle navigation of baybe.constraints.validation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.constraints.validation.validate_cardinality_constraint_parameter_bounds.html">baybe.constraints.validation.validate_cardinality_constraint_parameter_bounds</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.constraints.validation.validate_cardinality_constraints_are_nonoverlapping.html">baybe.constraints.validation.validate_cardinality_constraints_are_nonoverlapping</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.constraints.validation.validate_constraints.html">baybe.constraints.validation.validate_constraints</a></li>
@@ -464,7 +469,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../_autosummary/baybe.exceptions.html">baybe.exceptions</a><input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" role="switch" type="checkbox"/><label for="toctree-checkbox-30"><div class="visually-hidden">Toggle navigation of baybe.exceptions</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../_autosummary/baybe.exceptions.html">baybe.exceptions</a><input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" role="switch" type="checkbox"/><label for="toctree-checkbox-31"><div class="visually-hidden">Toggle navigation of baybe.exceptions</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../_autosummary/baybe.exceptions.DeprecationError.html">baybe.exceptions.DeprecationError</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../_autosummary/baybe.exceptions.EmptySearchSpaceError.html">baybe.exceptions.EmptySearchSpaceError</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../_autosummary/baybe.exceptions.IncompatibilityError.html">baybe.exceptions.IncompatibilityError</a></li>
@@ -493,8 +498,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../../_autosummary/baybe.exceptions.UnusedObjectWarning.html">baybe.exceptions.UnusedObjectWarning</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../_autosummary/baybe.insights.html">baybe.insights</a><input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" role="switch" type="checkbox"/><label for="toctree-checkbox-31"><div class="visually-hidden">Toggle navigation of baybe.insights</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.insights.shap.html">baybe.insights.shap</a><input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" role="switch" type="checkbox"/><label for="toctree-checkbox-32"><div class="visually-hidden">Toggle navigation of baybe.insights.shap</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../_autosummary/baybe.insights.html">baybe.insights</a><input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" role="switch" type="checkbox"/><label for="toctree-checkbox-32"><div class="visually-hidden">Toggle navigation of baybe.insights</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.insights.shap.html">baybe.insights.shap</a><input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" role="switch" type="checkbox"/><label for="toctree-checkbox-33"><div class="visually-hidden">Toggle navigation of baybe.insights.shap</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.insights.shap.SHAP_EXPLAINERS.html">baybe.insights.shap.SHAP_EXPLAINERS</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.insights.shap.NON_SHAP_EXPLAINERS.html">baybe.insights.shap.NON_SHAP_EXPLAINERS</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.insights.shap.EXPLAINERS.html">baybe.insights.shap.EXPLAINERS</a></li>
@@ -506,14 +511,14 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../_autosummary/baybe.kernels.html">baybe.kernels</a><input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" role="switch" type="checkbox"/><label for="toctree-checkbox-33"><div class="visually-hidden">Toggle navigation of baybe.kernels</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.kernels.base.html">baybe.kernels.base</a><input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" role="switch" type="checkbox"/><label for="toctree-checkbox-34"><div class="visually-hidden">Toggle navigation of baybe.kernels.base</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../_autosummary/baybe.kernels.html">baybe.kernels</a><input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" role="switch" type="checkbox"/><label for="toctree-checkbox-34"><div class="visually-hidden">Toggle navigation of baybe.kernels</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.kernels.base.html">baybe.kernels.base</a><input class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" role="switch" type="checkbox"/><label for="toctree-checkbox-35"><div class="visually-hidden">Toggle navigation of baybe.kernels.base</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.kernels.base.BasicKernel.html">BasicKernel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.kernels.base.CompositeKernel.html">CompositeKernel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.kernels.base.Kernel.html">Kernel</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.kernels.basic.html">baybe.kernels.basic</a><input class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" role="switch" type="checkbox"/><label for="toctree-checkbox-35"><div class="visually-hidden">Toggle navigation of baybe.kernels.basic</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.kernels.basic.html">baybe.kernels.basic</a><input class="toctree-checkbox" id="toctree-checkbox-36" name="toctree-checkbox-36" role="switch" type="checkbox"/><label for="toctree-checkbox-36"><div class="visually-hidden">Toggle navigation of baybe.kernels.basic</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.kernels.basic.LinearKernel.html">LinearKernel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.kernels.basic.MaternKernel.html">MaternKernel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.kernels.basic.PeriodicKernel.html">PeriodicKernel</a></li>
@@ -524,7 +529,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.kernels.basic.RQKernel.html">RQKernel</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.kernels.composite.html">baybe.kernels.composite</a><input class="toctree-checkbox" id="toctree-checkbox-36" name="toctree-checkbox-36" role="switch" type="checkbox"/><label for="toctree-checkbox-36"><div class="visually-hidden">Toggle navigation of baybe.kernels.composite</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.kernels.composite.html">baybe.kernels.composite</a><input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" role="switch" type="checkbox"/><label for="toctree-checkbox-37"><div class="visually-hidden">Toggle navigation of baybe.kernels.composite</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.kernels.composite.AdditiveKernel.html">AdditiveKernel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.kernels.composite.ProductKernel.html">ProductKernel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.kernels.composite.ScaleKernel.html">ScaleKernel</a></li>
@@ -532,79 +537,79 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../_autosummary/baybe.objectives.html">baybe.objectives</a><input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" role="switch" type="checkbox"/><label for="toctree-checkbox-37"><div class="visually-hidden">Toggle navigation of baybe.objectives</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.objectives.base.html">baybe.objectives.base</a><input class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" role="switch" type="checkbox"/><label for="toctree-checkbox-38"><div class="visually-hidden">Toggle navigation of baybe.objectives.base</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../_autosummary/baybe.objectives.html">baybe.objectives</a><input class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" role="switch" type="checkbox"/><label for="toctree-checkbox-38"><div class="visually-hidden">Toggle navigation of baybe.objectives</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.objectives.base.html">baybe.objectives.base</a><input class="toctree-checkbox" id="toctree-checkbox-39" name="toctree-checkbox-39" role="switch" type="checkbox"/><label for="toctree-checkbox-39"><div class="visually-hidden">Toggle navigation of baybe.objectives.base</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.objectives.base.to_objective.html">baybe.objectives.base.to_objective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.objectives.base.Objective.html">Objective</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.objectives.botorch.html">baybe.objectives.botorch</a><input class="toctree-checkbox" id="toctree-checkbox-39" name="toctree-checkbox-39" role="switch" type="checkbox"/><label for="toctree-checkbox-39"><div class="visually-hidden">Toggle navigation of baybe.objectives.botorch</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.objectives.botorch.html">baybe.objectives.botorch</a><input class="toctree-checkbox" id="toctree-checkbox-40" name="toctree-checkbox-40" role="switch" type="checkbox"/><label for="toctree-checkbox-40"><div class="visually-hidden">Toggle navigation of baybe.objectives.botorch</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.objectives.botorch.ChainedMCObjective.html">ChainedMCObjective</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.objectives.desirability.html">baybe.objectives.desirability</a><input class="toctree-checkbox" id="toctree-checkbox-40" name="toctree-checkbox-40" role="switch" type="checkbox"/><label for="toctree-checkbox-40"><div class="visually-hidden">Toggle navigation of baybe.objectives.desirability</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.objectives.desirability.html">baybe.objectives.desirability</a><input class="toctree-checkbox" id="toctree-checkbox-41" name="toctree-checkbox-41" role="switch" type="checkbox"/><label for="toctree-checkbox-41"><div class="visually-hidden">Toggle navigation of baybe.objectives.desirability</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.objectives.desirability.DesirabilityObjective.html">DesirabilityObjective</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.objectives.enum.html">baybe.objectives.enum</a><input class="toctree-checkbox" id="toctree-checkbox-41" name="toctree-checkbox-41" role="switch" type="checkbox"/><label for="toctree-checkbox-41"><div class="visually-hidden">Toggle navigation of baybe.objectives.enum</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.objectives.enum.html">baybe.objectives.enum</a><input class="toctree-checkbox" id="toctree-checkbox-42" name="toctree-checkbox-42" role="switch" type="checkbox"/><label for="toctree-checkbox-42"><div class="visually-hidden">Toggle navigation of baybe.objectives.enum</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.objectives.enum.Scalarizer.html">Scalarizer</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.objectives.pareto.html">baybe.objectives.pareto</a><input class="toctree-checkbox" id="toctree-checkbox-42" name="toctree-checkbox-42" role="switch" type="checkbox"/><label for="toctree-checkbox-42"><div class="visually-hidden">Toggle navigation of baybe.objectives.pareto</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.objectives.pareto.html">baybe.objectives.pareto</a><input class="toctree-checkbox" id="toctree-checkbox-43" name="toctree-checkbox-43" role="switch" type="checkbox"/><label for="toctree-checkbox-43"><div class="visually-hidden">Toggle navigation of baybe.objectives.pareto</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.objectives.pareto.ParetoObjective.html">ParetoObjective</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.objectives.single.html">baybe.objectives.single</a><input class="toctree-checkbox" id="toctree-checkbox-43" name="toctree-checkbox-43" role="switch" type="checkbox"/><label for="toctree-checkbox-43"><div class="visually-hidden">Toggle navigation of baybe.objectives.single</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.objectives.single.html">baybe.objectives.single</a><input class="toctree-checkbox" id="toctree-checkbox-44" name="toctree-checkbox-44" role="switch" type="checkbox"/><label for="toctree-checkbox-44"><div class="visually-hidden">Toggle navigation of baybe.objectives.single</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.objectives.single.SingleTargetObjective.html">SingleTargetObjective</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.objectives.validation.html">baybe.objectives.validation</a><input class="toctree-checkbox" id="toctree-checkbox-44" name="toctree-checkbox-44" role="switch" type="checkbox"/><label for="toctree-checkbox-44"><div class="visually-hidden">Toggle navigation of baybe.objectives.validation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.objectives.validation.html">baybe.objectives.validation</a><input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" role="switch" type="checkbox"/><label for="toctree-checkbox-45"><div class="visually-hidden">Toggle navigation of baybe.objectives.validation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.objectives.validation.validate_target_names.html">baybe.objectives.validation.validate_target_names</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../_autosummary/baybe.parameters.html">baybe.parameters</a><input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" role="switch" type="checkbox"/><label for="toctree-checkbox-45"><div class="visually-hidden">Toggle navigation of baybe.parameters</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.parameters.base.html">baybe.parameters.base</a><input class="toctree-checkbox" id="toctree-checkbox-46" name="toctree-checkbox-46" role="switch" type="checkbox"/><label for="toctree-checkbox-46"><div class="visually-hidden">Toggle navigation of baybe.parameters.base</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../_autosummary/baybe.parameters.html">baybe.parameters</a><input class="toctree-checkbox" id="toctree-checkbox-46" name="toctree-checkbox-46" role="switch" type="checkbox"/><label for="toctree-checkbox-46"><div class="visually-hidden">Toggle navigation of baybe.parameters</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.parameters.base.html">baybe.parameters.base</a><input class="toctree-checkbox" id="toctree-checkbox-47" name="toctree-checkbox-47" role="switch" type="checkbox"/><label for="toctree-checkbox-47"><div class="visually-hidden">Toggle navigation of baybe.parameters.base</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.parameters.base.ContinuousParameter.html">ContinuousParameter</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.parameters.base.DiscreteParameter.html">DiscreteParameter</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.parameters.base.Parameter.html">Parameter</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.parameters.categorical.html">baybe.parameters.categorical</a><input class="toctree-checkbox" id="toctree-checkbox-47" name="toctree-checkbox-47" role="switch" type="checkbox"/><label for="toctree-checkbox-47"><div class="visually-hidden">Toggle navigation of baybe.parameters.categorical</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.parameters.categorical.html">baybe.parameters.categorical</a><input class="toctree-checkbox" id="toctree-checkbox-48" name="toctree-checkbox-48" role="switch" type="checkbox"/><label for="toctree-checkbox-48"><div class="visually-hidden">Toggle navigation of baybe.parameters.categorical</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.parameters.categorical.CategoricalParameter.html">CategoricalParameter</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.parameters.categorical.TaskParameter.html">TaskParameter</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.parameters.custom.html">baybe.parameters.custom</a><input class="toctree-checkbox" id="toctree-checkbox-48" name="toctree-checkbox-48" role="switch" type="checkbox"/><label for="toctree-checkbox-48"><div class="visually-hidden">Toggle navigation of baybe.parameters.custom</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.parameters.custom.html">baybe.parameters.custom</a><input class="toctree-checkbox" id="toctree-checkbox-49" name="toctree-checkbox-49" role="switch" type="checkbox"/><label for="toctree-checkbox-49"><div class="visually-hidden">Toggle navigation of baybe.parameters.custom</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.parameters.custom.CustomDiscreteParameter.html">CustomDiscreteParameter</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.parameters.enum.html">baybe.parameters.enum</a><input class="toctree-checkbox" id="toctree-checkbox-49" name="toctree-checkbox-49" role="switch" type="checkbox"/><label for="toctree-checkbox-49"><div class="visually-hidden">Toggle navigation of baybe.parameters.enum</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.parameters.enum.html">baybe.parameters.enum</a><input class="toctree-checkbox" id="toctree-checkbox-50" name="toctree-checkbox-50" role="switch" type="checkbox"/><label for="toctree-checkbox-50"><div class="visually-hidden">Toggle navigation of baybe.parameters.enum</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.parameters.enum.CategoricalEncoding.html">CategoricalEncoding</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.parameters.enum.CustomEncoding.html">CustomEncoding</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.parameters.enum.ParameterEncoding.html">ParameterEncoding</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.parameters.enum.SubstanceEncoding.html">SubstanceEncoding</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.parameters.numerical.html">baybe.parameters.numerical</a><input class="toctree-checkbox" id="toctree-checkbox-50" name="toctree-checkbox-50" role="switch" type="checkbox"/><label for="toctree-checkbox-50"><div class="visually-hidden">Toggle navigation of baybe.parameters.numerical</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.parameters.numerical.html">baybe.parameters.numerical</a><input class="toctree-checkbox" id="toctree-checkbox-51" name="toctree-checkbox-51" role="switch" type="checkbox"/><label for="toctree-checkbox-51"><div class="visually-hidden">Toggle navigation of baybe.parameters.numerical</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.parameters.numerical.NumericalContinuousParameter.html">NumericalContinuousParameter</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.parameters.numerical.NumericalDiscreteParameter.html">NumericalDiscreteParameter</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.parameters.substance.html">baybe.parameters.substance</a><input class="toctree-checkbox" id="toctree-checkbox-51" name="toctree-checkbox-51" role="switch" type="checkbox"/><label for="toctree-checkbox-51"><div class="visually-hidden">Toggle navigation of baybe.parameters.substance</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.parameters.substance.html">baybe.parameters.substance</a><input class="toctree-checkbox" id="toctree-checkbox-52" name="toctree-checkbox-52" role="switch" type="checkbox"/><label for="toctree-checkbox-52"><div class="visually-hidden">Toggle navigation of baybe.parameters.substance</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.parameters.substance.Smiles.html">baybe.parameters.substance.Smiles</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.parameters.substance.SubstanceParameter.html">SubstanceParameter</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.parameters.utils.html">baybe.parameters.utils</a><input class="toctree-checkbox" id="toctree-checkbox-52" name="toctree-checkbox-52" role="switch" type="checkbox"/><label for="toctree-checkbox-52"><div class="visually-hidden">Toggle navigation of baybe.parameters.utils</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.parameters.utils.html">baybe.parameters.utils</a><input class="toctree-checkbox" id="toctree-checkbox-53" name="toctree-checkbox-53" role="switch" type="checkbox"/><label for="toctree-checkbox-53"><div class="visually-hidden">Toggle navigation of baybe.parameters.utils</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.parameters.utils.activate_parameter.html">baybe.parameters.utils.activate_parameter</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.parameters.utils.get_parameters_from_dataframe.html">baybe.parameters.utils.get_parameters_from_dataframe</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.parameters.utils.is_inactive.html">baybe.parameters.utils.is_inactive</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.parameters.utils.sort_parameters.html">baybe.parameters.utils.sort_parameters</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.parameters.validation.html">baybe.parameters.validation</a><input class="toctree-checkbox" id="toctree-checkbox-53" name="toctree-checkbox-53" role="switch" type="checkbox"/><label for="toctree-checkbox-53"><div class="visually-hidden">Toggle navigation of baybe.parameters.validation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.parameters.validation.html">baybe.parameters.validation</a><input class="toctree-checkbox" id="toctree-checkbox-54" name="toctree-checkbox-54" role="switch" type="checkbox"/><label for="toctree-checkbox-54"><div class="visually-hidden">Toggle navigation of baybe.parameters.validation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.parameters.validation.validate_decorrelation.html">baybe.parameters.validation.validate_decorrelation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.parameters.validation.validate_is_finite.html">baybe.parameters.validation.validate_is_finite</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.parameters.validation.validate_unique_values.html">baybe.parameters.validation.validate_unique_values</a></li>
@@ -612,12 +617,12 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../_autosummary/baybe.priors.html">baybe.priors</a><input class="toctree-checkbox" id="toctree-checkbox-54" name="toctree-checkbox-54" role="switch" type="checkbox"/><label for="toctree-checkbox-54"><div class="visually-hidden">Toggle navigation of baybe.priors</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.priors.base.html">baybe.priors.base</a><input class="toctree-checkbox" id="toctree-checkbox-55" name="toctree-checkbox-55" role="switch" type="checkbox"/><label for="toctree-checkbox-55"><div class="visually-hidden">Toggle navigation of baybe.priors.base</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../_autosummary/baybe.priors.html">baybe.priors</a><input class="toctree-checkbox" id="toctree-checkbox-55" name="toctree-checkbox-55" role="switch" type="checkbox"/><label for="toctree-checkbox-55"><div class="visually-hidden">Toggle navigation of baybe.priors</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.priors.base.html">baybe.priors.base</a><input class="toctree-checkbox" id="toctree-checkbox-56" name="toctree-checkbox-56" role="switch" type="checkbox"/><label for="toctree-checkbox-56"><div class="visually-hidden">Toggle navigation of baybe.priors.base</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.priors.base.Prior.html">Prior</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.priors.basic.html">baybe.priors.basic</a><input class="toctree-checkbox" id="toctree-checkbox-56" name="toctree-checkbox-56" role="switch" type="checkbox"/><label for="toctree-checkbox-56"><div class="visually-hidden">Toggle navigation of baybe.priors.basic</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.priors.basic.html">baybe.priors.basic</a><input class="toctree-checkbox" id="toctree-checkbox-57" name="toctree-checkbox-57" role="switch" type="checkbox"/><label for="toctree-checkbox-57"><div class="visually-hidden">Toggle navigation of baybe.priors.basic</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.priors.basic.BetaPrior.html">BetaPrior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.priors.basic.GammaPrior.html">GammaPrior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.priors.basic.HalfCauchyPrior.html">HalfCauchyPrior</a></li>
@@ -629,17 +634,17 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../_autosummary/baybe.recommenders.html">baybe.recommenders</a><input class="toctree-checkbox" id="toctree-checkbox-57" name="toctree-checkbox-57" role="switch" type="checkbox"/><label for="toctree-checkbox-57"><div class="visually-hidden">Toggle navigation of baybe.recommenders</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.recommenders.base.html">baybe.recommenders.base</a><input class="toctree-checkbox" id="toctree-checkbox-58" name="toctree-checkbox-58" role="switch" type="checkbox"/><label for="toctree-checkbox-58"><div class="visually-hidden">Toggle navigation of baybe.recommenders.base</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../_autosummary/baybe.recommenders.html">baybe.recommenders</a><input class="toctree-checkbox" id="toctree-checkbox-58" name="toctree-checkbox-58" role="switch" type="checkbox"/><label for="toctree-checkbox-58"><div class="visually-hidden">Toggle navigation of baybe.recommenders</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.recommenders.base.html">baybe.recommenders.base</a><input class="toctree-checkbox" id="toctree-checkbox-59" name="toctree-checkbox-59" role="switch" type="checkbox"/><label for="toctree-checkbox-59"><div class="visually-hidden">Toggle navigation of baybe.recommenders.base</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.recommenders.base.RecommenderProtocol.html">RecommenderProtocol</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.recommenders.meta.html">baybe.recommenders.meta</a><input class="toctree-checkbox" id="toctree-checkbox-59" name="toctree-checkbox-59" role="switch" type="checkbox"/><label for="toctree-checkbox-59"><div class="visually-hidden">Toggle navigation of baybe.recommenders.meta</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l4 has-children"><a class="reference internal" href="../../_autosummary/baybe.recommenders.meta.base.html">baybe.recommenders.meta.base</a><input class="toctree-checkbox" id="toctree-checkbox-60" name="toctree-checkbox-60" role="switch" type="checkbox"/><label for="toctree-checkbox-60"><div class="visually-hidden">Toggle navigation of baybe.recommenders.meta.base</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.recommenders.meta.html">baybe.recommenders.meta</a><input class="toctree-checkbox" id="toctree-checkbox-60" name="toctree-checkbox-60" role="switch" type="checkbox"/><label for="toctree-checkbox-60"><div class="visually-hidden">Toggle navigation of baybe.recommenders.meta</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../_autosummary/baybe.recommenders.meta.base.html">baybe.recommenders.meta.base</a><input class="toctree-checkbox" id="toctree-checkbox-61" name="toctree-checkbox-61" role="switch" type="checkbox"/><label for="toctree-checkbox-61"><div class="visually-hidden">Toggle navigation of baybe.recommenders.meta.base</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l5"><a class="reference internal" href="../../_autosummary/baybe.recommenders.meta.base.MetaRecommender.html">MetaRecommender</a></li>
 </ul>
 </li>
-<li class="toctree-l4 has-children"><a class="reference internal" href="../../_autosummary/baybe.recommenders.meta.sequential.html">baybe.recommenders.meta.sequential</a><input class="toctree-checkbox" id="toctree-checkbox-61" name="toctree-checkbox-61" role="switch" type="checkbox"/><label for="toctree-checkbox-61"><div class="visually-hidden">Toggle navigation of baybe.recommenders.meta.sequential</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../_autosummary/baybe.recommenders.meta.sequential.html">baybe.recommenders.meta.sequential</a><input class="toctree-checkbox" id="toctree-checkbox-62" name="toctree-checkbox-62" role="switch" type="checkbox"/><label for="toctree-checkbox-62"><div class="visually-hidden">Toggle navigation of baybe.recommenders.meta.sequential</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l5"><a class="reference internal" href="../../_autosummary/baybe.recommenders.meta.sequential.BaseSequentialMetaRecommender.html">BaseSequentialMetaRecommender</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../_autosummary/baybe.recommenders.meta.sequential.SequentialMetaRecommender.html">SequentialMetaRecommender</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../_autosummary/baybe.recommenders.meta.sequential.StreamingSequentialMetaRecommender.html">StreamingSequentialMetaRecommender</a></li>
@@ -648,26 +653,22 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.recommenders.naive.html">baybe.recommenders.naive</a><input class="toctree-checkbox" id="toctree-checkbox-62" name="toctree-checkbox-62" role="switch" type="checkbox"/><label for="toctree-checkbox-62"><div class="visually-hidden">Toggle navigation of baybe.recommenders.naive</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.recommenders.naive.html">baybe.recommenders.naive</a><input class="toctree-checkbox" id="toctree-checkbox-63" name="toctree-checkbox-63" role="switch" type="checkbox"/><label for="toctree-checkbox-63"><div class="visually-hidden">Toggle navigation of baybe.recommenders.naive</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.recommenders.naive.NaiveHybridSpaceRecommender.html">NaiveHybridSpaceRecommender</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.recommenders.pure.html">baybe.recommenders.pure</a><input class="toctree-checkbox" id="toctree-checkbox-63" name="toctree-checkbox-63" role="switch" type="checkbox"/><label for="toctree-checkbox-63"><div class="visually-hidden">Toggle navigation of baybe.recommenders.pure</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l4 has-children"><a class="reference internal" href="../../_autosummary/baybe.recommenders.pure.base.html">baybe.recommenders.pure.base</a><input class="toctree-checkbox" id="toctree-checkbox-64" name="toctree-checkbox-64" role="switch" type="checkbox"/><label for="toctree-checkbox-64"><div class="visually-hidden">Toggle navigation of baybe.recommenders.pure.base</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.recommenders.pure.html">baybe.recommenders.pure</a><input class="toctree-checkbox" id="toctree-checkbox-64" name="toctree-checkbox-64" role="switch" type="checkbox"/><label for="toctree-checkbox-64"><div class="visually-hidden">Toggle navigation of baybe.recommenders.pure</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../_autosummary/baybe.recommenders.pure.base.html">baybe.recommenders.pure.base</a><input class="toctree-checkbox" id="toctree-checkbox-65" name="toctree-checkbox-65" role="switch" type="checkbox"/><label for="toctree-checkbox-65"><div class="visually-hidden">Toggle navigation of baybe.recommenders.pure.base</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l5"><a class="reference internal" href="../../_autosummary/baybe.recommenders.pure.base.PureRecommender.html">PureRecommender</a></li>
 </ul>
 </li>
-<li class="toctree-l4 has-children"><a class="reference internal" href="../../_autosummary/baybe.recommenders.pure.bayesian.html">baybe.recommenders.pure.bayesian</a><input class="toctree-checkbox" id="toctree-checkbox-65" name="toctree-checkbox-65" role="switch" type="checkbox"/><label for="toctree-checkbox-65"><div class="visually-hidden">Toggle navigation of baybe.recommenders.pure.bayesian</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l5 has-children"><a class="reference internal" href="../../_autosummary/baybe.recommenders.pure.bayesian.base.html">baybe.recommenders.pure.bayesian.base</a><input class="toctree-checkbox" id="toctree-checkbox-66" name="toctree-checkbox-66" role="switch" type="checkbox"/><label for="toctree-checkbox-66"><div class="visually-hidden">Toggle navigation of baybe.recommenders.pure.bayesian.base</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../_autosummary/baybe.recommenders.pure.bayesian.html">baybe.recommenders.pure.bayesian</a><input class="toctree-checkbox" id="toctree-checkbox-66" name="toctree-checkbox-66" role="switch" type="checkbox"/><label for="toctree-checkbox-66"><div class="visually-hidden">Toggle navigation of baybe.recommenders.pure.bayesian</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5 has-children"><a class="reference internal" href="../../_autosummary/baybe.recommenders.pure.bayesian.base.html">baybe.recommenders.pure.bayesian.base</a><input class="toctree-checkbox" id="toctree-checkbox-67" name="toctree-checkbox-67" role="switch" type="checkbox"/><label for="toctree-checkbox-67"><div class="visually-hidden">Toggle navigation of baybe.recommenders.pure.bayesian.base</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l6"><a class="reference internal" href="../../_autosummary/baybe.recommenders.pure.bayesian.base.BayesianRecommender.html">BayesianRecommender</a></li>
 </ul>
 </li>
-<li class="toctree-l5 has-children"><a class="reference internal" href="../../_autosummary/baybe.recommenders.pure.bayesian.botorch.html">baybe.recommenders.pure.bayesian.botorch</a><input class="toctree-checkbox" id="toctree-checkbox-67" name="toctree-checkbox-67" role="switch" type="checkbox"/><label for="toctree-checkbox-67"><div class="visually-hidden">Toggle navigation of baybe.recommenders.pure.bayesian.botorch</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5 has-children"><a class="reference internal" href="../../_autosummary/baybe.recommenders.pure.bayesian.botorch.html">baybe.recommenders.pure.bayesian.botorch</a><input class="toctree-checkbox" id="toctree-checkbox-68" name="toctree-checkbox-68" role="switch" type="checkbox"/><label for="toctree-checkbox-68"><div class="visually-hidden">Toggle navigation of baybe.recommenders.pure.bayesian.botorch</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l6"><a class="reference internal" href="../../_autosummary/baybe.recommenders.pure.bayesian.botorch.BotorchRecommender.html">BotorchRecommender</a></li>
-</ul>
-</li>
-<li class="toctree-l5 has-children"><a class="reference internal" href="../../_autosummary/baybe.recommenders.pure.bayesian.sequential_greedy.html">baybe.recommenders.pure.bayesian.sequential_greedy</a><input class="toctree-checkbox" id="toctree-checkbox-68" name="toctree-checkbox-68" role="switch" type="checkbox"/><label for="toctree-checkbox-68"><div class="visually-hidden">Toggle navigation of baybe.recommenders.pure.bayesian.sequential_greedy</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l6"><a class="reference internal" href="../../_autosummary/baybe.recommenders.pure.bayesian.sequential_greedy.SequentialGreedyRecommender.html">baybe.recommenders.pure.bayesian.sequential_greedy.SequentialGreedyRecommender</a></li>
 </ul>
 </li>
 </ul>
@@ -866,20 +867,13 @@
 <li class="toctree-l3"><a class="reference internal" href="../../_autosummary/baybe.targets.transforms.html">baybe.targets.transforms</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../_autosummary/baybe.telemetry.html">baybe.telemetry</a><input class="toctree-checkbox" id="toctree-checkbox-110" name="toctree-checkbox-110" role="switch" type="checkbox"/><label for="toctree-checkbox-110"><div class="visually-hidden">Toggle navigation of baybe.telemetry</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/baybe.telemetry.get_user_details.html">baybe.telemetry.get_user_details</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/baybe.telemetry.is_enabled.html">baybe.telemetry.is_enabled</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/baybe.telemetry.telemetry_record_recommended_measurement_percentage.html">baybe.telemetry.telemetry_record_recommended_measurement_percentage</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/baybe.telemetry.telemetry_record_value.html">baybe.telemetry.telemetry_record_value</a></li>
-</ul>
-</li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../_autosummary/baybe.transformations.html">baybe.transformations</a><input class="toctree-checkbox" id="toctree-checkbox-111" name="toctree-checkbox-111" role="switch" type="checkbox"/><label for="toctree-checkbox-111"><div class="visually-hidden">Toggle navigation of baybe.transformations</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.transformations.base.html">baybe.transformations.base</a><input class="toctree-checkbox" id="toctree-checkbox-112" name="toctree-checkbox-112" role="switch" type="checkbox"/><label for="toctree-checkbox-112"><div class="visually-hidden">Toggle navigation of baybe.transformations.base</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../_autosummary/baybe.transformations.html">baybe.transformations</a><input class="toctree-checkbox" id="toctree-checkbox-110" name="toctree-checkbox-110" role="switch" type="checkbox"/><label for="toctree-checkbox-110"><div class="visually-hidden">Toggle navigation of baybe.transformations</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.transformations.base.html">baybe.transformations.base</a><input class="toctree-checkbox" id="toctree-checkbox-111" name="toctree-checkbox-111" role="switch" type="checkbox"/><label for="toctree-checkbox-111"><div class="visually-hidden">Toggle navigation of baybe.transformations.base</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.transformations.base.MonotonicTransformation.html">MonotonicTransformation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.transformations.base.Transformation.html">Transformation</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.transformations.basic.html">baybe.transformations.basic</a><input class="toctree-checkbox" id="toctree-checkbox-113" name="toctree-checkbox-113" role="switch" type="checkbox"/><label for="toctree-checkbox-113"><div class="visually-hidden">Toggle navigation of baybe.transformations.basic</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.transformations.basic.html">baybe.transformations.basic</a><input class="toctree-checkbox" id="toctree-checkbox-112" name="toctree-checkbox-112" role="switch" type="checkbox"/><label for="toctree-checkbox-112"><div class="visually-hidden">Toggle navigation of baybe.transformations.basic</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.transformations.basic.AbsoluteTransformation.html">AbsoluteTransformation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.transformations.basic.AffineTransformation.html">AffineTransformation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.transformations.basic.BellTransformation.html">BellTransformation</a></li>
@@ -894,13 +888,13 @@
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.transformations.basic.TwoSidedAffineTransformation.html">TwoSidedAffineTransformation</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.transformations.composite.html">baybe.transformations.composite</a><input class="toctree-checkbox" id="toctree-checkbox-114" name="toctree-checkbox-114" role="switch" type="checkbox"/><label for="toctree-checkbox-114"><div class="visually-hidden">Toggle navigation of baybe.transformations.composite</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.transformations.composite.html">baybe.transformations.composite</a><input class="toctree-checkbox" id="toctree-checkbox-113" name="toctree-checkbox-113" role="switch" type="checkbox"/><label for="toctree-checkbox-113"><div class="visually-hidden">Toggle navigation of baybe.transformations.composite</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.transformations.composite.AdditiveTransformation.html">AdditiveTransformation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.transformations.composite.ChainedTransformation.html">ChainedTransformation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.transformations.composite.MultiplicativeTransformation.html">MultiplicativeTransformation</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.transformations.utils.html">baybe.transformations.utils</a><input class="toctree-checkbox" id="toctree-checkbox-115" name="toctree-checkbox-115" role="switch" type="checkbox"/><label for="toctree-checkbox-115"><div class="visually-hidden">Toggle navigation of baybe.transformations.utils</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.transformations.utils.html">baybe.transformations.utils</a><input class="toctree-checkbox" id="toctree-checkbox-114" name="toctree-checkbox-114" role="switch" type="checkbox"/><label for="toctree-checkbox-114"><div class="visually-hidden">Toggle navigation of baybe.transformations.utils</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.transformations.utils.combine_affine_transformations.html">baybe.transformations.utils.combine_affine_transformations</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.transformations.utils.compress_transformations.html">baybe.transformations.utils.compress_transformations</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.transformations.utils.convert_transformation.html">baybe.transformations.utils.convert_transformation</a></li>
@@ -908,13 +902,13 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../_autosummary/baybe.utils.html">baybe.utils</a><input class="toctree-checkbox" id="toctree-checkbox-116" name="toctree-checkbox-116" role="switch" type="checkbox"/><label for="toctree-checkbox-116"><div class="visually-hidden">Toggle navigation of baybe.utils</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.utils.augmentation.html">baybe.utils.augmentation</a><input class="toctree-checkbox" id="toctree-checkbox-117" name="toctree-checkbox-117" role="switch" type="checkbox"/><label for="toctree-checkbox-117"><div class="visually-hidden">Toggle navigation of baybe.utils.augmentation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../_autosummary/baybe.utils.html">baybe.utils</a><input class="toctree-checkbox" id="toctree-checkbox-115" name="toctree-checkbox-115" role="switch" type="checkbox"/><label for="toctree-checkbox-115"><div class="visually-hidden">Toggle navigation of baybe.utils</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.utils.augmentation.html">baybe.utils.augmentation</a><input class="toctree-checkbox" id="toctree-checkbox-116" name="toctree-checkbox-116" role="switch" type="checkbox"/><label for="toctree-checkbox-116"><div class="visually-hidden">Toggle navigation of baybe.utils.augmentation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.utils.augmentation.df_apply_dependency_augmentation.html">baybe.utils.augmentation.df_apply_dependency_augmentation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.utils.augmentation.df_apply_permutation_augmentation.html">baybe.utils.augmentation.df_apply_permutation_augmentation</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.utils.basic.html">baybe.utils.basic</a><input class="toctree-checkbox" id="toctree-checkbox-118" name="toctree-checkbox-118" role="switch" type="checkbox"/><label for="toctree-checkbox-118"><div class="visually-hidden">Toggle navigation of baybe.utils.basic</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.utils.basic.html">baybe.utils.basic</a><input class="toctree-checkbox" id="toctree-checkbox-117" name="toctree-checkbox-117" role="switch" type="checkbox"/><label for="toctree-checkbox-117"><div class="visually-hidden">Toggle navigation of baybe.utils.basic</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.utils.basic.UNSPECIFIED.html">baybe.utils.basic.UNSPECIFIED</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.utils.basic.compose.html">baybe.utils.basic.compose</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.utils.basic.compose_two.html">baybe.utils.basic.compose_two</a></li>
@@ -930,26 +924,27 @@
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.utils.basic.register_hooks.html">baybe.utils.basic.register_hooks</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.utils.basic.to_tuple.html">baybe.utils.basic.to_tuple</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.utils.basic.Dummy.html">Dummy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.utils.basic.UncertainBool.html">UncertainBool</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.utils.basic.UnspecifiedType.html">UnspecifiedType</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.utils.basic.classproperty.html">classproperty</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.utils.boolean.html">baybe.utils.boolean</a><input class="toctree-checkbox" id="toctree-checkbox-119" name="toctree-checkbox-119" role="switch" type="checkbox"/><label for="toctree-checkbox-119"><div class="visually-hidden">Toggle navigation of baybe.utils.boolean</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.utils.boolean.html">baybe.utils.boolean</a><input class="toctree-checkbox" id="toctree-checkbox-118" name="toctree-checkbox-118" role="switch" type="checkbox"/><label for="toctree-checkbox-118"><div class="visually-hidden">Toggle navigation of baybe.utils.boolean</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.utils.boolean.check_if_in.html">baybe.utils.boolean.check_if_in</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.utils.boolean.is_abstract.html">baybe.utils.boolean.is_abstract</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.utils.boolean.strtobool.html">baybe.utils.boolean.strtobool</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.utils.chemistry.html">baybe.utils.chemistry</a><input class="toctree-checkbox" id="toctree-checkbox-120" name="toctree-checkbox-120" role="switch" type="checkbox"/><label for="toctree-checkbox-120"><div class="visually-hidden">Toggle navigation of baybe.utils.chemistry</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.utils.chemistry.html">baybe.utils.chemistry</a><input class="toctree-checkbox" id="toctree-checkbox-119" name="toctree-checkbox-119" role="switch" type="checkbox"/><label for="toctree-checkbox-119"><div class="visually-hidden">Toggle navigation of baybe.utils.chemistry</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.utils.chemistry.get_canonical_smiles.html">baybe.utils.chemistry.get_canonical_smiles</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.utils.chemistry.get_fingerprint_class.html">baybe.utils.chemistry.get_fingerprint_class</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.utils.chemistry.name_to_smiles.html">baybe.utils.chemistry.name_to_smiles</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.utils.chemistry.smiles_to_fingerprint_features.html">baybe.utils.chemistry.smiles_to_fingerprint_features</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.utils.clustering_algorithms.html">baybe.utils.clustering_algorithms</a><input class="toctree-checkbox" id="toctree-checkbox-121" name="toctree-checkbox-121" role="switch" type="checkbox"/><label for="toctree-checkbox-121"><div class="visually-hidden">Toggle navigation of baybe.utils.clustering_algorithms</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l4 has-children"><a class="reference internal" href="../../_autosummary/baybe.utils.clustering_algorithms.third_party.html">baybe.utils.clustering_algorithms.third_party</a><input class="toctree-checkbox" id="toctree-checkbox-122" name="toctree-checkbox-122" role="switch" type="checkbox"/><label for="toctree-checkbox-122"><div class="visually-hidden">Toggle navigation of baybe.utils.clustering_algorithms.third_party</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l5 has-children"><a class="reference internal" href="../../_autosummary/baybe.utils.clustering_algorithms.third_party.kmedoids.html">baybe.utils.clustering_algorithms.third_party.kmedoids</a><input class="toctree-checkbox" id="toctree-checkbox-123" name="toctree-checkbox-123" role="switch" type="checkbox"/><label for="toctree-checkbox-123"><div class="visually-hidden">Toggle navigation of baybe.utils.clustering_algorithms.third_party.kmedoids</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.utils.clustering_algorithms.html">baybe.utils.clustering_algorithms</a><input class="toctree-checkbox" id="toctree-checkbox-120" name="toctree-checkbox-120" role="switch" type="checkbox"/><label for="toctree-checkbox-120"><div class="visually-hidden">Toggle navigation of baybe.utils.clustering_algorithms</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../_autosummary/baybe.utils.clustering_algorithms.third_party.html">baybe.utils.clustering_algorithms.third_party</a><input class="toctree-checkbox" id="toctree-checkbox-121" name="toctree-checkbox-121" role="switch" type="checkbox"/><label for="toctree-checkbox-121"><div class="visually-hidden">Toggle navigation of baybe.utils.clustering_algorithms.third_party</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5 has-children"><a class="reference internal" href="../../_autosummary/baybe.utils.clustering_algorithms.third_party.kmedoids.html">baybe.utils.clustering_algorithms.third_party.kmedoids</a><input class="toctree-checkbox" id="toctree-checkbox-122" name="toctree-checkbox-122" role="switch" type="checkbox"/><label for="toctree-checkbox-122"><div class="visually-hidden">Toggle navigation of baybe.utils.clustering_algorithms.third_party.kmedoids</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l6"><a class="reference internal" href="../../_autosummary/baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.html">KMedoids</a></li>
 </ul>
 </li>
@@ -957,13 +952,13 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.utils.conversion.html">baybe.utils.conversion</a><input class="toctree-checkbox" id="toctree-checkbox-124" name="toctree-checkbox-124" role="switch" type="checkbox"/><label for="toctree-checkbox-124"><div class="visually-hidden">Toggle navigation of baybe.utils.conversion</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.utils.conversion.html">baybe.utils.conversion</a><input class="toctree-checkbox" id="toctree-checkbox-123" name="toctree-checkbox-123" role="switch" type="checkbox"/><label for="toctree-checkbox-123"><div class="visually-hidden">Toggle navigation of baybe.utils.conversion</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.utils.conversion.fraction_to_float.html">baybe.utils.conversion.fraction_to_float</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.utils.conversion.nonstring_to_tuple.html">baybe.utils.conversion.nonstring_to_tuple</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.utils.conversion.to_string.html">baybe.utils.conversion.to_string</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.utils.dataframe.html">baybe.utils.dataframe</a><input class="toctree-checkbox" id="toctree-checkbox-125" name="toctree-checkbox-125" role="switch" type="checkbox"/><label for="toctree-checkbox-125"><div class="visually-hidden">Toggle navigation of baybe.utils.dataframe</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.utils.dataframe.html">baybe.utils.dataframe</a><input class="toctree-checkbox" id="toctree-checkbox-124" name="toctree-checkbox-124" role="switch" type="checkbox"/><label for="toctree-checkbox-124"><div class="visually-hidden">Toggle navigation of baybe.utils.dataframe</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.utils.dataframe.add_fake_measurements.html">baybe.utils.dataframe.add_fake_measurements</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.utils.dataframe.add_noise_to_perturb_degenerate_rows.html">baybe.utils.dataframe.add_noise_to_perturb_degenerate_rows</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.utils.dataframe.add_parameter_noise.html">baybe.utils.dataframe.add_parameter_noise</a></li>
@@ -982,15 +977,21 @@
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.utils.dataframe.transform_target_columns.html">baybe.utils.dataframe.transform_target_columns</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.utils.interval.html">baybe.utils.interval</a><input class="toctree-checkbox" id="toctree-checkbox-126" name="toctree-checkbox-126" role="switch" type="checkbox"/><label for="toctree-checkbox-126"><div class="visually-hidden">Toggle navigation of baybe.utils.interval</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.utils.interval.html">baybe.utils.interval</a><input class="toctree-checkbox" id="toctree-checkbox-125" name="toctree-checkbox-125" role="switch" type="checkbox"/><label for="toctree-checkbox-125"><div class="visually-hidden">Toggle navigation of baybe.utils.interval</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.utils.interval.ConvertibleToInterval.html">baybe.utils.interval.ConvertibleToInterval</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.utils.interval.use_fallback_constructor_hook.html">baybe.utils.interval.use_fallback_constructor_hook</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.utils.interval.Interval.html">Interval</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.utils.interval.InfiniteIntervalError.html">baybe.utils.interval.InfiniteIntervalError</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.utils.memory.html">baybe.utils.memory</a><input class="toctree-checkbox" id="toctree-checkbox-127" name="toctree-checkbox-127" role="switch" type="checkbox"/><label for="toctree-checkbox-127"><div class="visually-hidden">Toggle navigation of baybe.utils.memory</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.utils.memory.html">baybe.utils.memory</a><input class="toctree-checkbox" id="toctree-checkbox-126" name="toctree-checkbox-126" role="switch" type="checkbox"/><label for="toctree-checkbox-126"><div class="visually-hidden">Toggle navigation of baybe.utils.memory</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.utils.memory.bytes_to_human_readable.html">baybe.utils.memory.bytes_to_human_readable</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.utils.metadata.html">baybe.utils.metadata</a><input class="toctree-checkbox" id="toctree-checkbox-127" name="toctree-checkbox-127" role="switch" type="checkbox"/><label for="toctree-checkbox-127"><div class="visually-hidden">Toggle navigation of baybe.utils.metadata</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.utils.metadata.to_metadata.html">baybe.utils.metadata.to_metadata</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.utils.metadata.MeasurableMetadata.html">MeasurableMetadata</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.utils.metadata.Metadata.html">Metadata</a></li>
 </ul>
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.utils.numerical.html">baybe.utils.numerical</a><input class="toctree-checkbox" id="toctree-checkbox-128" name="toctree-checkbox-128" role="switch" type="checkbox"/><label for="toctree-checkbox-128"><div class="visually-hidden">Toggle navigation of baybe.utils.numerical</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -1029,6 +1030,8 @@
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.utils.validation.non_inf_float.html">baybe.utils.validation.non_inf_float</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.utils.validation.non_nan_float.html">baybe.utils.validation.non_nan_float</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.utils.validation.validate_not_nan.html">baybe.utils.validation.validate_not_nan</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.utils.validation.validate_object_names.html">baybe.utils.validation.validate_object_names</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.utils.validation.validate_objective_input.html">baybe.utils.validation.validate_objective_input</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.utils.validation.validate_parameter_input.html">baybe.utils.validation.validate_parameter_input</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.utils.validation.validate_target_input.html">baybe.utils.validation.validate_target_input</a></li>
 </ul>
@@ -1065,7 +1068,13 @@
           <span>Back to top</span>
         </a>
         <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+          <div class="view-this-page">
+  <a class="muted-link" href="../../_sources/examples/Transformations/laser_tuning.md.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
@@ -1074,280 +1083,222 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <h1>Source code for baybe.telemetry</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;Telemetry functionality for BayBE.</span>
-
-<span class="sd">For more details, see https://emdgroup.github.io/baybe/stable/userguide/envvars.html#telemetry</span>
-<span class="sd">&quot;&quot;&quot;</span>
-
-<span class="kn">import</span><span class="w"> </span><span class="nn">getpass</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">hashlib</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">socket</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">Sequence</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">urllib.parse</span><span class="w"> </span><span class="kn">import</span> <span class="n">urlparse</span>
-
-<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-
-<span class="kn">from</span><span class="w"> </span><span class="nn">baybe.parameters.base</span><span class="w"> </span><span class="kn">import</span> <span class="n">Parameter</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">baybe.utils.boolean</span><span class="w"> </span><span class="kn">import</span> <span class="n">strtobool</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">baybe.utils.dataframe</span><span class="w"> </span><span class="kn">import</span> <span class="n">fuzzy_row_match</span>
-
-<span class="c1"># Telemetry environment variable names</span>
-<span class="n">VARNAME_TELEMETRY_ENABLED</span> <span class="o">=</span> <span class="s2">&quot;BAYBE_TELEMETRY_ENABLED&quot;</span>
-<span class="n">VARNAME_TELEMETRY_ENDPOINT</span> <span class="o">=</span> <span class="s2">&quot;BAYBE_TELEMETRY_ENDPOINT&quot;</span>
-<span class="n">VARNAME_TELEMETRY_VPN_CHECK</span> <span class="o">=</span> <span class="s2">&quot;BAYBE_TELEMETRY_VPN_CHECK&quot;</span>
-<span class="n">VARNAME_TELEMETRY_VPN_CHECK_TIMEOUT</span> <span class="o">=</span> <span class="s2">&quot;BAYBE_TELEMETRY_VPN_CHECK_TIMEOUT&quot;</span>
-<span class="n">VARNAME_TELEMETRY_USERNAME</span> <span class="o">=</span> <span class="s2">&quot;BAYBE_TELEMETRY_USERNAME&quot;</span>
-<span class="n">VARNAME_TELEMETRY_HOSTNAME</span> <span class="o">=</span> <span class="s2">&quot;BAYBE_TELEMETRY_HOSTNAME&quot;</span>
-
-<span class="c1"># Telemetry settings defaults</span>
-<span class="n">DEFAULT_TELEMETRY_ENABLED</span> <span class="o">=</span> <span class="s2">&quot;true&quot;</span>
-<span class="n">DEFAULT_TELEMETRY_ENDPOINT</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="s2">&quot;https://public.telemetry.baybe.p.uptimize.merckgroup.com:4317&quot;</span>
-<span class="p">)</span>
-<span class="n">DEFAULT_TELEMETRY_VPN_CHECK</span> <span class="o">=</span> <span class="s2">&quot;true&quot;</span>
-<span class="n">DEFAULT_TELEMETRY_VPN_CHECK_TIMEOUT</span> <span class="o">=</span> <span class="s2">&quot;0.5&quot;</span>
-
-
-<span class="c1"># Telemetry labels for metrics</span>
-<span class="n">TELEM_LABELS</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;RECOMMENDED_MEASUREMENTS_PERCENTAGE&quot;</span><span class="p">:</span> <span class="s2">&quot;value_recommended-measurements-percentage&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;BATCH_SIZE&quot;</span><span class="p">:</span> <span class="s2">&quot;value_batch-size&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;COUNT_ADD_RESULTS&quot;</span><span class="p">:</span> <span class="s2">&quot;count_add-results&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;COUNT_RECOMMEND&quot;</span><span class="p">:</span> <span class="s2">&quot;count_recommend&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;NUM_PARAMETERS&quot;</span><span class="p">:</span> <span class="s2">&quot;value_num-parameters&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;NUM_CONSTRAINTS&quot;</span><span class="p">:</span> <span class="s2">&quot;value_num-constraints&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;COUNT_SEARCHSPACE_CREATION&quot;</span><span class="p">:</span> <span class="s2">&quot;count_searchspace-created&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;NAKED_INITIAL_MEASUREMENTS&quot;</span><span class="p">:</span> <span class="s2">&quot;count_naked-initial-measurements-added&quot;</span><span class="p">,</span>
-<span class="p">}</span>
-
-<span class="c1"># Attempt telemetry import</span>
-<span class="k">try</span><span class="p">:</span>
-    <span class="kn">from</span><span class="w"> </span><span class="nn">opentelemetry.exporter.otlp.proto.grpc.metric_exporter</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
-        <span class="n">OTLPMetricExporter</span><span class="p">,</span>
-    <span class="p">)</span>
-    <span class="kn">from</span><span class="w"> </span><span class="nn">opentelemetry.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">Histogram</span><span class="p">,</span> <span class="n">get_meter</span><span class="p">,</span> <span class="n">set_meter_provider</span>
-    <span class="kn">from</span><span class="w"> </span><span class="nn">opentelemetry.sdk.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">MeterProvider</span>
-    <span class="kn">from</span><span class="w"> </span><span class="nn">opentelemetry.sdk.metrics.export</span><span class="w"> </span><span class="kn">import</span> <span class="n">PeriodicExportingMetricReader</span>
-    <span class="kn">from</span><span class="w"> </span><span class="nn">opentelemetry.sdk.resources</span><span class="w"> </span><span class="kn">import</span> <span class="n">Resource</span>  <span class="c1"># type: ignore[attr-defined]</span>
-<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
-    <span class="c1"># Failed telemetry install/import should not fail baybe, so telemetry is being</span>
-    <span class="c1"># disabled in that case</span>
-    <span class="k">if</span> <span class="n">strtobool</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">VARNAME_TELEMETRY_ENABLED</span><span class="p">,</span> <span class="n">DEFAULT_TELEMETRY_ENABLED</span><span class="p">)):</span>
-        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-            <span class="s2">&quot;Opentelemetry could not be imported, potentially it is not installed. &quot;</span>
-            <span class="s2">&quot;Disabling baybe telemetry.&quot;</span><span class="p">,</span>
-            <span class="ne">UserWarning</span><span class="p">,</span>
-        <span class="p">)</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="n">VARNAME_TELEMETRY_ENABLED</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;false&quot;</span>
-
-
-<div class="viewcode-block" id="is_enabled">
-<a class="viewcode-back" href="../../_autosummary/baybe.telemetry.is_enabled.html#baybe.telemetry.is_enabled">[docs]</a>
-<span class="k">def</span><span class="w"> </span><span class="nf">is_enabled</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Tell whether telemetry currently is enabled.</span>
-
-<span class="sd">    Telemetry can be disabled by setting the respective environment variable.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="n">strtobool</span><span class="p">(</span>
-        <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">VARNAME_TELEMETRY_ENABLED</span><span class="p">,</span> <span class="n">DEFAULT_TELEMETRY_ENABLED</span><span class="p">)</span>
-    <span class="p">)</span></div>
-
-
-
-<span class="c1"># Attempt telemetry initialization</span>
-<span class="k">if</span> <span class="n">is_enabled</span><span class="p">():</span>
-    <span class="c1"># Assign default user and machine name</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">DEFAULT_TELEMETRY_USERNAME</span> <span class="o">=</span> <span class="p">(</span>
-            <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">(</span><span class="n">getpass</span><span class="o">.</span><span class="n">getuser</span><span class="p">()</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span><span class="o">.</span><span class="n">upper</span><span class="p">()[:</span><span class="mi">10</span><span class="p">]</span>
-        <span class="p">)</span>
-    <span class="k">except</span> <span class="ne">ModuleNotFoundError</span><span class="p">:</span>
-        <span class="c1"># getpass.getuser() does not work on Windows if all the environment variables</span>
-        <span class="c1"># it checks are empty. Since then there is no way of inferring the username, we</span>
-        <span class="c1"># use UNKNOWN as fallback.</span>
-        <span class="n">DEFAULT_TELEMETRY_USERNAME</span> <span class="o">=</span> <span class="s2">&quot;UNKNOWN&quot;</span>
-
-    <span class="n">DEFAULT_TELEMETRY_HOSTNAME</span> <span class="o">=</span> <span class="p">(</span>
-        <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">gethostname</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span><span class="o">.</span><span class="n">upper</span><span class="p">()[:</span><span class="mi">10</span><span class="p">]</span>
-    <span class="p">)</span>
-
-    <span class="n">_endpoint_url</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
-        <span class="n">VARNAME_TELEMETRY_ENDPOINT</span><span class="p">,</span> <span class="n">DEFAULT_TELEMETRY_ENDPOINT</span>
-    <span class="p">)</span>
-
-    <span class="c1"># Test endpoint URL</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="c1"># Parse endpoint URL</span>
-        <span class="n">_endpoint_url_parsed</span> <span class="o">=</span> <span class="n">urlparse</span><span class="p">(</span><span class="n">_endpoint_url</span><span class="p">)</span>
-        <span class="n">_endpoint_hostname</span> <span class="o">=</span> <span class="n">_endpoint_url_parsed</span><span class="o">.</span><span class="n">hostname</span>
-        <span class="n">_endpoint_port</span> <span class="o">=</span> <span class="n">_endpoint_url_parsed</span><span class="o">.</span><span class="n">port</span> <span class="k">if</span> <span class="n">_endpoint_url_parsed</span><span class="o">.</span><span class="n">port</span> <span class="k">else</span> <span class="mi">80</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">_TIMEOUT_S</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span>
-                <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
-                    <span class="n">VARNAME_TELEMETRY_VPN_CHECK_TIMEOUT</span><span class="p">,</span>
-                    <span class="n">DEFAULT_TELEMETRY_VPN_CHECK_TIMEOUT</span><span class="p">,</span>
-                <span class="p">)</span>
-            <span class="p">)</span>
-        <span class="k">except</span> <span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">):</span>
-            <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-                <span class="sa">f</span><span class="s2">&quot;WARNING: Value passed for environment variable &quot;</span>
-                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">VARNAME_TELEMETRY_VPN_CHECK_TIMEOUT</span><span class="si">}</span><span class="s2"> is not a valid floating point &quot;</span>
-                <span class="sa">f</span><span class="s2">&quot;number. Using default of </span><span class="si">{</span><span class="n">DEFAULT_TELEMETRY_VPN_CHECK_TIMEOUT</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">,</span>
-                <span class="ne">UserWarning</span><span class="p">,</span>
-            <span class="p">)</span>
-            <span class="n">_TIMEOUT_S</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">DEFAULT_TELEMETRY_VPN_CHECK_TIMEOUT</span><span class="p">)</span>
-
-        <span class="c1"># Send a test request. If there is no internet connection or a firewall is</span>
-        <span class="c1"># present this will throw an error and telemetry will be deactivated.</span>
-        <span class="k">if</span> <span class="n">strtobool</span><span class="p">(</span>
-            <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">VARNAME_TELEMETRY_VPN_CHECK</span><span class="p">,</span> <span class="n">DEFAULT_TELEMETRY_VPN_CHECK</span><span class="p">)</span>
-        <span class="p">):</span>
-            <span class="n">socket</span><span class="o">.</span><span class="n">gethostbyname</span><span class="p">(</span><span class="s2">&quot;verkehrsnachrichten.merck.de&quot;</span><span class="p">)</span>
-
-        <span class="c1"># User has connectivity to the telemetry endpoint, so we initialize</span>
-        <span class="n">_instruments</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Histogram</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
-        <span class="n">_resource</span> <span class="o">=</span> <span class="n">Resource</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
-            <span class="p">{</span><span class="s2">&quot;service.namespace&quot;</span><span class="p">:</span> <span class="s2">&quot;BayBE&quot;</span><span class="p">,</span> <span class="s2">&quot;service.name&quot;</span><span class="p">:</span> <span class="s2">&quot;SDK&quot;</span><span class="p">}</span>
-        <span class="p">)</span>
-        <span class="n">_reader</span> <span class="o">=</span> <span class="n">PeriodicExportingMetricReader</span><span class="p">(</span>
-            <span class="n">exporter</span><span class="o">=</span><span class="n">OTLPMetricExporter</span><span class="p">(</span>
-                <span class="n">endpoint</span><span class="o">=</span><span class="n">_endpoint_url</span><span class="p">,</span>
-                <span class="n">insecure</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-            <span class="p">)</span>
-        <span class="p">)</span>
-        <span class="n">_provider</span> <span class="o">=</span> <span class="n">MeterProvider</span><span class="p">(</span><span class="n">resource</span><span class="o">=</span><span class="n">_resource</span><span class="p">,</span> <span class="n">metric_readers</span><span class="o">=</span><span class="p">[</span><span class="n">_reader</span><span class="p">])</span>
-        <span class="n">set_meter_provider</span><span class="p">(</span><span class="n">_provider</span><span class="p">)</span>
-        <span class="n">_meter</span> <span class="o">=</span> <span class="n">get_meter</span><span class="p">(</span><span class="s2">&quot;aws-otel&quot;</span><span class="p">,</span> <span class="s2">&quot;1.0&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
-        <span class="c1"># Catching broad exception here and disabling telemetry in that case to avoid</span>
-        <span class="c1"># any telemetry timeouts or interference for the user in case of unexpected</span>
-        <span class="c1"># errors. Possible ones are for instance ``socket.gaierror`` in case the user</span>
-        <span class="c1"># has no internet connection.</span>
-        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">VARNAME_TELEMETRY_USERNAME</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;DEV_&quot;</span><span class="p">):</span>
-            <span class="c1"># This warning is only printed for developers to make them aware of</span>
-            <span class="c1"># potential issues</span>
-            <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-                <span class="sa">f</span><span class="s2">&quot;WARNING: BayBE Telemetry endpoint </span><span class="si">{</span><span class="n">_endpoint_url</span><span class="si">}</span><span class="s2"> cannot be reached. &quot;</span>
-                <span class="s2">&quot;Disabling telemetry. The exception encountered was: &quot;</span>
-                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">ex</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">ex</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
-                <span class="ne">UserWarning</span><span class="p">,</span>
-            <span class="p">)</span>
-        <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="n">VARNAME_TELEMETRY_ENABLED</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;false&quot;</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="n">DEFAULT_TELEMETRY_USERNAME</span> <span class="o">=</span> <span class="s2">&quot;UNKNOWN&quot;</span>
-    <span class="n">DEFAULT_TELEMETRY_HOSTNAME</span> <span class="o">=</span> <span class="s2">&quot;UNKNOWN&quot;</span>
-
-
-<div class="viewcode-block" id="get_user_details">
-<a class="viewcode-back" href="../../_autosummary/baybe.telemetry.get_user_details.html#baybe.telemetry.get_user_details">[docs]</a>
-<span class="k">def</span><span class="w"> </span><span class="nf">get_user_details</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Generate user details.</span>
-
-<span class="sd">    These are submitted as metadata with requested telemetry stats.</span>
-
-<span class="sd">    Returns:</span>
-<span class="sd">        The hostname and username in hashed format as well as the package version.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="kn">from</span><span class="w"> </span><span class="nn">baybe</span><span class="w"> </span><span class="kn">import</span> <span class="n">__version__</span>
-
-    <span class="n">username_hash</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
-        <span class="n">VARNAME_TELEMETRY_USERNAME</span><span class="p">,</span> <span class="n">DEFAULT_TELEMETRY_USERNAME</span>
-    <span class="p">)</span>
-    <span class="n">hostname_hash</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
-        <span class="n">VARNAME_TELEMETRY_HOSTNAME</span><span class="p">,</span> <span class="n">DEFAULT_TELEMETRY_HOSTNAME</span>
-    <span class="p">)</span>
-
-    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;host&quot;</span><span class="p">:</span> <span class="n">hostname_hash</span><span class="p">,</span> <span class="s2">&quot;user&quot;</span><span class="p">:</span> <span class="n">username_hash</span><span class="p">,</span> <span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="n">__version__</span><span class="p">}</span></div>
-
-
-
-<div class="viewcode-block" id="telemetry_record_value">
-<a class="viewcode-back" href="../../_autosummary/baybe.telemetry.telemetry_record_value.html#baybe.telemetry.telemetry_record_value">[docs]</a>
-<span class="k">def</span><span class="w"> </span><span class="nf">telemetry_record_value</span><span class="p">(</span><span class="n">instrument_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Transmit a given value under a given label to the telemetry backend.</span>
-
-<span class="sd">    The values are recorded as histograms, i.e. the info about record time and sample</span>
-<span class="sd">    size is also available. This can be used to count function calls (record the</span>
-<span class="sd">    value 1) or statistics about any variable (record its value). Due to serialization</span>
-<span class="sd">    limitations only certain data types of value are allowed.</span>
-
-<span class="sd">    Args:</span>
-<span class="sd">        instrument_name: The label under which this statistic is logged.</span>
-<span class="sd">        value: The value of the statistic to be logged.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="n">is_enabled</span><span class="p">():</span>
-        <span class="n">_submit_scalar_value</span><span class="p">(</span><span class="n">instrument_name</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span></div>
-
-
-
-<span class="k">def</span><span class="w"> </span><span class="nf">_submit_scalar_value</span><span class="p">(</span><span class="n">instrument_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;See :func:`baybe.telemetry.telemetry_record_value`.&quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="n">instrument_name</span> <span class="ow">in</span> <span class="n">_instruments</span><span class="p">:</span>
-        <span class="n">histogram</span> <span class="o">=</span> <span class="n">_instruments</span><span class="p">[</span><span class="n">instrument_name</span><span class="p">]</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">histogram</span> <span class="o">=</span> <span class="n">_meter</span><span class="o">.</span><span class="n">create_histogram</span><span class="p">(</span>
-            <span class="n">instrument_name</span><span class="p">,</span>
-            <span class="n">description</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Histogram for instrument </span><span class="si">{</span><span class="n">instrument_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
-        <span class="p">)</span>
-        <span class="n">_instruments</span><span class="p">[</span><span class="n">instrument_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">histogram</span>
-    <span class="n">histogram</span><span class="o">.</span><span class="n">record</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">get_user_details</span><span class="p">())</span>
-
-
-<div class="viewcode-block" id="telemetry_record_recommended_measurement_percentage">
-<a class="viewcode-back" href="../../_autosummary/baybe.telemetry.telemetry_record_recommended_measurement_percentage.html#baybe.telemetry.telemetry_record_recommended_measurement_percentage">[docs]</a>
-<span class="k">def</span><span class="w"> </span><span class="nf">telemetry_record_recommended_measurement_percentage</span><span class="p">(</span>
-    <span class="n">cached_recommendation</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
-    <span class="n">measurements</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
-    <span class="n">parameters</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Parameter</span><span class="p">],</span>
-<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Submit the percentage of added measurements.</span>
-
-<span class="sd">    More precisely, submit the percentage of added measurements that correspond to</span>
-<span class="sd">    previously recommended ones (called cached recommendations).</span>
-
-<span class="sd">    The matching is performed via fuzzy row matching, using the utils function</span>
-<span class="sd">    :func:`baybe.utils.dataframe.fuzzy_row_match`. The calculation is only performed</span>
-<span class="sd">    if telemetry is enabled. If no cached recommendation exists the percentage is not</span>
-<span class="sd">    calculated and instead a different event (&#39;naked initial measurement added&#39;) is</span>
-<span class="sd">    recorded.</span>
-
-<span class="sd">    Args:</span>
-<span class="sd">        cached_recommendation: The cached recommendations.</span>
-<span class="sd">        measurements: The measurements which are supposed to be checked against cached</span>
-<span class="sd">            recommendations.</span>
-<span class="sd">        parameters: The list of parameters spanning the entire search space.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="n">is_enabled</span><span class="p">():</span>
-        <span class="k">if</span> <span class="n">cached_recommendation</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
-            <span class="n">_submit_scalar_value</span><span class="p">(</span><span class="n">TELEM_LABELS</span><span class="p">[</span><span class="s2">&quot;NAKED_INITIAL_MEASUREMENTS&quot;</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">recommended_measurements_percentage</span> <span class="o">=</span> <span class="p">(</span>
-                <span class="nb">len</span><span class="p">(</span><span class="n">fuzzy_row_match</span><span class="p">(</span><span class="n">cached_recommendation</span><span class="p">,</span> <span class="n">measurements</span><span class="p">,</span> <span class="n">parameters</span><span class="p">))</span>
-                <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">cached_recommendation</span><span class="p">)</span>
-                <span class="o">*</span> <span class="mf">100.0</span>
-            <span class="p">)</span>
-            <span class="n">_submit_scalar_value</span><span class="p">(</span>
-                <span class="n">TELEM_LABELS</span><span class="p">[</span><span class="s2">&quot;RECOMMENDED_MEASUREMENTS_PERCENTAGE&quot;</span><span class="p">],</span>
-                <span class="n">recommended_measurements_percentage</span><span class="p">,</span>
-            <span class="p">)</span></div>
-
+          <section class="tex2jax_ignore mathjax_ignore" id="optimizing-a-laser-s-wavelength">
+<h1>Optimizing a Laser’s Wavelength<a class="headerlink" href="#optimizing-a-laser-s-wavelength" title="Link to this heading">¶</a></h1>
+<p>In this example, we explore BayBE’s capabilities for handling nonlinear
+optimization problems. Specifically, we demonstrate the two fundamental types of
+nonlinearities that can arise in optimization scenarios: known and unknown.
+We investigate a setting where:</p>
+<ul class="simple">
+<li><p>we need to optimize a very specific <strong>user-defined nonlinear</strong> objective function of
+a target quantity,</p></li>
+<li><p>where the target quantity depends in a <strong>nonlinear but unknown</strong> way on a parameter
+controlled by the user.</p></li>
+</ul>
+<section id="imports">
+<h2>Imports<a class="headerlink" href="#imports" title="Link to this heading">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 </pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">baybe.campaign</span><span class="w"> </span><span class="kn">import</span> <span class="n">Campaign</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">baybe.parameters.numerical</span><span class="w"> </span><span class="kn">import</span> <span class="n">NumericalContinuousParameter</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">baybe.simulation.scenarios</span><span class="w"> </span><span class="kn">import</span> <span class="n">simulate_scenarios</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">baybe.targets.numerical</span><span class="w"> </span><span class="kn">import</span> <span class="n">NumericalTarget</span>
+</pre></div>
+</div>
+</section>
+<section id="settings">
+<h2>Settings<a class="headerlink" href="#settings" title="Link to this heading">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">SMOKE_TEST</span> <span class="o">=</span> <span class="s2">&quot;SMOKE_TEST&quot;</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span>
+<span class="n">N_MC_ITERATIONS</span> <span class="o">=</span> <span class="mi">2</span> <span class="k">if</span> <span class="n">SMOKE_TEST</span> <span class="k">else</span> <span class="mi">20</span>
+<span class="n">N_DOE_ITERATIONS</span> <span class="o">=</span> <span class="mi">2</span> <span class="k">if</span> <span class="n">SMOKE_TEST</span> <span class="k">else</span> <span class="mi">20</span>
+</pre></div>
+</div>
+</section>
+<section id="scenario">
+<h2>Scenario<a class="headerlink" href="#scenario" title="Link to this heading">¶</a></h2>
+<p>Imagine you’re in a busy optics lab, preparing to tune a high-performance laser for a
+critical experiment. Your goal is to align the laser’s output wavelength to one of two
+specific channels in a wavelength-division multiplexing system. Both channels
+lead to the same detector, making them functionally equivalent for your measurements.</p>
+<p>The laser’s wavelength is controlled by the voltage applied to its tuning element;
+however, this relationship is complex and nonlinear. It involves both linear drift
+and nonlinear cavity mode effects, but you lack a precise analytical model.
+Consequently, you turn to a data-driven optimization approach, with BayBE as your ally.</p>
+</section>
+<section id="the-laser-model">
+<h2>The Laser Model<a class="headerlink" href="#the-laser-model" title="Link to this heading">¶</a></h2>
+<p>To demonstrate this scenario through simulation, we need to define the laser’s
+characteristics and system dynamics. In practice, this information would be unknown,
+but for benchmarking our optimization approach, we assume realistic values to build
+a black-box model.</p>
+<p>First, we define the physical constants that characterize our laser:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y0</span> <span class="o">=</span> <span class="mf">1550.00</span>  <span class="c1"># unit: nm</span>
+<span class="n">α</span> <span class="o">=</span> <span class="mf">0.20</span>  <span class="c1"># unit: nm/V</span>
+<span class="n">A</span> <span class="o">=</span> <span class="mf">0.60</span>  <span class="c1"># unit: nm</span>
+<span class="n">P</span> <span class="o">=</span> <span class="mf">2.5</span>  <span class="c1"># unit: V</span>
+</pre></div>
+</div>
+<p>We also capture the relationship between the applied voltage and the emitted
+wavelength in form of a lookup callable that can be used to close the simulation loop:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">lookup</span><span class="p">(</span><span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A lookup modelling the voltage-to-wavelength relationship of a tunable laser.</span>
+
+<span class="sd">    This function captures both linear tuning and nonlinear cavity mode effects</span>
+<span class="sd">    that are typical in real laser systems.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Wavelength&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">y0</span> <span class="o">+</span> <span class="n">α</span> <span class="o">*</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Voltage&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">A</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Voltage&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="n">P</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">df</span>
+</pre></div>
+</div>
+</section>
+<section id="the-optimization-problem">
+<h2>The Optimization Problem<a class="headerlink" href="#the-optimization-problem" title="Link to this heading">¶</a></h2>
+<p>Now, let us define our voltage parameter:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">voltage</span> <span class="o">=</span> <span class="n">NumericalContinuousParameter</span><span class="p">(</span><span class="s2">&quot;Voltage&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="n">metadata</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;V&quot;</span><span class="p">})</span>
+</pre></div>
+</div>
+<p>We can visualize how it affects the laser’s output wavelength by querying the lookup:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">voltage_grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">*</span><span class="n">voltage</span><span class="o">.</span><span class="n">bounds</span><span class="o">.</span><span class="n">to_tuple</span><span class="p">(),</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">induced_λ</span> <span class="o">=</span> <span class="n">lookup</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;Voltage&quot;</span><span class="p">:</span> <span class="n">voltage_grid</span><span class="p">}))[</span><span class="s2">&quot;Wavelength&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">voltage_grid</span><span class="p">,</span> <span class="n">induced_λ</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:blue&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fa39efe00d0&gt;]
+</pre></div>
+</div>
+<p>Our target wavelengths for the two multiplexing channels and the acceptable
+tolerance around each target are defined as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">λ1</span> <span class="o">=</span> <span class="mf">1550.5</span>  <span class="c1"># unit: nm</span>
+<span class="n">λ2</span> <span class="o">=</span> <span class="mf">1551.5</span>  <span class="c1"># unit: nm</span>
+<span class="n">σ</span> <span class="o">=</span> <span class="mf">0.05</span>  <span class="c1"># unit: nm</span>
+</pre></div>
+</div>
+<p>Let us also add them to the plot:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">λ1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:red&quot;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">λ2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:red&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.lines.Line2D at 0x7fa39f0678b0&gt;
+</pre></div>
+</div>
+<p>Next, we define a corresponding target value that allows us to reference our
+observable quantity:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">λ</span> <span class="o">=</span> <span class="n">NumericalTarget</span><span class="p">(</span><span class="s2">&quot;Wavelength&quot;</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;nm&quot;</span><span class="p">})</span>
+</pre></div>
+</div>
+<p>With these specifications at hand, we can define an optimization objective
+using BayBE’s transformation mechanism, by creating Gaussian-shaped reward functions
+centered on each target wavelength:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">λ1_bump</span> <span class="o">=</span> <span class="p">((</span><span class="n">λ</span> <span class="o">-</span> <span class="n">λ1</span><span class="p">)</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">σ</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="n">negate</span><span class="p">()</span><span class="o">.</span><span class="n">exp</span><span class="p">()</span>
+<span class="n">λ2_bump</span> <span class="o">=</span> <span class="p">((</span><span class="n">λ</span> <span class="o">-</span> <span class="n">λ2</span><span class="p">)</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">σ</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="n">negate</span><span class="p">()</span><span class="o">.</span><span class="n">exp</span><span class="p">()</span>
+<span class="n">target</span> <span class="o">=</span> <span class="n">λ1_bump</span> <span class="o">+</span> <span class="n">λ2_bump</span>
+</pre></div>
+</div>
+<p>Let us also visualize the relationship between observed wavelength and objective
+value:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">λ_grid</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">induced_λ</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">induced_λ</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="mi">1000</span><span class="p">))</span>
+<span class="n">induced_target</span> <span class="o">=</span> <span class="n">target</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">λ_grid</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ax2</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">twiny</span><span class="p">()</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">induced_target</span><span class="p">,</span> <span class="n">λ_grid</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:orange&quot;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Objective Value&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:orange&quot;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">labelcolor</span><span class="o">=</span><span class="s2">&quot;tab:orange&quot;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Voltage (V)&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:blue&quot;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Wavelength (nm)&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:blue&quot;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">labelcolor</span><span class="o">=</span><span class="s2">&quot;tab:blue&quot;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="n">labelcolor</span><span class="o">=</span><span class="s2">&quot;tab:blue&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="simulating-the-optimization-loop">
+<h2>Simulating the Optimization Loop<a class="headerlink" href="#simulating-the-optimization-loop" title="Link to this heading">¶</a></h2>
+<p>Finally, we encapsulate both the search space and objective in a BayBE campaign:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">campaign</span> <span class="o">=</span> <span class="n">Campaign</span><span class="p">(</span>
+    <span class="n">searchspace</span><span class="o">=</span><span class="n">voltage</span><span class="o">.</span><span class="n">to_searchspace</span><span class="p">(),</span>
+    <span class="n">objective</span><span class="o">=</span><span class="n">target</span><span class="o">.</span><span class="n">to_objective</span><span class="p">(),</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>In practice, we would iteratively query this campaign for voltage recommendations,
+measure the resulting wavelengths, and provide feedback for refined recommendations.
+Here, we simulate this closed-loop process using our black-box laser model:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="n">simulate_scenarios</span><span class="p">(</span>
+    <span class="p">{</span><span class="s2">&quot;Laser&quot;</span><span class="p">:</span> <span class="n">campaign</span><span class="p">},</span>
+    <span class="n">lookup</span><span class="p">,</span>
+    <span class="n">n_doe_iterations</span><span class="o">=</span><span class="n">N_DOE_ITERATIONS</span><span class="p">,</span>
+    <span class="n">n_mc_iterations</span><span class="o">=</span><span class="n">N_MC_ITERATIONS</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Unsurprisingly, the optimization results show trajectories converging to two distinct
+clusters, corresponding to the two target wavelengths. This bimodal convergence occurs
+because both targets yield equivalent objective values:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">results</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span>
+        <span class="n">columns</span><span class="o">=</span><span class="p">{</span>
+            <span class="s2">&quot;Wavelength_CumBest&quot;</span><span class="p">:</span> <span class="s2">&quot;Wavelength (nm)&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Num_Experiments&quot;</span><span class="p">:</span> <span class="s2">&quot;# Experiments&quot;</span><span class="p">,</span>
+        <span class="p">}</span>
+    <span class="p">),</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;# Experiments&quot;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Wavelength (nm)&quot;</span><span class="p">,</span>
+    <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;Monte_Carlo_Run&quot;</span><span class="p">,</span>
+    <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+    <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;laser_tuning.svg&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../../_images/laser_tuning.svg" class="align-center" src="../../_images/laser_tuning.svg" />
+</section>
+</section>
+
         </article>
       </div>
       <footer>
         
         <div class="related-pages">
-          
-          
+          <a class="next-page" href="../Transfer_Learning/Transfer_Learning.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Transfer Learning</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="Transformations.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Transformations</div>
+                
+              </div>
+            </a>
         </div>
         <div class="bottom-of-page">
           <div class="left-details">
@@ -1366,8 +1317,32 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Optimizing a Laser’s Wavelength</a><ul>
+<li><a class="reference internal" href="#imports">Imports</a></li>
+<li><a class="reference internal" href="#settings">Settings</a></li>
+<li><a class="reference internal" href="#scenario">Scenario</a></li>
+<li><a class="reference internal" href="#the-laser-model">The Laser Model</a></li>
+<li><a class="reference internal" href="#the-optimization-problem">The Optimization Problem</a></li>
+<li><a class="reference internal" href="#simulating-the-optimization-loop">Simulating the Optimization Loop</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

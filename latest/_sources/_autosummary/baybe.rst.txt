@@ -59,8 +59,6 @@
 
    targets
 
-   telemetry
-
    transformations
 
    utils

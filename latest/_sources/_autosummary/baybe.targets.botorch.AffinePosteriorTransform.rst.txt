@@ -35,7 +35,6 @@ AffinePosteriorTransform
       ~AffinePosteriorTransform.get_submodule
       ~AffinePosteriorTransform.half
       ~AffinePosteriorTransform.ipu
-      ~AffinePosteriorTransform.load_state_dict
       ~AffinePosteriorTransform.modules
       ~AffinePosteriorTransform.mtia
       ~AffinePosteriorTransform.named_buffers

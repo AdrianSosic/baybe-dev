@@ -31,7 +31,6 @@ qExpectedImprovement
    .. autosummary::
    
       ~qExpectedImprovement.abbreviation
-      ~qExpectedImprovement.is_analytic
       ~qExpectedImprovement.supports_multi_output
    
    

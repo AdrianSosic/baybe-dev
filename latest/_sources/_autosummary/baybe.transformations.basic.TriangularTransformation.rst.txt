@@ -22,6 +22,7 @@ TriangularTransformation
       ~TriangularTransformation.from_json
       ~TriangularTransformation.from_margins
       ~TriangularTransformation.from_width
+      ~TriangularTransformation.get_codomain
       ~TriangularTransformation.get_image
       ~TriangularTransformation.negate
       ~TriangularTransformation.to_botorch_objective
@@ -36,8 +37,8 @@ TriangularTransformation
 
    .. autosummary::
    
-      ~TriangularTransformation.margins
       ~TriangularTransformation.cutoffs
       ~TriangularTransformation.peak
+      ~TriangularTransformation.margins
    
    
