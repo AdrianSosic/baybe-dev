@@ -71,15 +71,6 @@ for subclass in get_subclasses(Surrogate):
     print(subclass)
 ```
 
-    <class 'baybe.surrogates.custom.CustomONNXSurrogate'>
-    <class 'baybe.surrogates.linear.BayesianLinearSurrogate'>
-    <class 'baybe.surrogates.naive.MeanPredictionSurrogate'>
-    <class 'baybe.surrogates.ngboost.NGBoostSurrogate'>
-    <class 'baybe.surrogates.bandit.BetaBernoulliMultiArmedBanditSurrogate'>
-    <class 'baybe.surrogates.gaussian_process.core.GaussianProcessSurrogate'>
-    <class 'baybe.surrogates.random_forest.RandomForestSurrogate'>
-
-
 Per default a Gaussian Process is used
 You can change the used kernel by using the optional `kernel` keyword.
 
@@ -141,26 +132,6 @@ recommender = TwoPhaseMetaRecommender(
 ```python
 print(recommender)
 ```
-
-    TwoPhaseMetaRecommender
-       Initial recommender
-          RandomRecommender
-             Compatibility: SearchSpaceType.HYBRID
-       Recommender
-          BotorchRecommender
-             Surrogate
-                GaussianProcessSurrogate
-                   Supports Transfer Learning: True
-                   Kernel factory: DefaultKernelFactory()
-             Acquisition function: qLogExpectedImprovement()
-             Compatibility: SearchSpaceType.HYBRID
-             Sequential continuous: True
-             Hybrid sampler: None
-             Sampling percentage: 1.0
-       Switch after: 1
-       Remain switched: False
-       Has switched: False
-
 
 ## Example Searchspace and objective parameters
 
@@ -243,40 +214,12 @@ print("\n\nRecommended experiments: ")
 print(recommendation)
 ```
 
-    
-    
-    Recommended experiments: 
-          Solvent                Base                        Ligand  Temperature  \
-    222      DMAc      Cesium acetate                 (t-Bu)PhCPhos        120.0   
-    329  p-Xylene      Cesium acetate                 (t-Bu)PhCPhos        105.0   
-    320      DMAc  Potassium pivalate  Di-tert-butylphenylphosphine        105.0   
-    
-         Concentration  
-    222          0.057  
-    329          0.153  
-    320          0.153  
-
-
 
 ```python
 add_fake_measurements(recommendation, campaign.targets)
 print("\n\nRecommended experiments with fake measured values: ")
 print(recommendation)
 ```
-
-    
-    
-    Recommended experiments with fake measured values: 
-          Solvent                Base                        Ligand  Temperature  \
-    222      DMAc      Cesium acetate                 (t-Bu)PhCPhos        120.0   
-    329  p-Xylene      Cesium acetate                 (t-Bu)PhCPhos        105.0   
-    320      DMAc  Potassium pivalate  Di-tert-butylphenylphosphine        105.0   
-    
-         Concentration      yield  
-    222          0.057 -71.978420  
-    329          0.153   8.149903  
-    320          0.153 -69.279717  
-
 
 
 ```python

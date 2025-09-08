@@ -181,17 +181,6 @@ results = simulate_transfer_learning(
 )
 ```
 
-    
-
-    
-
-    
-
-    
-
-    
-
-
 For comparison, we also compare with the baseline tasks
 
 ```{note}
@@ -218,24 +207,6 @@ for func_name, function in test_functions.items():
     results = pd.concat([results, result_baseline])
 ```
 
-    
-
-    
-
-    
-
-    
-
-
-    
-
-    
-
-    
-
-    
-
-
 All that remains is to visualize the results.
 As the example shows, the optimization speed can be significantly increased by
 using even small amounts of training data from related optimization tasks.
@@ -256,11 +227,6 @@ ax = sns.lineplot(
 )
 create_example_plots(ax=ax, base_name="backtesting")
 ```
-
-
-    
-    
-
 ```{image} backtesting_light.svg
 :align: center
 :class: only-light

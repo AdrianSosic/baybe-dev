@@ -81,9 +81,6 @@ except FileNotFoundError as e:
     print(e)
 ```
 
-    [Errno 2] No such file or directory: 'benchmarks/data/direct_arylation/data.csv'
-
-
 Following the setup described [here](../Backtesting/full_lookup.md), we create the
 building blocks for the optimization problem:
 
@@ -141,15 +138,6 @@ results_uninterrupted = simulate_scenarios(
     random_seed=RANDOM_SEED,
 )
 ```
-
-    
-
-    
-
-    
-
-    
-
 
 ## Defining the Campaign-Stopping Hook
 
@@ -252,15 +240,6 @@ results_interrupted = simulate_scenarios(
 )
 ```
 
-    
-
-    
-
-    
-
-    
-
-
 ```{note}
 If an exception is thrown inside the loop, the function still returns the partial
 trajectory, which effectively implements early stopping.
@@ -297,11 +276,6 @@ for line in ax.get_lines()[1:]:
     line.set_dashes([5, 2])
 create_example_plots(ax=ax, base_name="campaign_stopping")
 ```
-
-
-    
-    
-
 ```{image} campaign_stopping_light.svg
 :align: center
 :class: only-light

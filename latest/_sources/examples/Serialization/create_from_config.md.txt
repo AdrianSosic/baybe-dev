@@ -110,9 +110,3 @@ We now perform a recommendation as usual and print it.
 recommendation = campaign.recommend(batch_size=3)
 print(recommendation)
 ```
-
-       Granularity  Pressure[bar]    Solvent
-    12        fine            1.0  Solvent A
-    33  ultra-fine           10.0  Solvent B
-    7       coarse            5.0  Solvent D
-

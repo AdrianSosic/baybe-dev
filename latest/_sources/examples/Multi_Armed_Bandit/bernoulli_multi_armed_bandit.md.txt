@@ -235,24 +235,6 @@ for acqf in ACQFS:
     print("\n")
 ```
 
-    qThompsonSampling
-    -----------------
-    Optimal win rate: 0.8
-    Achieved win rate: 0.62
-    Mean squared error (last iteration): 0.14448993259018328
-    
-    
-
-
-    PosteriorStandardDeviation
-    --------------------------
-    Optimal win rate: 0.8
-    Achieved win rate: 0.5066666666666667
-    Mean squared error (last iteration): 0.09653736976391157
-    
-    
-
-
 ## Discussion
 
 As expected, we observe a higher achieved win rate for the online optimization strategy,

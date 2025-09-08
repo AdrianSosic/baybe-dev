@@ -155,11 +155,6 @@ fig, axs = plt.subplots(1, 2, figsize=(10, 5))
 ```
 
 
-    
-    
-
-
-
 ```python
 plt.sca(axs[0])
 plt.contour(x0_mesh, x1_mesh, y0_mesh, colors="tab:red", alpha=0.2)
@@ -176,13 +171,6 @@ plt.title("Parameter Space")
 plt.axis("square")
 plt.axis([-1, 1, -1, 1])
 ```
-
-
-
-
-    (np.float64(-1.0), np.float64(1.0), np.float64(-1.0), np.float64(1.0))
-
-
 
 Similarly, we plot the training data, the achieved function values,
 and the Pareto frontier in the target space:
@@ -203,13 +191,6 @@ plt.xlabel(y0.name)
 plt.ylabel(y1.name)
 plt.title("Target Space")
 ```
-
-
-
-
-    Text(0.5, 1.0, 'Target Space')
-
-
 
 
 ```python

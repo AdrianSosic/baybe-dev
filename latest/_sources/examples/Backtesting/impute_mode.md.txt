@@ -179,15 +179,6 @@ results = simulate_scenarios(
 )
 ```
 
-    
-
-    
-
-    
-
-    
-
-
 The following lines plot the results and save the plot in run_impute_mode.png
 
 
@@ -201,8 +192,3 @@ plt.legend(loc="lower right")
 plt.gcf().set_size_inches(20, 8)
 plt.savefig("./run_impute_mode.png")
 ```
-
-
-    
-    
-

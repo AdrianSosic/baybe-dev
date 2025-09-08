@@ -20,7 +20,7 @@ AffineTransformation
       ~AffineTransformation.clamp
       ~AffineTransformation.from_dict
       ~AffineTransformation.from_json
-      ~AffineTransformation.from_points_mapped_to_unit_interval_bounds
+      ~AffineTransformation.from_values_mapped_to_unit_interval
       ~AffineTransformation.get_codomain
       ~AffineTransformation.get_image
       ~AffineTransformation.negate

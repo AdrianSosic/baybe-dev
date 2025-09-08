@@ -131,8 +131,3 @@ concentration = NumericalDiscreteParameter("Concentration", values=[0.057, 0.1, 
 searchspace = SearchSpace.from_product([temperature, concentration])
 recommendation = recommender.recommend(batch_size=3, searchspace=searchspace)
 ```
-
-    Recommender type: RandomRecommender
-    Search space parameters: ['Concentration', 'Temperature']
-    Consumed time of RandomRecommender: 0.0006985789999589542
-

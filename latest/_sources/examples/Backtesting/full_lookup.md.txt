@@ -75,9 +75,6 @@ except FileNotFoundError as e:
     print(e)
 ```
 
-    [Errno 2] No such file or directory: 'benchmarks/data/direct_arylation/data.csv'
-
-
 As usual, we set up some experiment.
 Note that we now need to ensure that the names fit the names in the provided .xlsx file!
 
@@ -206,19 +203,6 @@ results = simulate_scenarios(
 )
 ```
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-
 Let's visualize the results. As you can see, the type of encoding has a tremendous
 impact on the outcome, with chemical encodings performing much better than
 traditional ones at almost no extra cost.
@@ -236,11 +220,6 @@ ax = sns.lineplot(
 )
 create_example_plots(ax=ax, base_name="full_lookup")
 ```
-
-
-    
-    
-
 ```{image} full_lookup_light.svg
 :align: center
 :class: only-light

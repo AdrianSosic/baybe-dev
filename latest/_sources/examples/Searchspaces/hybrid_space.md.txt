@@ -199,12 +199,3 @@ campaign.add_measurements(measurements)
 print("\n\nRecommended experiments with measured values: ")
 print(measurements)
 ```
-
-    
-    
-    Recommended experiments with measured values: 
-         x_1   x_2   x_3       x_4       x_5       x_6     Target
-    10  0.00 -5.12  0.00 -3.159951 -2.315111 -1.047625  64.428662
-    11  0.00 -5.12  5.12 -1.641630  1.304271  1.194322  99.883732
-    7  -5.12  5.12  0.00 -2.965372  1.027321 -1.812278  77.551416
-
