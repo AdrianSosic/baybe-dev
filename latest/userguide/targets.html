@@ -1246,19 +1246,11 @@ suitable transformation computing some form of “proximity” to the set point 
 how we can match a single set point using built-in constructors:</p>
 <section id="absolute-transformation">
 <h4>Absolute Transformation<a class="headerlink" href="#absolute-transformation" title="Link to this heading">¶</a></h4>
-<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
-<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 docutils">
-<div class="sd-col sd-d-flex-column sd-col-auto sd-col-xs-auto sd-col-sm-auto sd-col-md-auto sd-col-lg-auto docutils">
 <p><img alt="Transforms" src="../_images/absolute.svg" /></p>
-</div>
-<div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
 <p>The potentially simplest way to match a set point value is by minimizing the absolute
 distance to it, since it requires no configuration other than specifying the set point
 value itself. The <a class="reference internal" href="../_autosummary/baybe.targets.numerical.NumericalTarget.html#baybe.targets.numerical.NumericalTarget.match_absolute" title="baybe.targets.numerical.NumericalTarget.match_absolute"><code class="xref py py-meth docutils literal notranslate"><span class="pre">match_absolute()</span></code></a>
 constructor allows you to do exactly that in a single line of code.</p>
-</div>
-</div>
-</div>
 <p><strong>Example</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t_abs</span> <span class="o">=</span> <span class="n">NumericalTarget</span><span class="o">.</span><span class="n">match_absolute</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Size&quot;</span><span class="p">,</span> <span class="n">match_value</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
 </pre></div>
@@ -1271,19 +1263,11 @@ constructor allows you to do exactly that in a single line of code.</p>
 </section>
 <section id="triangular-transformation">
 <h4>Triangular Transformation<a class="headerlink" href="#triangular-transformation" title="Link to this heading">¶</a></h4>
-<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
-<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 docutils">
-<div class="sd-col sd-d-flex-column sd-col-auto sd-col-xs-auto sd-col-sm-auto sd-col-md-auto sd-col-lg-auto docutils">
 <p><img alt="Transforms" src="../_images/triangular.svg" /></p>
-</div>
-<div class="sd-col sd-d-flex-column sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
 <p>In some cases, we want to penalize <a class="reference internal" href="#absolute-transformation">absolute distance</a> to the set point but only
 up to a certain threshold, above which any further deviation does not matter. For this purpose,
 the <a class="reference internal" href="../_autosummary/baybe.targets.numerical.NumericalTarget.html#baybe.targets.numerical.NumericalTarget.match_triangular" title="baybe.targets.numerical.NumericalTarget.match_triangular"><code class="xref py py-meth docutils literal notranslate"><span class="pre">match_triangular()</span></code></a> constructor can be used,
 which allows us to specify these thresholds in various ways.</p>
-</div>
-</div>
-</div>
 <p><strong>Example</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t1</span> <span class="o">=</span> <span class="n">NumericalTarget</span><span class="o">.</span><span class="n">match_triangular</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Size&quot;</span><span class="p">,</span> <span class="n">match_value</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">t2</span> <span class="o">=</span> <span class="n">NumericalTarget</span><span class="o">.</span><span class="n">match_triangular</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Size&quot;</span><span class="p">,</span> <span class="n">match_value</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">cutoffs</span><span class="o">=</span><span class="p">(</span><span class="mi">37</span><span class="p">,</span> <span class="mi">47</span><span class="p">))</span>
@@ -1301,20 +1285,12 @@ optimization if the thresholds are chosen too tight</p>
 </section>
 <section id="bell-transformation">
 <h4>Bell Transformation<a class="headerlink" href="#bell-transformation" title="Link to this heading">¶</a></h4>
-<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
-<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 docutils">
-<div class="sd-col sd-d-flex-column sd-col-auto sd-col-xs-auto sd-col-sm-auto sd-col-md-auto sd-col-lg-auto docutils">
 <p><img alt="Transforms" src="../_images/bell.svg" /></p>
-</div>
-<div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
 <p>Bell-transformed targets created via the
 <a class="reference internal" href="../_autosummary/baybe.targets.numerical.NumericalTarget.html#baybe.targets.numerical.NumericalTarget.match_bell" title="baybe.targets.numerical.NumericalTarget.match_bell"><code class="xref py py-meth docutils literal notranslate"><span class="pre">match_bell()</span></code></a> constructor can be
 considered relaxed versions of their <a class="reference internal" href="#triangular-transformation">triangular</a>
 counterparts. Unlike the latter, they have no strict cutoff points, resulting in a smooth
 change in the output with non-zero gradient on the entire domain.</p>
-</div>
-</div>
-</div>
 <p><strong>Example</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t_bell</span> <span class="o">=</span> <span class="n">NumericalTarget</span><span class="o">.</span><span class="n">match_bell</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Size&quot;</span><span class="p">,</span> <span class="n">match_value</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
@@ -1328,20 +1304,12 @@ change in the output with non-zero gradient on the entire domain.</p>
 </section>
 <section id="power-transformation">
 <h4>Power Transformation<a class="headerlink" href="#power-transformation" title="Link to this heading">¶</a></h4>
-<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
-<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 docutils">
-<div class="sd-col sd-d-flex-column sd-col-auto sd-col-xs-auto sd-col-sm-auto sd-col-md-auto sd-col-lg-auto docutils">
 <p><img alt="Transforms" src="../_images/power.svg" /></p>
-</div>
-<div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
 <p>If you need more precise control over how strongly deviations from the set point are
 penalized, you can use the <a class="reference internal" href="../_autosummary/baybe.targets.numerical.NumericalTarget.html#baybe.targets.numerical.NumericalTarget.match_power" title="baybe.targets.numerical.NumericalTarget.match_power"><code class="xref py py-meth docutils literal notranslate"><span class="pre">match_power()</span></code></a>
 constructor, which applies a power transformation to the <a class="reference internal" href="#absolute-transformation">absolute distance</a>.
 For the common case of squared penalties, we also provide a separate
 <a class="reference internal" href="../_autosummary/baybe.targets.numerical.NumericalTarget.html#baybe.targets.numerical.NumericalTarget.match_quadratic" title="baybe.targets.numerical.NumericalTarget.match_quadratic"><code class="xref py py-meth docutils literal notranslate"><span class="pre">match_quadratic()</span></code></a> constructor.</p>
-</div>
-</div>
-</div>
 <p><strong>Example</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t_power</span> <span class="o">=</span> <span class="n">NumericalTarget</span><span class="o">.</span><span class="n">match_power</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Size&quot;</span><span class="p">,</span> <span class="n">match_value</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">exponent</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">t_quad</span> <span class="o">=</span> <span class="n">NumericalTarget</span><span class="o">.</span><span class="n">match_quadratic</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Size&quot;</span><span class="p">,</span> <span class="n">match_value</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
@@ -1374,19 +1342,11 @@ where this can be required is when combining the targets using a
 provide convenience constructors with the <code class="docutils literal notranslate"><span class="pre">normalized_</span></code> prefix:</p>
 <section id="ramp-transformation">
 <h4>Ramp Transformation<a class="headerlink" href="#ramp-transformation" title="Link to this heading">¶</a></h4>
-<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
-<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 docutils">
-<div class="sd-col sd-d-flex-column sd-col-auto sd-col-xs-auto sd-col-sm-auto sd-col-md-auto sd-col-lg-auto docutils">
 <p><img alt="Transforms" src="../_images/ramp.svg" /></p>
-</div>
-<div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
 <p>The <a class="reference internal" href="../_autosummary/baybe.targets.numerical.NumericalTarget.html#baybe.targets.numerical.NumericalTarget.normalized_ramp" title="baybe.targets.numerical.NumericalTarget.normalized_ramp"><code class="xref py py-meth docutils literal notranslate"><span class="pre">normalized_ramp()</span></code></a> constructor offers
 the simplest way to create a normalized target. It does so by linearly mapping the
 target values to the range [0, 1] inside a specified interval and clamping the output
 outside.</p>
-</div>
-</div>
-</div>
 <p><strong>Example</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">NumericalTarget</span><span class="o">.</span><span class="n">normalized_ramp</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Target&quot;</span><span class="p">,</span> <span class="n">cutoffs</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">descending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
@@ -1400,19 +1360,11 @@ optimization if the thresholds are chosen too tight</p>
 </section>
 <section id="sigmoid-transformation">
 <h4>Sigmoid Transformation<a class="headerlink" href="#sigmoid-transformation" title="Link to this heading">¶</a></h4>
-<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
-<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 docutils">
-<div class="sd-col sd-d-flex-column sd-col-auto sd-col-xs-auto sd-col-sm-auto sd-col-md-auto sd-col-lg-auto docutils">
 <p><img alt="Transforms" src="../_images/sigmoid.svg" /></p>
-</div>
-<div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
 <p>The <a class="reference internal" href="../_autosummary/baybe.targets.numerical.NumericalTarget.html#baybe.targets.numerical.NumericalTarget.normalized_sigmoid" title="baybe.targets.numerical.NumericalTarget.normalized_sigmoid"><code class="xref py py-meth docutils literal notranslate"><span class="pre">normalized_sigmoid()</span></code></a> constructor
 can be considered a softened version of the <a class="reference internal" href="#ramp-transformation">ramp transformation</a>.
 Instead of using hard cutoffs, it smoothly interpolates the target values between
 0 and 1 using a sigmoid function.</p>
-</div>
-</div>
-</div>
 <p><strong>Example</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">NumericalTarget</span><span class="o">.</span><span class="n">normalized_sigmoid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Target&quot;</span><span class="p">,</span> <span class="n">anchors</span><span class="o">=</span><span class="p">[(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">)])</span>
 </pre></div>

@@ -1156,8 +1156,8 @@ characteristics and system dynamics. In practice, this information would be unkn
 but for benchmarking our optimization approach, we assume realistic values to build
 a black-box model.</p>
 <p>First, we define the physical constants that characterize our laser:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y0</span> <span class="o">=</span> <span class="mf">1550.00</span>  <span class="c1"># unit: nm</span>
-<span class="n">α</span> <span class="o">=</span> <span class="mf">0.20</span>  <span class="c1"># unit: nm/V</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">w0</span> <span class="o">=</span> <span class="mf">1550.00</span>  <span class="c1"># unit: nm</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.20</span>  <span class="c1"># unit: nm/V</span>
 <span class="n">A</span> <span class="o">=</span> <span class="mf">0.60</span>  <span class="c1"># unit: nm</span>
 <span class="n">P</span> <span class="o">=</span> <span class="mf">2.5</span>  <span class="c1"># unit: V</span>
 </pre></div>
@@ -1171,7 +1171,7 @@ wavelength in form of a lookup callable that can be used to close the simulation
 <span class="sd">    that are typical in real laser systems.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Wavelength&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
-        <span class="n">y0</span> <span class="o">+</span> <span class="n">α</span> <span class="o">*</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Voltage&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">A</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Voltage&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="n">P</span><span class="p">)</span>
+        <span class="n">w0</span> <span class="o">+</span> <span class="n">alpha</span> <span class="o">*</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Voltage&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">A</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Voltage&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="n">P</span><span class="p">)</span>
     <span class="p">)</span>
     <span class="k">return</span> <span class="n">df</span>
 </pre></div>
@@ -1185,33 +1185,28 @@ wavelength in form of a lookup callable that can be used to close the simulation
 </div>
 <p>We can visualize how it affects the laser’s output wavelength by querying the lookup:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">voltage_grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">*</span><span class="n">voltage</span><span class="o">.</span><span class="n">bounds</span><span class="o">.</span><span class="n">to_tuple</span><span class="p">(),</span> <span class="mi">1000</span><span class="p">)</span>
-<span class="n">induced_λ</span> <span class="o">=</span> <span class="n">lookup</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;Voltage&quot;</span><span class="p">:</span> <span class="n">voltage_grid</span><span class="p">}))[</span><span class="s2">&quot;Wavelength&quot;</span><span class="p">]</span>
+<span class="n">induced_wavelength</span> <span class="o">=</span> <span class="n">lookup</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;Voltage&quot;</span><span class="p">:</span> <span class="n">voltage_grid</span><span class="p">}))[</span><span class="s2">&quot;Wavelength&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
-<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">voltage_grid</span><span class="p">,</span> <span class="n">induced_λ</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:blue&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f31fdb8f820&gt;]
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">voltage_grid</span><span class="p">,</span> <span class="n">induced_wavelength</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:blue&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Our reference wavelengths for the two multiplexing channels and the acceptable
 tolerance around each are defined as follows:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">λ1</span> <span class="o">=</span> <span class="mf">1550.5</span>  <span class="c1"># unit: nm</span>
-<span class="n">λ2</span> <span class="o">=</span> <span class="mf">1551.5</span>  <span class="c1"># unit: nm</span>
-<span class="n">σ</span> <span class="o">=</span> <span class="mf">0.1</span>  <span class="c1"># unit: nm</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">wavelength1</span> <span class="o">=</span> <span class="mf">1550.5</span>  <span class="c1"># unit: nm</span>
+<span class="n">wavelength2</span> <span class="o">=</span> <span class="mf">1551.5</span>  <span class="c1"># unit: nm</span>
+<span class="n">sigma</span> <span class="o">=</span> <span class="mf">0.1</span>  <span class="c1"># unit: nm</span>
 </pre></div>
 </div>
-<p>Let us also add them to the plot:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">λ1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:red&quot;</span><span class="p">)</span>
-<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">λ2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:red&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.lines.Line2D at 0x7f31fdc9f010&gt;
+<p>Let us also add them to the plot so that we can easily see the optimal parameter
+settings, that is, the voltages that generate these wavelengths:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">wavelength1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:red&quot;</span><span class="p">);</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">wavelength2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:red&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Our goal is to align the laser’s output wavelength with either of the two reference
-wavelengths, treating both wavelenght as equally desirable. We can express this
+wavelengths, treating both wavelengths as equally desirable. We can express this
 symmetric objective by creating “reward peaks” around each reference wavelength using
 Gaussian-shaped functions. The tolerance parameter <span class="math notranslate nohighlight">\(\sigma\)</span> controls the width of
 these peaks, determining how precisely the laser must be tuned to achieve optimal
@@ -1227,30 +1222,33 @@ performance:</p>
 <p>We can easily implement this mathematical objective in code using BayBE’s
 transformation framework. To do so, we start by creating a target variable that
 lets us reference our observable quantity (the laser’s output wavelength):</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">λ</span> <span class="o">=</span> <span class="n">NumericalTarget</span><span class="p">(</span><span class="s2">&quot;Wavelength&quot;</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;nm&quot;</span><span class="p">})</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">wavelength</span> <span class="o">=</span> <span class="n">NumericalTarget</span><span class="p">(</span><span class="s2">&quot;Wavelength&quot;</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;nm&quot;</span><span class="p">})</span>
 </pre></div>
 </div>
 <p>Using BayBE’s ability to <a class="reference internal" href="../../userguide/transformations.html#composite-transformations"><span class="std std-ref">compose transformations</span></a>, the optimization objective can
 be imprinted onto the target using basic algebraic operations:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">λ1_peak</span> <span class="o">=</span> <span class="p">((</span><span class="n">λ</span> <span class="o">-</span> <span class="n">λ1</span><span class="p">)</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">σ</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="n">negate</span><span class="p">()</span><span class="o">.</span><span class="n">exp</span><span class="p">()</span>
-<span class="n">λ2_peak</span> <span class="o">=</span> <span class="p">((</span><span class="n">λ</span> <span class="o">-</span> <span class="n">λ2</span><span class="p">)</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">σ</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="n">negate</span><span class="p">()</span><span class="o">.</span><span class="n">exp</span><span class="p">()</span>
-<span class="n">target</span> <span class="o">=</span> <span class="n">λ1_peak</span> <span class="o">+</span> <span class="n">λ2_peak</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">wavelength1_peak</span> <span class="o">=</span> <span class="p">((</span><span class="n">wavelength</span> <span class="o">-</span> <span class="n">wavelength1</span><span class="p">)</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">sigma</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="n">negate</span><span class="p">()</span><span class="o">.</span><span class="n">exp</span><span class="p">()</span>
+<span class="n">wavelength2_peak</span> <span class="o">=</span> <span class="n">NumericalTarget</span><span class="o">.</span><span class="n">match_bell</span><span class="p">(</span>
+    <span class="s2">&quot;Wavelength&quot;</span><span class="p">,</span> <span class="n">wavelength2</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;nm&quot;</span><span class="p">}</span>
+<span class="p">)</span>
+<span class="n">target</span> <span class="o">=</span> <span class="n">wavelength1_peak</span> <span class="o">+</span> <span class="n">wavelength2_peak</span>
 </pre></div>
 </div>
-<div class="tip admonition">
-<p class="admonition-title">Convenience Constructor</p>
-<p>Note that you can also use the
+<p>For demonstration purposes, we use the
 <a class="reference internal" href="../../_autosummary/baybe.targets.numerical.NumericalTarget.html#baybe.targets.numerical.NumericalTarget.match_bell" title="baybe.targets.numerical.NumericalTarget.match_bell"><code class="xref py py-meth docutils literal notranslate"><span class="pre">match_bell()</span></code></a> convenience constructor to
-create the individual peaks instead, yielding <a class="reference internal" href="../../userguide/transformations.html#equality"><span class="std std-ref">mathematically equivalent</span></a> target objects.</p>
-</div>
+create the second peak, which yields a target object that is <a class="reference internal" href="../../userguide/transformations.html#equality"><span class="std std-ref">mathematically equivalent</span></a> to that of the corresponding
+algebraic construction. See our <a class="reference internal" href="../../userguide/transformations.html"><span class="doc std std-doc">transformation user
+guide</span></a> for more alternative construction routes.</p>
 <p>Let us overlay the relationship between observed wavelength and objective value in the
 existing plot:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">λ_grid</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">induced_λ</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">induced_λ</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="mi">1000</span><span class="p">))</span>
-<span class="n">induced_target</span> <span class="o">=</span> <span class="n">target</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">λ_grid</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">wavelength_grid</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">induced_wavelength</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">induced_wavelength</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">induced_target</span> <span class="o">=</span> <span class="n">target</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">wavelength_grid</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ax2</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">twiny</span><span class="p">()</span>
-<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">induced_target</span><span class="p">,</span> <span class="n">λ_grid</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:orange&quot;</span><span class="p">);</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">induced_target</span><span class="p">,</span> <span class="n">wavelength_grid</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:orange&quot;</span><span class="p">);</span>
 <span class="n">ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Objective Value&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:orange&quot;</span><span class="p">);</span>
 <span class="n">ax2</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">labelcolor</span><span class="o">=</span><span class="s2">&quot;tab:orange&quot;</span><span class="p">);</span>
 <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">voltage</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">voltage</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">unit</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:blue&quot;</span><span class="p">);</span>

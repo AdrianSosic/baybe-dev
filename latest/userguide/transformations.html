@@ -1128,12 +1128,7 @@ that allow for more customization:</p>
 <h3>ClampingTransformation<a class="headerlink" href="#clampingtransformation" title="Link to this heading">¶</a></h3>
 <p>The <a class="reference internal" href="../_autosummary/baybe.transformations.basic.ClampingTransformation.html#baybe.transformations.basic.ClampingTransformation" title="baybe.transformations.basic.ClampingTransformation"><code class="xref py py-class docutils literal notranslate"><span class="pre">ClampingTransformation</span></code></a> is used to limit the
 range of the input values to a specified interval.</p>
-<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
-<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 docutils">
-<div class="sd-col sd-d-flex-column sd-col-auto sd-col-xs-auto sd-col-sm-auto sd-col-md-auto sd-col-lg-auto docutils">
 <p><img alt="Transforms" src="../_images/clamping.svg" /></p>
-</div>
-<div class="sd-col sd-d-flex-column sd-col-auto sd-col-xs-auto sd-col-sm-auto sd-col-md-auto sd-col-lg-auto docutils">
 <p><strong>Transformation rule</strong></p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
@@ -1145,9 +1140,6 @@ range of the input values to a specified interval.</p>
 \end{cases}\end{split}\]</div>
 </div>
 <p>where <span class="math notranslate nohighlight">\(c_\text{min}\)</span> and <span class="math notranslate nohighlight">\(c_\text{max}\)</span> are the bounds specified for the transformation.</p>
-</div>
-</div>
-</div>
 <p><strong>Example</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">baybe.transformations</span><span class="w"> </span><span class="kn">import</span> <span class="n">ClampingTransformation</span>
 
@@ -1161,12 +1153,7 @@ range of the input values to a specified interval.</p>
 <h3>AffineTransformation<a class="headerlink" href="#affinetransformation" title="Link to this heading">¶</a></h3>
 <p>The <a class="reference internal" href="../_autosummary/baybe.transformations.basic.AffineTransformation.html#baybe.transformations.basic.AffineTransformation" title="baybe.transformations.basic.AffineTransformation"><code class="xref py py-class docutils literal notranslate"><span class="pre">AffineTransformation</span></code></a> applies an affine
 transformation to the given input, i.e., it scales and shifts the incoming values.</p>
-<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
-<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 docutils">
-<div class="sd-col sd-d-flex-column sd-col-auto sd-col-xs-auto sd-col-sm-auto sd-col-md-auto sd-col-lg-auto docutils">
 <p><img alt="Transforms" src="../_images/affine.svg" /></p>
-</div>
-<div class="sd-col sd-d-flex-column sd-col-auto sd-col-xs-auto sd-col-sm-auto sd-col-md-auto sd-col-lg-auto docutils">
 <p><strong>Transformation rule</strong></p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
@@ -1176,9 +1163,6 @@ transformation to the given input, i.e., it scales and shifts the incoming value
 \end{cases}\end{split}\]</div>
 </div>
 <p>where <span class="math notranslate nohighlight">\(a\)</span> is the scaling factor and <span class="math notranslate nohighlight">\(b\)</span> is the shift value of the transformation.</p>
-</div>
-</div>
-</div>
 <p><strong>Example</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">baybe.transformations</span><span class="w"> </span><span class="kn">import</span> <span class="n">AffineTransformation</span>
 
@@ -1193,12 +1177,7 @@ transformation to the given input, i.e., it scales and shifts the incoming value
 <h3>TwoSidedAffineTransformation<a class="headerlink" href="#twosidedaffinetransformation" title="Link to this heading">¶</a></h3>
 <p>The <a class="reference internal" href="../_autosummary/baybe.transformations.basic.TwoSidedAffineTransformation.html#baybe.transformations.basic.TwoSidedAffineTransformation" title="baybe.transformations.basic.TwoSidedAffineTransformation"><code class="xref py py-class docutils literal notranslate"><span class="pre">TwoSidedAffineTransformation</span></code></a> is a piecewise
 transformation with two affine segments that meet at a midpoint.</p>
-<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
-<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 docutils">
-<div class="sd-col sd-d-flex-column sd-col-auto sd-col-xs-auto sd-col-sm-auto sd-col-md-auto sd-col-lg-auto docutils">
 <p><img alt="Transforms" src="../_images/twosidedaffine.svg" /></p>
-</div>
-<div class="sd-col sd-d-flex-column sd-col-5 sd-col-xs-5 sd-col-sm-5 sd-col-md-5 sd-col-lg-5 docutils">
 <p><strong>Transformation rule</strong></p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
@@ -1211,9 +1190,6 @@ transformation with two affine segments that meet at a midpoint.</p>
 <p>where <span class="math notranslate nohighlight">\(c_\text{left}\)</span> and <span class="math notranslate nohighlight">\(c_\text{right}\)</span> are the slopes of the left and right affine
 segments, respectively, and <span class="math notranslate nohighlight">\(c_\text{mid}\)</span> specifies the midpoint where the two
 segments meet.</p>
-</div>
-</div>
-</div>
 <p><strong>Example</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">baybe.transformations</span><span class="w"> </span><span class="kn">import</span> <span class="n">TwoSidedAffineTransformation</span>
 
@@ -1226,12 +1202,7 @@ segments meet.</p>
 <h3>SigmoidTransformation<a class="headerlink" href="#sigmoidtransformation" title="Link to this heading">¶</a></h3>
 <p>The <a class="reference internal" href="../_autosummary/baybe.transformations.basic.SigmoidTransformation.html#baybe.transformations.basic.SigmoidTransformation" title="baybe.transformations.basic.SigmoidTransformation"><code class="xref py py-class docutils literal notranslate"><span class="pre">SigmoidTransformation</span></code></a> normalizes its input
 to the range <span class="math notranslate nohighlight">\([0, 1]\)</span> using a sigmoid function.</p>
-<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
-<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 docutils">
-<div class="sd-col sd-d-flex-column sd-col-auto sd-col-xs-auto sd-col-sm-auto sd-col-md-auto sd-col-lg-auto docutils">
 <p><img alt="Transforms" src="../_images/sigmoid1.svg" /></p>
-</div>
-<div class="sd-col sd-d-flex-column sd-col-5 sd-col-xs-5 sd-col-sm-5 sd-col-md-5 sd-col-lg-5 docutils">
 <p><strong>Transformation rule</strong></p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
@@ -1240,9 +1211,6 @@ to the range <span class="math notranslate nohighlight">\([0, 1]\)</span> using 
 <p>where <span class="math notranslate nohighlight">\(c\)</span> is the center point where the curve crosses the value 0.5 and <span class="math notranslate nohighlight">\(a\)</span> is a
 parameter controlling the steepness. Note that the transformation can also be specified
 using anchors points instead, as demonstrated below.</p>
-</div>
-</div>
-</div>
 <p><strong>Example</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">baybe.transformations</span><span class="w"> </span><span class="kn">import</span> <span class="n">SigmoidTransformation</span>
 
@@ -1259,12 +1227,7 @@ using anchors points instead, as demonstrated below.</p>
 <p>The <a class="reference internal" href="../_autosummary/baybe.transformations.basic.BellTransformation.html#baybe.transformations.basic.BellTransformation" title="baybe.transformations.basic.BellTransformation"><code class="xref py py-class docutils literal notranslate"><span class="pre">BellTransformation</span></code></a> passes its input through a
 bell-shaped function (i.e. an <strong>unnormalized</strong> Gaussian). This is useful for steering
 target values to specific set points.</p>
-<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
-<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 docutils">
-<div class="sd-col sd-d-flex-column sd-col-auto sd-col-xs-auto sd-col-sm-auto sd-col-md-auto sd-col-lg-auto docutils">
 <p><img alt="Transforms" src="../_images/bell1.svg" /></p>
-</div>
-<div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
 <p><strong>Transformation rule</strong></p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
@@ -1273,9 +1236,6 @@ target values to specific set points.</p>
 <p>where <span class="math notranslate nohighlight">\(c\)</span> is the center of the bell curve and <span class="math notranslate nohighlight">\(\sigma\)</span> is a parameter controlling its
 width. The latter has the same interpretation as the standard deviation of a Gaussian
 distribution except that it does not affect the magnitude of the curve.</p>
-</div>
-</div>
-</div>
 <p><strong>Example</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">baybe.transformations</span><span class="w"> </span><span class="kn">import</span> <span class="n">BellTransformation</span>
 
@@ -1289,12 +1249,7 @@ distribution except that it does not affect the magnitude of the curve.</p>
 <p>The <a class="reference internal" href="../_autosummary/baybe.transformations.basic.TriangularTransformation.html#baybe.transformations.basic.TriangularTransformation" title="baybe.transformations.basic.TriangularTransformation"><code class="xref py py-class docutils literal notranslate"><span class="pre">TriangularTransformation</span></code></a> is a piecewise affine
 transformation with the shape of a triangle. This is useful for steering target values
 to specific set points with symmetric or asymmetric penalty.</p>
-<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
-<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 docutils">
-<div class="sd-col sd-d-flex-column sd-col-auto sd-col-xs-auto sd-col-sm-auto sd-col-md-auto sd-col-lg-auto docutils">
 <p><img alt="Transforms" src="../_images/triangular1.svg" /></p>
-</div>
-<div class="sd-col sd-d-flex-column sd-col-5 sd-col-xs-5 sd-col-sm-5 sd-col-md-5 sd-col-lg-5 docutils">
 <p><strong>Transformation rule</strong></p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
@@ -1310,9 +1265,6 @@ to specific set points with symmetric or asymmetric penalty.</p>
 respectively, and <span class="math notranslate nohighlight">\(c_\text{peak}\)</span> is its peak location. Note that there also exist
 convenience constructors that allow for alternative parameterizations of the
 transformation, as exemplified below.</p>
-</div>
-</div>
-</div>
 <p><strong>Example</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">baybe.transformations</span><span class="w"> </span><span class="kn">import</span> <span class="n">TriangularTransformation</span>
 
