@@ -245,6 +245,11 @@ ax = create_pi_plot(pi_per_iteration)
 create_example_plots(ax=ax, base_name="probability_of_improvement")
 ```
 
+
+    
+    
+
+
 The results nicely reveal: As the experimentation progresses, the obtained
 PI values tend to shrink, reflecting the fact that there is (on average) less room
 for improvement after each new measurement. This not only confirms that the

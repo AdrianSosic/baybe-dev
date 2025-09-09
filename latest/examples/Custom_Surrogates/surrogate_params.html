@@ -1173,6 +1173,10 @@ The defaults will be used if none specified</p>
     <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
 </pre></div>
 </div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>The validator will give an error here:
+The provided dictionary for &#39;model_params&#39; is invalid.
+</pre></div>
+</div>
 </section>
 <section id="links-for-documentation">
 <h2>Links for documentation<a class="headerlink" href="#links-for-documentation" title="Link to this heading">¶</a></h2>
@@ -1200,12 +1204,21 @@ The defaults will be used if none specified</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">surrogate_model</span><span class="o">.</span><span class="n">to_json</span><span class="p">(),</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">*</span> <span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>The model object in json format:
+{&quot;type&quot;: &quot;NGBoostSurrogate&quot;, &quot;model_params&quot;: {&quot;n_estimators&quot;: 50, &quot;verbose&quot;: true}}
+</pre></div>
+</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s do a first round of recommendation</span>
 <span class="n">recommendation</span> <span class="o">=</span> <span class="n">campaign</span><span class="o">.</span><span class="n">recommend</span><span class="p">(</span><span class="n">batch_size</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Recommendation from campaign:&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">recommendation</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Recommendation from campaign:
+    Granularity  Pressure[bar]  Temperature[degree_C]    Solvent
+331      medium           10.0             122.222222  Solvent D
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add some fake results</span>
@@ -1220,6 +1233,9 @@ The defaults will be used if none specified</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Here you will see some model outputs as we set verbose to True&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Here you will see some model outputs as we set verbose to True
+</pre></div>
+</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Do another round of recommendation</span>
 <span class="n">recommendation</span> <span class="o">=</span> <span class="n">campaign</span><span class="o">.</span><span class="n">recommend</span><span class="p">(</span><span class="n">batch_size</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
@@ -1227,6 +1243,12 @@ The defaults will be used if none specified</p>
 <p>Print second round of recommendation</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Recommendation from campaign:&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">recommendation</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Recommendation from campaign:
+      Granularity  Pressure[bar]  Temperature[degree_C]    Solvent
+index                                                             
+0          coarse            1.0                  100.0  Solvent A
 </pre></div>
 </div>
 </section>

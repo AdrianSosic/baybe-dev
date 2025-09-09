@@ -87,6 +87,10 @@ except TypeError as e:
     print(e)
 ```
 
+    The validator will give an error here:
+    The provided dictionary for 'model_params' is invalid.
+
+
 ## Links for documentation
 
 [`RandomForestModel`](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html)
@@ -117,6 +121,12 @@ print("The model object in json format:")
 print(surrogate_model.to_json(), end="\n" * 3)
 ```
 
+    The model object in json format:
+    {"type": "NGBoostSurrogate", "model_params": {"n_estimators": 50, "verbose": true}}
+    
+    
+
+
 
 ```python
 # Let's do a first round of recommendation
@@ -128,6 +138,11 @@ recommendation = campaign.recommend(batch_size=1)
 print("Recommendation from campaign:")
 print(recommendation)
 ```
+
+    Recommendation from campaign:
+        Granularity  Pressure[bar]  Temperature[degree_C]    Solvent
+    331      medium           10.0             122.222222  Solvent D
+
 
 
 ```python
@@ -145,6 +160,9 @@ Note that this model is only triggered when there is data.
 print("Here you will see some model outputs as we set verbose to True")
 ```
 
+    Here you will see some model outputs as we set verbose to True
+
+
 
 ```python
 # Do another round of recommendation
@@ -158,6 +176,12 @@ Print second round of recommendation
 print("Recommendation from campaign:")
 print(recommendation)
 ```
+
+    Recommendation from campaign:
+          Granularity  Pressure[bar]  Temperature[degree_C]    Solvent
+    index                                                             
+    0          coarse            1.0                  100.0  Solvent A
+
 
 ## Using configuration instead
 

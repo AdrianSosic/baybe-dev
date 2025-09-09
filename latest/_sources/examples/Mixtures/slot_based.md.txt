@@ -226,6 +226,43 @@ print(
 )
 ```
 
+       Slot1_Label Slot2_Label Slot3_Label  Slot1_Amount  Slot2_Amount  Slot3_Amount
+    0      acetone     ethanol    methanol           0.0           0.0         100.0
+    1      acetone     ethanol    methanol           0.0          25.0          75.0
+    2      acetone     ethanol    methanol           0.0          50.0          50.0
+    3      acetone     ethanol    methanol           0.0          75.0          25.0
+    4      acetone     ethanol    methanol           0.0         100.0           0.0
+    5      acetone     ethanol    methanol          25.0           0.0          75.0
+    6      acetone     ethanol    methanol          25.0          25.0          50.0
+    7      acetone     ethanol    methanol          25.0          50.0          25.0
+    8      acetone     ethanol    methanol          25.0          75.0           0.0
+    9      acetone     ethanol    methanol          50.0           0.0          50.0
+    10     acetone     ethanol    methanol          50.0          25.0          25.0
+    11     acetone     ethanol    methanol          50.0          50.0           0.0
+    12     acetone     ethanol    methanol          75.0           0.0          25.0
+    13     acetone     ethanol    methanol          75.0          25.0           0.0
+    14     acetone     ethanol    methanol         100.0           0.0           0.0
+    15     acetone     ethanol       water           0.0           0.0         100.0
+    16     acetone     ethanol       water           0.0          25.0          75.0
+    17     acetone     ethanol       water           0.0          50.0          50.0
+    18     acetone     ethanol       water           0.0          75.0          25.0
+    19     acetone     ethanol       water          25.0           0.0          75.0
+    20     acetone     ethanol       water          25.0          25.0          50.0
+    21     acetone     ethanol       water          25.0          50.0          25.0
+    22     acetone     ethanol       water          50.0           0.0          50.0
+    23     acetone     ethanol       water          50.0          25.0          25.0
+    24     acetone     ethanol       water          75.0           0.0          25.0
+    25     acetone    methanol       water           0.0          25.0          75.0
+    26     acetone    methanol       water           0.0          50.0          50.0
+    27     acetone    methanol       water           0.0          75.0          25.0
+    28     acetone    methanol       water          25.0          25.0          50.0
+    29     acetone    methanol       water          25.0          50.0          25.0
+    30     acetone    methanol       water          50.0          25.0          25.0
+    31     ethanol    methanol       water          25.0          25.0          50.0
+    32     ethanol    methanol       water          25.0          50.0          25.0
+    33     ethanol    methanol       water          50.0          25.0          25.0
+
+
 ````{admonition} Simplex Construction
 :class: tip
 In this example, we use the
@@ -275,6 +312,9 @@ assert n_wrong_sum == 0
 print("Number of configurations whose amounts do not sum to 100: ", n_wrong_sum)
 ```
 
+    Number of configurations whose amounts do not sum to 100:  0
+
+
 * There are no duplicate slot labels:
 
 
@@ -284,6 +324,9 @@ assert n_duplicates == 0
 print("Number of configurations with duplicate slot labels: ", n_duplicates)
 ```
 
+    Number of configurations with duplicate slot labels:  0
+
+
 * There are no permutation-invariant configurations:
 
 
@@ -292,6 +335,9 @@ n_permute = slots.apply(frozenset, axis=1).duplicated().sum()
 assert n_permute == 0
 print("Number of permuted configurations: ", n_permute)
 ```
+
+    Number of permuted configurations:  0
+
 
 ## Verification of Span
 
@@ -343,3 +389,8 @@ for K in range(1, 4):
         f"{n_combinations_actual} ({n_combinations_expected} expected)"
     )
 ```
+
+    Number of unique 1-solvent entries: 4 (4 expected)
+    Number of unique 2-solvent entries: 18 (18 expected)
+    Number of unique 3-solvent entries: 12 (12 expected)
+

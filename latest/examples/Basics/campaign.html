@@ -1184,6 +1184,16 @@ objective.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">recommendation</span><span class="p">)</span>
 </pre></div>
 </div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Recommended measurements with batch_size = 2: 
+      Solvent               Base                        Ligand  Temperature  \
+216      DMAc     Cesium acetate                 (t-Bu)PhCPhos         90.0   
+398  p-Xylene  Potassium acetate  Di-tert-butylphenylphosphine         90.0   
+
+     Concentration  
+216          0.057  
+398          0.153  
+</pre></div>
+</div>
 <p>Adding target values is done by creating a new column in the <code class="docutils literal notranslate"><span class="pre">recommendation</span></code>
 dataframe named after the target.
 In this example, we use the <code class="docutils literal notranslate"><span class="pre">add_fake_measurements()</span></code> utility to create fake results.
@@ -1191,6 +1201,16 @@ We then update the campaign by adding the measurements.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">add_fake_measurements</span><span class="p">(</span><span class="n">recommendation</span><span class="p">,</span> <span class="n">campaign</span><span class="o">.</span><span class="n">targets</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">Recommended experiments with fake measured values: &quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">recommendation</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Recommended experiments with fake measured values: 
+      Solvent               Base                        Ligand  Temperature  \
+216      DMAc     Cesium acetate                 (t-Bu)PhCPhos         90.0   
+398  p-Xylene  Potassium acetate  Di-tert-butylphenylphosphine         90.0   
+
+     Concentration      yield  
+216          0.057  46.434336  
+398          0.153  96.799668  
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">campaign</span><span class="o">.</span><span class="n">add_measurements</span><span class="p">(</span><span class="n">recommendation</span><span class="p">)</span>

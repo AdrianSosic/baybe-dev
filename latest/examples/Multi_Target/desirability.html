@@ -1186,6 +1186,12 @@ up a <a class="reference internal" href="../../_autosummary/baybe.campaign.Campa
 <span class="nb">print</span><span class="p">(</span><span class="n">recommendations</span><span class="p">)</span>
 </pre></div>
 </div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>   parameter
+0   0.268517
+1   0.440561
+2   0.791612
+</pre></div>
+</div>
 </section>
 <section id="accessing-desirability-values">
 <h2>Accessing Desirability Values<a class="headerlink" href="#accessing-desirability-values" title="Link to this heading">¶</a></h2>
@@ -1199,6 +1205,12 @@ up a <a class="reference internal" href="../../_autosummary/baybe.campaign.Campa
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">campaign</span><span class="o">.</span><span class="n">add_measurements</span><span class="p">(</span><span class="n">recommendations</span><span class="p">)</span>
 <span class="n">desirability</span> <span class="o">=</span> <span class="n">objective</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">recommendations</span><span class="p">,</span> <span class="n">allow_extra</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">recommendations</span><span class="p">,</span> <span class="n">desirability</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>   parameter  target_max  target_min  target_match  Desirability
+0   0.268517          65          -8            55      0.653918
+1   0.440561          35          -3            25      0.130002
+2   0.791612          87          -5            48      0.827870
 </pre></div>
 </div>
 </section>

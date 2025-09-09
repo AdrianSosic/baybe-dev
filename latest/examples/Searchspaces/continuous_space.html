@@ -1128,6 +1128,19 @@ Let us draw some samples from it and verify that they are within the bounds:</p>
 <span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">samples</span> <span class="o">&gt;=</span> <span class="n">BOUNDS</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="ow">and</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">samples</span> <span class="o">&lt;=</span> <span class="n">BOUNDS</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 </div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>        x_1       x_2       x_3       x_4
+0  0.744930  0.216211  0.425814 -0.233493
+1  0.417105  0.569207 -0.171349  0.145760
+2 -0.232138  0.827428  0.482253  0.654454
+3  0.164554 -0.601372  0.101648  0.496210
+4 -0.108162  0.192249  0.278512  0.414172
+5 -0.072721 -0.248753 -0.352053 -0.351211
+6  0.169516  0.268263 -0.623995  0.537590
+7  0.990299 -0.131181 -0.226822 -0.284299
+8 -0.392166 -0.796565  0.131235 -0.313460
+9  0.517911  0.472173  0.497541  0.076467
+</pre></div>
+</div>
 <p>There are several ways we can turn the above objects into a search space.
 This provides a lot of flexibility depending on the context:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Using conversion:</span>

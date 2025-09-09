@@ -67,6 +67,9 @@ except FileNotFoundError as e:
     print(e)
 ```
 
+    [Errno 2] No such file or directory: 'benchmarks/data/direct_arylation/data.csv'
+
+
 ## Inclusion of initial data
 
 To include initial data, we sample some rows from the lookup table.
@@ -179,6 +182,15 @@ results = simulate_scenarios(
 )
 ```
 
+    
+
+    
+
+    
+
+    
+
+
 The following lines plot the results and save the plot in run_full_initial_data.png
 
 
@@ -192,3 +204,8 @@ plt.legend(loc="lower right")
 plt.gcf().set_size_inches(20, 8)
 plt.savefig("./run_full_initial_data.png")
 ```
+
+
+    
+    
+

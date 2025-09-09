@@ -186,6 +186,51 @@ for p in (0.01, 0.02, 0.05, 0.08, 0.2):
     results.append(result_fraction)
 ```
 
+    
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+
 For comparison, we also optimize the function without using any initial data:
 
 
@@ -199,6 +244,15 @@ result_baseline = simulate_scenarios(
 )
 results = pd.concat([result_baseline, *results])
 ```
+
+    
+
+    
+
+    
+
+    
+
 
 All that remains is to visualize the results.
 As the example shows, the optimization speed can be significantly increased by
@@ -217,6 +271,11 @@ ax = sns.lineplot(
 )
 create_example_plots(ax=ax, base_name="basic_transfer_learning")
 ```
+
+
+    
+    
+
 ```{image} basic_transfer_learning_light.svg
 :align: center
 :class: only-light

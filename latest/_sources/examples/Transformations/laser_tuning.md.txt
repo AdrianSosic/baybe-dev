@@ -118,6 +118,18 @@ fig, axs = plt.subplots(2, 1, figsize=(8, 10))
 axs[0].plot(voltage_grid, induced_λ, color="tab:blue")
 ```
 
+
+
+
+    [<matplotlib.lines.Line2D at 0x7f31fdb8f820>]
+
+
+
+
+    
+    
+
+
 Our reference wavelengths for the two multiplexing channels and the acceptable
 tolerance around each are defined as follows:
 
@@ -135,6 +147,13 @@ Let us also add them to the plot:
 axs[0].axhline(λ1, color="tab:red")
 axs[0].axhline(λ2, color="tab:red")
 ```
+
+
+
+
+    <matplotlib.lines.Line2D at 0x7f31fdc9f010>
+
+
 
 Our goal is to align the laser's output wavelength with either of the two reference
 wavelengths, treating both wavelenght as equally desirable. We can express this
@@ -191,13 +210,13 @@ induced_target = target.transform(λ_grid)
 
 ```python
 ax2 = axs[0].twiny()
-ax2.plot(induced_target, λ_grid, color="tab:orange")
-ax2.set_xlabel("Objective Value", color="tab:orange")
-ax2.tick_params(axis="x", labelcolor="tab:orange")
-axs[0].set_xlabel(f"{voltage.name} ({voltage.metadata.unit})", color="tab:blue")
-axs[0].set_ylabel(f"{target.name} ({target.metadata.unit})", color="tab:blue")
-axs[0].tick_params(axis="x", labelcolor="tab:blue")
-axs[0].tick_params(axis="y", labelcolor="tab:blue")
+ax2.plot(induced_target, λ_grid, color="tab:orange");
+ax2.set_xlabel("Objective Value", color="tab:orange");
+ax2.tick_params(axis="x", labelcolor="tab:orange");
+axs[0].set_xlabel(f"{voltage.name} ({voltage.metadata.unit})", color="tab:blue");
+axs[0].set_ylabel(f"{target.name} ({target.metadata.unit})", color="tab:blue");
+axs[0].tick_params(axis="x", labelcolor="tab:blue");
+axs[0].tick_params(axis="y", labelcolor="tab:blue");
 ```
 
 ## Simulating the Optimization Loop
@@ -227,6 +246,17 @@ results = simulate_scenarios(
 )
 ```
 
+    
+
+    
+
+    
+
+    
+
+    
+
+
 ## Results
 
 Let us visualize the optimization process in the second subplot:
@@ -250,6 +280,9 @@ sns.lineplot(
 plt.tight_layout()
 plt.show()
 ```
+
+
+
 
 The plot reveals trajectories converging to two distinct clusters,
 corresponding to the two reference wavelengths $\lambda_1$ and $\lambda_2$. This

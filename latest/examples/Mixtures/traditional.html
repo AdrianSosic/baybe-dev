@@ -1199,6 +1199,19 @@ random points from the search space:</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">recommendations</span><span class="p">)</span>
 </pre></div>
 </div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>       Base1      Base2  PhaseAgent1  PhaseAgent2   Solvent1   Solvent2
+0   7.199198  15.261871     0.250830     2.313431  59.314319  15.660351
+1   0.581680  10.909345     4.359893     0.012124  45.842002  38.294956
+2   6.622386  14.870481     1.479876     1.594038  65.178615  10.254604
+3   4.927633  10.210020     0.628946     3.785727  53.207735  27.239939
+4   0.215841  16.501489     4.546225     0.399709  14.750881  63.585854
+5   8.192532   9.131949     0.185470     4.404370  73.165867   4.919812
+6   1.504376  13.123454     0.457794     3.621924  12.954938  68.337513
+7   4.151752  13.594137     2.270972     0.247667  65.591810  14.143661
+8  13.377853   4.082063     1.417214     0.830275  78.467194   1.825401
+9  17.985853  13.264905     1.605945     0.588339  49.599996  16.954963
+</pre></div>
+</div>
 <p>Computing the respective row sums reveals the expected result:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
     <span class="p">{</span>
@@ -1208,6 +1221,19 @@ random points from the search space:</p>
     <span class="p">}</span>
 <span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">stats</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>   Total  Total_Bases  Total_Phase_Agents
+0  100.0    22.461069            2.564261
+1  100.0    11.491025            4.372017
+2  100.0    21.492867            3.073914
+3  100.0    15.137653            4.414673
+4  100.0    16.717330            4.945934
+5  100.0    17.324481            4.589840
+6  100.0    14.627830            4.079718
+7  100.0    17.745890            2.518640
+8  100.0    17.459915            2.247489
+9  100.0    31.250758            2.194284
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">stats</span><span class="p">[</span><span class="s2">&quot;Total&quot;</span><span class="p">],</span> <span class="mi">100</span><span class="p">)</span>

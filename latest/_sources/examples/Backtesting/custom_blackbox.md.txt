@@ -119,6 +119,15 @@ results = simulate_scenarios(
 )
 ```
 
+    
+
+    
+
+    
+
+    
+
+
 ## Plotting the Results
 
 Finally, we compare the trajectories of the campaigns:
@@ -135,6 +144,11 @@ ax = sns.lineplot(
 )
 create_example_plots(ax=ax, base_name="custom_blackbox")
 ```
+
+
+    
+    
+
 ```{image} custom_blackbox_light.svg
 :align: center
 :class: only-light

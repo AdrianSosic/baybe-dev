@@ -1180,6 +1180,85 @@ Note that multiple dependencies have to be included in a single constraint objec
 <span class="nb">print</span><span class="p">(</span><span class="n">campaign</span><span class="p">)</span>
 </pre></div>
 </div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Campaign
+   Meta Data
+      Batches done: 0
+      Fits done: 0
+      Discrete Subspace Meta Data
+         Recommended: 0/35
+         Measured: 0/35
+         Excluded: 0/35
+   SearchSpace
+      Search Space Type: DISCRETE
+      SubspaceDiscrete
+         Discrete Parameters
+                  Name                        Type  ...                   Encoding
+</pre></div>
+</div>
+<p>nActiveValues
+0    Frac1  NumericalDiscreteParameter  …                       None
+NaN
+1   FrameA        CategoricalParameter  …    CategoricalEncoding.OHE
+2.0
+2   FrameB        CategoricalParameter  …    CategoricalEncoding.OHE
+2.0
+3     Solv          SubstanceParameter  …  SubstanceEncoding.MORDRED
+2.0
+4  Switch1        CategoricalParameter  …    CategoricalEncoding.OHE
+2.0
+5  Switch2        CategoricalParameter  …    CategoricalEncoding.OHE
+2.0</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>            [6 rows x 5 columns]
+         Experimental Representation
+                 Solv Switch1  ... FrameA  FrameB
+            0      C1     off  ...      A       A
+            1      C1     off  ...      A       A
+            2      C1     off  ...      A       B
+            ..    ...     ...  ...    ...     ...
+            32  water      on  ...      A       B
+            33  water      on  ...      B       A
+            34  water      on  ...      B       B
+            
+            [35 rows x 6 columns]
+         Constraints
+                          Type Affected_Paramet
+            0  DiscreteDepe...  [Switch1, Sw...
+         Computational Representation
+                Frac1  FrameA_A  ...  Switch2_left  Switch2_right
+            0     0.0       1.0  ...           1.0            0.0
+            1     0.0       1.0  ...           0.0            1.0
+            2     0.0       1.0  ...           0.0            1.0
+            ..    ...       ...  ...           ...            ...
+            32  100.0       1.0  ...           0.0            1.0
+            33  100.0       0.0  ...           0.0            1.0
+            34  100.0       0.0  ...           0.0            1.0
+            
+            [35 rows x 10 columns]
+   Objective
+      Type: SingleTargetObjective
+      Targets
+                       Type      Name   Transformation  Minimize
+         0  NumericalTarget  Target_1  IdentityTran...     False
+   TwoPhaseMetaRecommender
+      Initial recommender
+         RandomRecommender
+            Compatibility: SearchSpaceType.HYBRID
+      Recommender
+         BotorchRecommender
+            Surrogate
+               GaussianProcessSurrogate
+                  Supports Transfer Learning: True
+                  Kernel factory: DefaultKernelFactory()
+            Acquisition function: None
+            Compatibility: SearchSpaceType.HYBRID
+            Sequential continuous: True
+            Hybrid sampler: None
+            Sampling percentage: 1.0
+      Switch after: 1
+      Remain switched: False
+      Has switched: False
+</pre></div>
+</div>
 </section>
 <section id="manual-verification-of-the-constraints">
 <h2>Manual verification of the constraints<a class="headerlink" href="#manual-verification-of-the-constraints" title="Link to this heading">¶</a></h2>
@@ -1225,6 +1304,21 @@ constraints.</p>
     <span class="n">rec</span> <span class="o">=</span> <span class="n">campaign</span><span class="o">.</span><span class="n">recommend</span><span class="p">(</span><span class="n">batch_size</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
     <span class="n">add_fake_measurements</span><span class="p">(</span><span class="n">rec</span><span class="p">,</span> <span class="n">campaign</span><span class="o">.</span><span class="n">targets</span><span class="p">)</span>
     <span class="n">campaign</span><span class="o">.</span><span class="n">add_measurements</span><span class="p">(</span><span class="n">rec</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>#### ITERATION 1 ####
+## ASSERTS ##
+Number entries with both switches on (expected 24):  24
+Number entries with Switch1 off (expected 4):        4
+Number entries with Switch2 off (expected 6):       6
+Number entries with both switches off (expected 1):  1
+
+#### ITERATION 2 ####
+## ASSERTS ##
+Number entries with both switches on (expected 24):  24
+Number entries with Switch1 off (expected 4):        4
+Number entries with Switch2 off (expected 6):       6
+Number entries with both switches off (expected 1):  1
 </pre></div>
 </div>
 </section>

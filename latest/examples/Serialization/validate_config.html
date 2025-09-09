@@ -1260,12 +1260,18 @@ interpret this part of the code as <code class="docutils literal notranslate"><s
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The first config seems valid.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>The first config seems valid.
+</pre></div>
+</div>
 <p>This should fail.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
     <span class="n">Campaign</span><span class="o">.</span><span class="n">validate_config</span><span class="p">(</span><span class="n">INVALID_CONFIG</span><span class="p">)</span>
     <span class="n">campaign</span> <span class="o">=</span> <span class="n">Campaign</span><span class="o">.</span><span class="n">from_config</span><span class="p">(</span><span class="n">INVALID_CONFIG</span><span class="p">)</span>
 <span class="k">except</span> <span class="n">ClassValidationError</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Something is wrong with the second config, which is what we expected!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Something is wrong with the second config, which is what we expected!
 </pre></div>
 </div>
 </section>

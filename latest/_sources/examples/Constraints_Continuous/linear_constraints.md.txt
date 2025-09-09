@@ -166,6 +166,9 @@ print(
 )
 ```
 
+    1.0*x_1 + 1.0*x_2 = 1.0 satisfied in all recommendations?  True
+
+
 $1.0*x_3 - 1.0*x_4 = 2.0$
 
 
@@ -178,6 +181,9 @@ print(
 )
 ```
 
+    1.0*x_3 - 1.0*x_4 = 2.0 satisfied in all recommendations?  True
+
+
 $1.0*x_1 + 1.0*x_3 >= 1.0$
 
 
@@ -188,6 +194,9 @@ print(
 )
 ```
 
+    1.0*x_1 + 1.0*x_3 >= 1.0 satisfied in all recommendations?  True
+
+
 $2.0*x_2 + 3.0*x_4 <= 1.0$
 
 
@@ -197,3 +206,6 @@ print(
     (2.0 * measurements["x_2"] + 3.0 * measurements["x_4"]).le(1.0 + TOLERANCE).all(),
 )
 ```
+
+    2.0*x_2 + 3.0*x_4 <= 1.0 satisfied in all recommendations?  True
+

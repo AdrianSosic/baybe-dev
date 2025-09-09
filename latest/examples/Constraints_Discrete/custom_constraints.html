@@ -1205,6 +1205,12 @@ access to.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">searchspace</span> <span class="o">=</span> <span class="n">SearchSpace</span><span class="o">.</span><span class="n">from_product</span><span class="p">(</span><span class="n">parameters</span><span class="o">=</span><span class="n">parameters</span><span class="p">,</span> <span class="n">constraints</span><span class="o">=</span><span class="p">[</span><span class="n">constraint</span><span class="p">])</span>
 </pre></div>
 </div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>/home/runner/work/baybe-dev/baybe-dev/baybe/utils/chemistry.py:126:
+</pre></div>
+</div>
+<p>DeprecationWarning: Substance encoding ‘RDKIT’ is deprecated and will be disabled in a
+future version. Use ‘RDKIT2DDESCRIPTORS’ instead.
+warnings.warn(</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">objective</span> <span class="o">=</span> <span class="n">SingleTargetObjective</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">NumericalTarget</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;yield&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -1213,6 +1219,81 @@ access to.</p>
 <h2>Creating and printing the campaign<a class="headerlink" href="#creating-and-printing-the-campaign" title="Link to this heading">¶</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">campaign</span> <span class="o">=</span> <span class="n">Campaign</span><span class="p">(</span><span class="n">searchspace</span><span class="o">=</span><span class="n">searchspace</span><span class="p">,</span> <span class="n">objective</span><span class="o">=</span><span class="n">objective</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">campaign</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Campaign
+   Meta Data
+      Batches done: 0
+      Fits done: 0
+      Discrete Subspace Meta Data
+         Recommended: 0/450
+         Measured: 0/450
+         Excluded: 0/450
+   SearchSpace
+      Search Space Type: DISCRETE
+      SubspaceDiscrete
+         Discrete Parameters
+                        Name                        Type  ...
+</pre></div>
+</div>
+<p>Encoding nActiveValues
+0  Concentration  NumericalDiscreteParameter  …
+None           NaN
+1        Solvent          SubstanceParameter  …
+SubstanceEncoding.RDKIT           8.0
+2          Speed        CategoricalParameter  …
+CategoricalEncoding.INT           5.0
+3    Temperature  NumericalDiscreteParameter  …
+None           NaN</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>            [4 rows x 5 columns]
+         Experimental Representation
+                Solvent      Speed  Temperature  Concentration
+            0        C1       fast        100.0            1.0
+            1        C1       fast        100.0            2.0
+            2        C1       fast        100.0            5.0
+            ..      ...        ...          ...            ...
+            447   water  very slow        200.0            1.0
+            448   water  very slow        200.0            2.0
+            449   water  very slow        200.0            5.0
+            
+            [450 rows x 4 columns]
+         Constraints
+                          Type Affected_Paramet
+            0  DiscreteCust...  [Concentrati...
+         Computational Representation
+                 Concentration  Solvent_RDKIT2DD  ...  Speed  Temperature
+            0              1.0              0.0   ...    0.0        100.0
+            1              2.0              0.0   ...    0.0        100.0
+            2              5.0              0.0   ...    0.0        100.0
+            ..             ...              ...   ...    ...          ...
+            447            1.0              0.0   ...    4.0        200.0
+            448            2.0              0.0   ...    4.0        200.0
+            449            5.0              0.0   ...    4.0        200.0
+            
+            [450 rows x 8 columns]
+   Objective
+      Type: SingleTargetObjective
+      Targets
+                       Type   Name   Transformation  Minimize
+         0  NumericalTarget  yield  IdentityTran...     False
+   TwoPhaseMetaRecommender
+      Initial recommender
+         RandomRecommender
+            Compatibility: SearchSpaceType.HYBRID
+      Recommender
+         BotorchRecommender
+            Surrogate
+               GaussianProcessSurrogate
+                  Supports Transfer Learning: True
+                  Kernel factory: DefaultKernelFactory()
+            Acquisition function: None
+            Compatibility: SearchSpaceType.HYBRID
+            Sequential continuous: True
+            Hybrid sampler: None
+            Sampling percentage: 1.0
+      Switch after: 1
+      Remain switched: False
+      Has switched: False
 </pre></div>
 </div>
 </section>
@@ -1265,6 +1346,29 @@ constraints.</p>
     <span class="n">rec</span> <span class="o">=</span> <span class="n">campaign</span><span class="o">.</span><span class="n">recommend</span><span class="p">(</span><span class="n">batch_size</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
     <span class="n">add_fake_measurements</span><span class="p">(</span><span class="n">rec</span><span class="p">,</span> <span class="n">campaign</span><span class="o">.</span><span class="n">targets</span><span class="p">)</span>
     <span class="n">campaign</span><span class="o">.</span><span class="n">add_measurements</span><span class="p">(</span><span class="n">rec</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>#### ITERATION 1 ####
+## ASSERTS ##
+Number of entries with water, temp &gt; 120 and concentration &gt; 5:       0
+Number of entries with C2, temp &gt; 180 and concentration &gt; 3:          0
+Number of entries with C3, temp &gt; 150 and concentration &gt; 3:          0
+
+
+#### ITERATION 2 ####
+## ASSERTS ##
+Number of entries with water, temp &gt; 120 and concentration &gt; 5:       0
+Number of entries with C2, temp &gt; 180 and concentration &gt; 3:          0
+Number of entries with C3, temp &gt; 150 and concentration &gt; 3:          0
+
+
+
+
+#### ITERATION 3 ####
+## ASSERTS ##
+Number of entries with water, temp &gt; 120 and concentration &gt; 5:       0
+Number of entries with C2, temp &gt; 180 and concentration &gt; 3:          0
+Number of entries with C3, temp &gt; 150 and concentration &gt; 3:          0
 </pre></div>
 </div>
 </section>

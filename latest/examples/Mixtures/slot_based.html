@@ -1323,6 +1323,43 @@ its configurations:</p>
 <span class="p">)</span>
 </pre></div>
 </div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>   Slot1_Label Slot2_Label Slot3_Label  Slot1_Amount  Slot2_Amount  Slot3_Amount
+0      acetone     ethanol    methanol           0.0           0.0         100.0
+1      acetone     ethanol    methanol           0.0          25.0          75.0
+2      acetone     ethanol    methanol           0.0          50.0          50.0
+3      acetone     ethanol    methanol           0.0          75.0          25.0
+4      acetone     ethanol    methanol           0.0         100.0           0.0
+5      acetone     ethanol    methanol          25.0           0.0          75.0
+6      acetone     ethanol    methanol          25.0          25.0          50.0
+7      acetone     ethanol    methanol          25.0          50.0          25.0
+8      acetone     ethanol    methanol          25.0          75.0           0.0
+9      acetone     ethanol    methanol          50.0           0.0          50.0
+10     acetone     ethanol    methanol          50.0          25.0          25.0
+11     acetone     ethanol    methanol          50.0          50.0           0.0
+12     acetone     ethanol    methanol          75.0           0.0          25.0
+13     acetone     ethanol    methanol          75.0          25.0           0.0
+14     acetone     ethanol    methanol         100.0           0.0           0.0
+15     acetone     ethanol       water           0.0           0.0         100.0
+16     acetone     ethanol       water           0.0          25.0          75.0
+17     acetone     ethanol       water           0.0          50.0          50.0
+18     acetone     ethanol       water           0.0          75.0          25.0
+19     acetone     ethanol       water          25.0           0.0          75.0
+20     acetone     ethanol       water          25.0          25.0          50.0
+21     acetone     ethanol       water          25.0          50.0          25.0
+22     acetone     ethanol       water          50.0           0.0          50.0
+23     acetone     ethanol       water          50.0          25.0          25.0
+24     acetone     ethanol       water          75.0           0.0          25.0
+25     acetone    methanol       water           0.0          25.0          75.0
+26     acetone    methanol       water           0.0          50.0          50.0
+27     acetone    methanol       water           0.0          75.0          25.0
+28     acetone    methanol       water          25.0          25.0          50.0
+29     acetone    methanol       water          25.0          50.0          25.0
+30     acetone    methanol       water          50.0          25.0          25.0
+31     ethanol    methanol       water          25.0          25.0          50.0
+32     ethanol    methanol       water          25.0          50.0          25.0
+33     ethanol    methanol       water          50.0          25.0          25.0
+</pre></div>
+</div>
 <div class="tip admonition">
 <p class="admonition-title">Simplex Construction</p>
 <p>In this example, we use the
@@ -1367,6 +1404,9 @@ inherently ensures the sum constraint, hence we do not pass it to <code class="d
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of configurations whose amounts do not sum to 100: &quot;</span><span class="p">,</span> <span class="n">n_wrong_sum</span><span class="p">)</span>
 </pre></div>
 </div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Number of configurations whose amounts do not sum to 100:  0
+</pre></div>
+</div>
 <ul class="simple">
 <li><p>There are no duplicate slot labels:</p></li>
 </ul>
@@ -1375,12 +1415,18 @@ inherently ensures the sum constraint, hence we do not pass it to <code class="d
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of configurations with duplicate slot labels: &quot;</span><span class="p">,</span> <span class="n">n_duplicates</span><span class="p">)</span>
 </pre></div>
 </div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Number of configurations with duplicate slot labels:  0
+</pre></div>
+</div>
 <ul class="simple">
 <li><p>There are no permutation-invariant configurations:</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">n_permute</span> <span class="o">=</span> <span class="n">slots</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="nb">frozenset</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 <span class="k">assert</span> <span class="n">n_permute</span> <span class="o">==</span> <span class="mi">0</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of permuted configurations: &quot;</span><span class="p">,</span> <span class="n">n_permute</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Number of permuted configurations:  0
 </pre></div>
 </div>
 </section>
@@ -1423,6 +1469,11 @@ implemented in the helper function below.</p>
         <span class="sa">f</span><span class="s2">&quot;Number of unique </span><span class="si">{</span><span class="n">K</span><span class="si">}</span><span class="s2">-solvent entries: &quot;</span>
         <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">n_combinations_actual</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">n_combinations_expected</span><span class="si">}</span><span class="s2"> expected)&quot;</span>
     <span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Number of unique 1-solvent entries: 4 (4 expected)
+Number of unique 2-solvent entries: 18 (18 expected)
+Number of unique 3-solvent entries: 12 (12 expected)
 </pre></div>
 </div>
 </section>

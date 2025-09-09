@@ -71,6 +71,15 @@ for subclass in get_subclasses(Surrogate):
     print(subclass)
 ```
 
+    <class 'baybe.surrogates.custom.CustomONNXSurrogate'>
+    <class 'baybe.surrogates.linear.BayesianLinearSurrogate'>
+    <class 'baybe.surrogates.naive.MeanPredictionSurrogate'>
+    <class 'baybe.surrogates.ngboost.NGBoostSurrogate'>
+    <class 'baybe.surrogates.bandit.BetaBernoulliMultiArmedBanditSurrogate'>
+    <class 'baybe.surrogates.gaussian_process.core.GaussianProcessSurrogate'>
+    <class 'baybe.surrogates.random_forest.RandomForestSurrogate'>
+
+
 Per default a Gaussian Process is used
 You can change the used kernel by using the optional `kernel` keyword.
 
@@ -132,6 +141,26 @@ recommender = TwoPhaseMetaRecommender(
 ```python
 print(recommender)
 ```
+
+    TwoPhaseMetaRecommender
+       Initial recommender
+          RandomRecommender
+             Compatibility: SearchSpaceType.HYBRID
+       Recommender
+          BotorchRecommender
+             Surrogate
+                GaussianProcessSurrogate
+                   Supports Transfer Learning: True
+                   Kernel factory: DefaultKernelFactory()
+             Acquisition function: qLogExpectedImprovement()
+             Compatibility: SearchSpaceType.HYBRID
+             Sequential continuous: True
+             Hybrid sampler: None
+             Sampling percentage: 1.0
+       Switch after: 1
+       Remain switched: False
+       Has switched: False
+
 
 ## Example Searchspace and objective parameters
 
@@ -214,12 +243,40 @@ print("\n\nRecommended experiments: ")
 print(recommendation)
 ```
 
+    
+    
+    Recommended experiments: 
+               Solvent                Base         Ligand  Temperature  \
+    149  Butyornitrile     Cesium pivalate      BrettPhos        105.0   
+    250           DMAc     Cesium pivalate  (t-Bu)PhCPhos        120.0   
+    298           DMAc  Potassium pivalate  (t-Bu)PhCPhos         90.0   
+    
+         Concentration  
+    149          0.153  
+    250          0.100  
+    298          0.100  
+
+
 
 ```python
 add_fake_measurements(recommendation, campaign.targets)
 print("\n\nRecommended experiments with fake measured values: ")
 print(recommendation)
 ```
+
+    
+    
+    Recommended experiments with fake measured values: 
+               Solvent                Base         Ligand  Temperature  \
+    149  Butyornitrile     Cesium pivalate      BrettPhos        105.0   
+    250           DMAc     Cesium pivalate  (t-Bu)PhCPhos        120.0   
+    298           DMAc  Potassium pivalate  (t-Bu)PhCPhos         90.0   
+    
+         Concentration      yield  
+    149          0.153  37.150921  
+    250          0.100  13.620700  
+    298          0.100  -5.692023  
+
 
 
 ```python

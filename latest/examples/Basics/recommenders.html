@@ -1156,6 +1156,15 @@ The surrogate model is then used by the acquisition function to make recommendat
     <span class="nb">print</span><span class="p">(</span><span class="n">subclass</span><span class="p">)</span>
 </pre></div>
 </div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;baybe.surrogates.custom.CustomONNXSurrogate&#39;&gt;
+&lt;class &#39;baybe.surrogates.linear.BayesianLinearSurrogate&#39;&gt;
+&lt;class &#39;baybe.surrogates.naive.MeanPredictionSurrogate&#39;&gt;
+&lt;class &#39;baybe.surrogates.ngboost.NGBoostSurrogate&#39;&gt;
+&lt;class &#39;baybe.surrogates.bandit.BetaBernoulliMultiArmedBanditSurrogate&#39;&gt;
+&lt;class &#39;baybe.surrogates.gaussian_process.core.GaussianProcessSurrogate&#39;&gt;
+&lt;class &#39;baybe.surrogates.random_forest.RandomForestSurrogate&#39;&gt;
+</pre></div>
+</div>
 <p>Per default a Gaussian Process is used
 You can change the used kernel by using the optional <code class="docutils literal notranslate"><span class="pre">kernel</span></code> keyword.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">SURROGATE_MODEL</span> <span class="o">=</span> <span class="n">GaussianProcessSurrogate</span><span class="p">()</span>
@@ -1205,6 +1214,26 @@ Therefore one does not need to specify all of them to create a recommender objec
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">recommender</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>TwoPhaseMetaRecommender
+   Initial recommender
+      RandomRecommender
+         Compatibility: SearchSpaceType.HYBRID
+   Recommender
+      BotorchRecommender
+         Surrogate
+            GaussianProcessSurrogate
+               Supports Transfer Learning: True
+               Kernel factory: DefaultKernelFactory()
+         Acquisition function: qLogExpectedImprovement()
+         Compatibility: SearchSpaceType.HYBRID
+         Sequential continuous: True
+         Hybrid sampler: None
+         Sampling percentage: 1.0
+   Switch after: 1
+   Remain switched: False
+   Has switched: False
 </pre></div>
 </div>
 </section>
@@ -1271,9 +1300,33 @@ as follows.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">recommendation</span><span class="p">)</span>
 </pre></div>
 </div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Recommended experiments: 
+           Solvent                Base         Ligand  Temperature  \
+149  Butyornitrile     Cesium pivalate      BrettPhos        105.0   
+250           DMAc     Cesium pivalate  (t-Bu)PhCPhos        120.0   
+298           DMAc  Potassium pivalate  (t-Bu)PhCPhos         90.0   
+
+     Concentration  
+149          0.153  
+250          0.100  
+298          0.100  
+</pre></div>
+</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">add_fake_measurements</span><span class="p">(</span><span class="n">recommendation</span><span class="p">,</span> <span class="n">campaign</span><span class="o">.</span><span class="n">targets</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">Recommended experiments with fake measured values: &quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">recommendation</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Recommended experiments with fake measured values: 
+           Solvent                Base         Ligand  Temperature  \
+149  Butyornitrile     Cesium pivalate      BrettPhos        105.0   
+250           DMAc     Cesium pivalate  (t-Bu)PhCPhos        120.0   
+298           DMAc  Potassium pivalate  (t-Bu)PhCPhos         90.0   
+
+     Concentration      yield  
+149          0.153  37.150921  
+250          0.100  13.620700  
+298          0.100  -5.692023  
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">campaign</span><span class="o">.</span><span class="n">add_measurements</span><span class="p">(</span><span class="n">recommendation</span><span class="p">)</span>
