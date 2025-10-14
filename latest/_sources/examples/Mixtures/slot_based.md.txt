@@ -226,6 +226,20 @@ print(
 )
 ```
 
+    ________________________________________________________________________________
+    [Memory] Calling baybe.utils.chemistry._molecule_to_fingerprint_features...
+    _molecule_to_fingerprint_features('CC(=O)C', MordredFingerprint())
+    _________________________________molecule_to_fingerprint_features - 0.1s, 0.0min
+    ________________________________________________________________________________
+    [Memory] Calling baybe.utils.chemistry._molecule_to_fingerprint_features...
+    _molecule_to_fingerprint_features('CCO', MordredFingerprint())
+    _________________________________molecule_to_fingerprint_features - 0.1s, 0.0min
+    ________________________________________________________________________________
+    [Memory] Calling baybe.utils.chemistry._molecule_to_fingerprint_features...
+    _molecule_to_fingerprint_features('CO', MordredFingerprint())
+    _________________________________molecule_to_fingerprint_features - 0.0s, 0.0min
+
+
        Slot1_Label Slot2_Label Slot3_Label  Slot1_Amount  Slot2_Amount  Slot3_Amount
     0      acetone     ethanol    methanol           0.0           0.0         100.0
     1      acetone     ethanol    methanol           0.0          25.0          75.0

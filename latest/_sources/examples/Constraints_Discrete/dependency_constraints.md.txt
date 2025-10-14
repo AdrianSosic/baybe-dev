@@ -90,6 +90,16 @@ constraint = DiscreteDependenciesConstraint(
 searchspace = SearchSpace.from_product(parameters=parameters, constraints=[constraint])
 ```
 
+    ________________________________________________________________________________
+    [Memory] Calling baybe.utils.chemistry._molecule_to_fingerprint_features...
+    _molecule_to_fingerprint_features('C', MordredFingerprint())
+    _________________________________molecule_to_fingerprint_features - 0.1s, 0.0min
+    ________________________________________________________________________________
+    [Memory] Calling baybe.utils.chemistry._molecule_to_fingerprint_features...
+    _molecule_to_fingerprint_features('O', MordredFingerprint())
+    _________________________________molecule_to_fingerprint_features - 0.0s, 0.0min
+
+
 
 ```python
 objective = SingleTargetObjective(target=NumericalTarget(name="Target_1"))

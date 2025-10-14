@@ -129,10 +129,44 @@ constraint = DiscreteCustomConstraint(
 searchspace = SearchSpace.from_product(parameters=parameters, constraints=[constraint])
 ```
 
-    /home/runner/work/baybe-dev/baybe-dev/baybe/utils/chemistry.py:126:
+    /home/runner/work/baybe-dev/baybe-dev/baybe/utils/chemistry.py:109:
 DeprecationWarning: Substance encoding 'RDKIT' is deprecated and will be disabled in a
 future version. Use 'RDKIT2DDESCRIPTORS' instead.
       warnings.warn(
+
+
+    ________________________________________________________________________________
+    [Memory] Calling baybe.utils.chemistry._molecule_to_fingerprint_features...
+    _molecule_to_fingerprint_features('C', RDKit2DDescriptorsFingerprint())
+    _________________________________molecule_to_fingerprint_features - 0.2s, 0.0min
+    ________________________________________________________________________________
+    [Memory] Calling baybe.utils.chemistry._molecule_to_fingerprint_features...
+    _molecule_to_fingerprint_features('CC', RDKit2DDescriptorsFingerprint())
+    _________________________________molecule_to_fingerprint_features - 0.0s, 0.0min
+    ________________________________________________________________________________
+    [Memory] Calling baybe.utils.chemistry._molecule_to_fingerprint_features...
+    _molecule_to_fingerprint_features('CCC', RDKit2DDescriptorsFingerprint())
+    _________________________________molecule_to_fingerprint_features - 0.0s, 0.0min
+    ________________________________________________________________________________
+    [Memory] Calling baybe.utils.chemistry._molecule_to_fingerprint_features...
+    _molecule_to_fingerprint_features('CCCC', RDKit2DDescriptorsFingerprint())
+    _________________________________molecule_to_fingerprint_features - 0.0s, 0.0min
+    ________________________________________________________________________________
+    [Memory] Calling baybe.utils.chemistry._molecule_to_fingerprint_features...
+    _molecule_to_fingerprint_features('CCCCC', RDKit2DDescriptorsFingerprint())
+    _________________________________molecule_to_fingerprint_features - 0.0s, 0.0min
+    ________________________________________________________________________________
+    [Memory] Calling baybe.utils.chemistry._molecule_to_fingerprint_features...
+    _molecule_to_fingerprint_features('CCCCCC', RDKit2DDescriptorsFingerprint())
+    _________________________________molecule_to_fingerprint_features - 0.0s, 0.0min
+    ________________________________________________________________________________
+    [Memory] Calling baybe.utils.chemistry._molecule_to_fingerprint_features...
+    _molecule_to_fingerprint_features('c1ccccc1', RDKit2DDescriptorsFingerprint())
+    _________________________________molecule_to_fingerprint_features - 0.0s, 0.0min
+    ________________________________________________________________________________
+    [Memory] Calling baybe.utils.chemistry._molecule_to_fingerprint_features...
+    _molecule_to_fingerprint_features('O', RDKit2DDescriptorsFingerprint())
+    _________________________________molecule_to_fingerprint_features - 0.0s, 0.0min
 
 
 

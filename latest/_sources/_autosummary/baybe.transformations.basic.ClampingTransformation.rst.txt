@@ -35,6 +35,6 @@ ClampingTransformation
 
    .. autosummary::
    
-      ~ClampingTransformation.bounds
+      ~ClampingTransformation.cutoffs
    
    

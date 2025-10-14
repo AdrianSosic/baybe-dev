@@ -98,7 +98,8 @@ dict_ligand = {
     "1268824-69-6": r"CC(OC1=C(P(C2CCCCC2)C3CCCCC3)C(OC(C)C)=CC=C1)C",
     "JackiePhos": r"FC(F)(F)C1=CC(P(C2=C(C3=C(C(C)C)C=C(C(C)C)C=C3C(C)C)C(OC)=CC=C2OC)"
     r"C4=CC(C(F)(F)F)=CC(C(F)(F)F)=C4)=CC(C(F)(F)F)=C1",
-    "SCHEMBL15068049": r"C[C@]1(O2)O[C@](C[C@]2(C)P3C4=CC=CC=C4)(C)O[C@]3(C)C1",
+    "SCHEMBL15068049": r"C[C@]1(O2)O[C@]"
+    r"C(C[C@]2(C)P3C4=CC=CC=C4)(C)O[C@]3(C)C1",
     "Me2PPh": r"CP(C)C1=CC=CC=C1",
 }
 ```
@@ -130,6 +131,118 @@ parameters = [solvent, base, ligand, temperature, concentration]
 searchspace = SearchSpace.from_product(parameters=parameters)
 objective = SingleTargetObjective(target=NumericalTarget(name="yield"))
 ```
+
+    ________________________________________________________________________________
+    [Memory] Calling baybe.utils.chemistry._molecule_to_fingerprint_features...
+    _molecule_to_fingerprint_features('O=C([O-])C.[Cs+]', MordredFingerprint())
+    _________________________________molecule_to_fingerprint_features - 0.0s, 0.0min
+    ________________________________________________________________________________
+    [Memory] Calling baybe.utils.chemistry._molecule_to_fingerprint_features...
+    _molecule_to_fingerprint_features('O=C([O-])C(C)(C)C.[Cs+]', MordredFingerprint())
+    _________________________________molecule_to_fingerprint_features - 0.0s, 0.0min
+    ________________________________________________________________________________
+    [Memory] Calling baybe.utils.chemistry._molecule_to_fingerprint_features...
+    _molecule_to_fingerprint_features('O=C([O-])C.[K+]', MordredFingerprint())
+    _________________________________molecule_to_fingerprint_features - 0.0s, 0.0min
+    ________________________________________________________________________________
+    [Memory] Calling baybe.utils.chemistry._molecule_to_fingerprint_features...
+    _molecule_to_fingerprint_features('O=C([O-])C(C)(C)C.[K+]', MordredFingerprint())
+    _________________________________molecule_to_fingerprint_features - 0.0s, 0.0min
+
+
+    ________________________________________________________________________________
+    [Memory] Calling baybe.utils.chemistry._molecule_to_fingerprint_features...
+    _molecule_to_fingerprint_features('CN(C)C1=CC=CC(N(C)C)=C1C2=CC=CC=C2P(C(C)(C)C)C3=C
+C=CC=C3', MordredFingerprint())
+    _________________________________molecule_to_fingerprint_features - 0.2s, 0.0min
+    ________________________________________________________________________________
+    [Memory] Calling baybe.utils.chemistry._molecule_to_fingerprint_features...
+    _molecule_to_fingerprint_features('CC(OC1=C(P(C2CCCCC2)C3CCCCC3)C(OC(C)C)=CC=C1)C',
+MordredFingerprint())
+
+
+    _________________________________molecule_to_fingerprint_features - 0.2s, 0.0min
+    ________________________________________________________________________________
+    [Memory] Calling baybe.utils.chemistry._molecule_to_fingerprint_features...
+    _molecule_to_fingerprint_features('CC(C)C1=CC(C(C)C)=C(C(C(C)C)=C1)C2=C(P(C3CCCCC3)C
+4CCCCC4)C(OC)=CC=C2OC', MordredFingerprint())
+
+
+    _________________________________molecule_to_fingerprint_features - 0.4s, 0.0min
+    ________________________________________________________________________________
+    [Memory] Calling baybe.utils.chemistry._molecule_to_fingerprint_features...
+    _molecule_to_fingerprint_features('CC(C)(C)P(C1=CC=CC=C1)C(C)(C)C',
+MordredFingerprint())
+    _________________________________molecule_to_fingerprint_features - 0.1s, 0.0min
+    ________________________________________________________________________________
+    [Memory] Calling baybe.utils.chemistry._molecule_to_fingerprint_features...
+    _molecule_to_fingerprint_features('FC(F)(F)C1=CC(P(C2=C(C3=C(C(C)C)C=C(C(C)C)C=C3C(C
+)C)C(OC)=CC=C2OC)C4=CC(C(F)(F)F)=CC(C(F)(F)F)=C4)=CC(C(F)(F)F)=C1',
+    MordredFingerprint())
+
+
+    _________________________________molecule_to_fingerprint_features - 0.4s, 0.0min
+    ________________________________________________________________________________
+    [Memory] Calling baybe.utils.chemistry._molecule_to_fingerprint_features...
+    _molecule_to_fingerprint_features('CP(C)C1=CC=CC=C1', MordredFingerprint())
+    _________________________________molecule_to_fingerprint_features - 0.1s, 0.0min
+    ________________________________________________________________________________
+    [Memory] Calling baybe.utils.chemistry._molecule_to_fingerprint_features...
+    _molecule_to_fingerprint_features('CP(C1=CC=CC=C1)C2=CC=CC=C2',
+MordredFingerprint())
+    _________________________________molecule_to_fingerprint_features - 0.1s, 0.0min
+    ________________________________________________________________________________
+    [Memory] Calling baybe.utils.chemistry._molecule_to_fingerprint_features...
+    _molecule_to_fingerprint_features('P(C1=CC=CO1)(C2=CC=CO2)C3=CC=CO3',
+MordredFingerprint())
+
+
+    _________________________________molecule_to_fingerprint_features - 0.1s, 0.0min
+    ________________________________________________________________________________
+    [Memory] Calling baybe.utils.chemistry._molecule_to_fingerprint_features...
+    _molecule_to_fingerprint_features('P(C1=CC=CC=C1)(C2=CC=CC=C2)C3=CC=CC=C3',
+MordredFingerprint())
+    _________________________________molecule_to_fingerprint_features - 0.1s, 0.0min
+    ________________________________________________________________________________
+    [Memory] Calling baybe.utils.chemistry._molecule_to_fingerprint_features...
+    _molecule_to_fingerprint_features('C[C@]1(O2)O[C@]C(C[C@]2(C)P3C4=CC=CC=C4)(C)O[C@]3
+(C)C1', MordredFingerprint())
+
+
+    _________________________________molecule_to_fingerprint_features - 0.2s, 0.0min
+    ________________________________________________________________________________
+    [Memory] Calling baybe.utils.chemistry._molecule_to_fingerprint_features...
+    _molecule_to_fingerprint_features('P(C1CCCCC1)(C2CCCCC2)C3CCCCC3',
+MordredFingerprint())
+    _________________________________molecule_to_fingerprint_features - 0.1s, 0.0min
+    ________________________________________________________________________________
+    [Memory] Calling baybe.utils.chemistry._molecule_to_fingerprint_features...
+    _molecule_to_fingerprint_features('CC(C1=C(C2=CC=CC=C2P(C3CCCCC3)C4CCCCC4)C(C(C)C)=C
+C(C(C)C)=C1)C', MordredFingerprint())
+
+
+    _________________________________molecule_to_fingerprint_features - 0.2s, 0.0min
+
+
+    ________________________________________________________________________________
+    [Memory] Calling baybe.utils.chemistry._molecule_to_fingerprint_features...
+    _molecule_to_fingerprint_features('CCCCOC(C)=O', MordredFingerprint())
+    _________________________________molecule_to_fingerprint_features - 0.1s, 0.0min
+    ________________________________________________________________________________
+    [Memory] Calling baybe.utils.chemistry._molecule_to_fingerprint_features...
+    _molecule_to_fingerprint_features('CCCC#N', MordredFingerprint())
+    _________________________________molecule_to_fingerprint_features - 0.1s, 0.0min
+    ________________________________________________________________________________
+    [Memory] Calling baybe.utils.chemistry._molecule_to_fingerprint_features...
+    _molecule_to_fingerprint_features('CC(N(C)C)=O', MordredFingerprint())
+    _________________________________molecule_to_fingerprint_features - 0.1s, 0.0min
+    ________________________________________________________________________________
+    [Memory] Calling baybe.utils.chemistry._molecule_to_fingerprint_features...
+    _molecule_to_fingerprint_features('CC1=CC=C(C)C=C1', MordredFingerprint())
+
+
+    _________________________________molecule_to_fingerprint_features - 0.1s, 0.0min
+
 
 ## Constructing campaigns for the simulation loop
 

@@ -22,22 +22,21 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 from matplotlib import pyplot as plt
-from polars import set_random_seed
 ```
 
 
 ```python
-from baybe.campaign import Campaign
-from baybe.parameters.numerical import NumericalContinuousParameter
-from baybe.simulation.scenarios import simulate_scenarios
-from baybe.targets.numerical import NumericalTarget
+from baybe import Campaign, active_settings
+from baybe.parameters import NumericalContinuousParameter
+from baybe.simulation import simulate_scenarios
+from baybe.targets import NumericalTarget
 ```
 
 ## Settings
 
 
 ```python
-set_random_seed(1337)
+active_settings.random_seed = 1337
 ```
 
 

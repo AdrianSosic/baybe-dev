@@ -112,6 +112,14 @@ parameters = [
 searchspace = SearchSpace.from_product(parameters=parameters)
 ```
 
+    ________________________________________________________________________________
+    [Memory] Calling baybe.utils.chemistry._molecule_to_fingerprint_features...
+    _molecule_to_fingerprint_features('C[C@]1(O2)O[C@](C[C@]2(C)P3C4=CC=CC=C4)(C)O[C@]3(C)C1', MordredFingerprint())
+
+
+    _________________________________molecule_to_fingerprint_features - 0.3s, 0.0min
+
+
 
 ```python
 objective = SingleTargetObjective(target=NumericalTarget(name="yield"))
