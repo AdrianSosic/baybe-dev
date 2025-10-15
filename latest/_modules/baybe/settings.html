@@ -1105,8 +1105,7 @@
 <span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">TYPE_CHECKING</span><span class="p">,</span> <span class="n">Any</span><span class="p">,</span> <span class="n">ClassVar</span><span class="p">,</span> <span class="n">TypeVar</span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">attrs</span><span class="w"> </span><span class="kn">import</span> <span class="n">Attribute</span><span class="p">,</span> <span class="n">Factory</span><span class="p">,</span> <span class="n">define</span><span class="p">,</span> <span class="n">field</span><span class="p">,</span> <span class="n">fields</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">attrs.converters</span><span class="w"> </span><span class="kn">import</span> <span class="n">optional</span> <span class="k">as</span> <span class="n">optional_c</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">attrs</span><span class="w"> </span><span class="kn">import</span> <span class="n">Attribute</span><span class="p">,</span> <span class="n">Converter</span><span class="p">,</span> <span class="n">Factory</span><span class="p">,</span> <span class="n">define</span><span class="p">,</span> <span class="n">field</span><span class="p">,</span> <span class="n">fields</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">attrs.setters</span><span class="w"> </span><span class="kn">import</span> <span class="n">validate</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">attrs.validators</span><span class="w"> </span><span class="kn">import</span> <span class="n">in_</span><span class="p">,</span> <span class="n">instance_of</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">attrs.validators</span><span class="w"> </span><span class="kn">import</span> <span class="n">optional</span> <span class="k">as</span> <span class="n">optional_v</span>
@@ -1135,10 +1134,17 @@
     <span class="s2">&quot;to &#39;False&#39;/&#39;Auto&#39;.&quot;</span>
 <span class="p">)</span>
 
-<span class="n">_ENV_VARS_WHITELIST</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;BAYBE_TEST_ENV&quot;</span><span class="p">,</span>  <span class="c1"># defines testing scope</span>
-<span class="p">}</span>
-<span class="sd">&quot;&quot;&quot;The collection of whitelisted **additional** environment variables allowed.&quot;&quot;&quot;</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_validate_whitelist_env_vars</span><span class="p">(</span><span class="nb">vars</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span> <span class="o">/</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Validate the values of non-settings environment variables.&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">value</span> <span class="o">:=</span> <span class="nb">vars</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;BAYBE_TEST_ENV&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">{</span><span class="s2">&quot;CORETEST&quot;</span><span class="p">,</span> <span class="s2">&quot;FULLTEST&quot;</span><span class="p">,</span> <span class="s2">&quot;GPUTEST&quot;</span><span class="p">}:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Allowed values for &#39;BAYBE_TEST_ENV&#39; are &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;&#39;CORETEST&#39;, &#39;FULLTEST&#39;, and &#39;GPUTEST&#39;. Given: &#39;</span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&#39;&quot;</span>
+            <span class="p">)</span>
+    <span class="k">if</span> <span class="nb">vars</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unknown environment variables: </span><span class="si">{</span><span class="nb">set</span><span class="p">(</span><span class="nb">vars</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 
 <span class="k">class</span><span class="w"> </span><span class="nc">_SlottedContextDecorator</span><span class="p">:</span>
@@ -1260,6 +1266,21 @@
     <span class="k">return</span> <span class="n">value</span>
 
 
+<span class="k">def</span><span class="w"> </span><span class="nf">_convert_cache_directory</span><span class="p">(</span>
+    <span class="n">value</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span> <span class="n">field</span><span class="p">:</span> <span class="n">Attribute</span><span class="p">,</span> <span class="o">/</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Attrs converter for the cache directory setting.&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">value</span> <span class="ow">in</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">Path</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="nb">type</span><span class="p">(</span><span class="n">ex</span><span class="p">)(</span>
+            <span class="sa">f</span><span class="s2">&quot;Cannot set &#39;</span><span class="si">{</span><span class="n">field</span><span class="o">.</span><span class="n">alias</span><span class="si">}</span><span class="s2">&#39; to &#39;</span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&#39;. &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;Expected &#39;None&#39; or a path-like object.&quot;</span>
+        <span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">ex</span>
+
+
 <div class="viewcode-block" id="Settings">
 <a class="viewcode-back" href="../../_autosummary/baybe.settings.Settings.html#baybe.settings.Settings">[docs]</a>
 <span class="nd">@define</span><span class="p">(</span><span class="n">kw_only</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">field_transformer</span><span class="o">=</span><span class="n">adjust_defaults</span><span class="p">)</span>
@@ -1294,9 +1315,10 @@
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Controls if campaigns cache their latest recommendation.&quot;&quot;&quot;</span>
 
     <span class="n">cache_directory</span><span class="p">:</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span>
-        <span class="n">default</span><span class="o">=</span><span class="n">Path</span><span class="p">(</span><span class="n">tempfile</span><span class="o">.</span><span class="n">gettempdir</span><span class="p">())</span> <span class="o">/</span> <span class="s2">&quot;.baybe_cache&quot;</span><span class="p">,</span> <span class="n">converter</span><span class="o">=</span><span class="n">optional_c</span><span class="p">(</span><span class="n">Path</span><span class="p">)</span>
+        <span class="n">default</span><span class="o">=</span><span class="n">Path</span><span class="p">(</span><span class="n">tempfile</span><span class="o">.</span><span class="n">gettempdir</span><span class="p">())</span> <span class="o">/</span> <span class="s2">&quot;.baybe_cache&quot;</span><span class="p">,</span>
+        <span class="n">converter</span><span class="o">=</span><span class="n">Converter</span><span class="p">(</span><span class="n">_convert_cache_directory</span><span class="p">,</span> <span class="n">takes_field</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
     <span class="p">)</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;The directory used for caching. Set to ``None`` to disable caching.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The directory used for caching. Set to &quot;&quot; or ``None`` to disable caching.&quot;&quot;&quot;</span>
 
     <span class="n">float_precision_numpy</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span>
         <span class="n">default</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span> <span class="n">converter</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">validator</span><span class="o">=</span><span class="n">in_</span><span class="p">((</span><span class="mi">16</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">64</span><span class="p">))</span>
@@ -1347,7 +1369,7 @@
             <span class="p">(</span><span class="s2">&quot;BAYBE_CACHE_DIR&quot;</span><span class="p">,</span> <span class="n">flds</span><span class="o">.</span><span class="n">cache_directory</span><span class="p">),</span>
         <span class="p">]</span>
         <span class="k">for</span> <span class="n">env_var</span><span class="p">,</span> <span class="n">fld</span> <span class="ow">in</span> <span class="n">pairs</span><span class="p">:</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">val</span> <span class="o">:=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">env_var</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">value</span> <span class="o">:=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">env_var</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
                     <span class="sa">f</span><span class="s2">&quot;The environment variable &#39;</span><span class="si">{</span><span class="n">env_var</span><span class="si">}</span><span class="s2">&#39; has &quot;</span>
                     <span class="sa">f</span><span class="s2">&quot;been deprecated and support will be dropped in a future version. &quot;</span>
@@ -1356,23 +1378,24 @@
                     <span class="ne">DeprecationWarning</span><span class="p">,</span>
                 <span class="p">)</span>
                 <span class="k">if</span> <span class="n">env_var</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;SINGLE_PRECISION&quot;</span><span class="p">):</span>
-                    <span class="n">new_value</span> <span class="o">=</span> <span class="s2">&quot;32&quot;</span> <span class="k">if</span> <span class="n">_to_bool</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="k">else</span> <span class="s2">&quot;64&quot;</span>
+                    <span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;32&quot;</span> <span class="k">if</span> <span class="n">_to_bool</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="k">else</span> <span class="s2">&quot;64&quot;</span>
                 <span class="k">elif</span> <span class="n">env_var</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;POLARS&quot;</span><span class="p">):</span>
-                    <span class="n">new_value</span> <span class="o">=</span> <span class="s2">&quot;false&quot;</span> <span class="k">if</span> <span class="n">_to_bool</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="k">else</span> <span class="s2">&quot;true&quot;</span>
+                    <span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;false&quot;</span> <span class="k">if</span> <span class="n">_to_bool</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="k">else</span> <span class="s2">&quot;true&quot;</span>
                 <span class="k">elif</span> <span class="n">env_var</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;SIMULATION_RUNS&quot;</span><span class="p">):</span>
-                    <span class="n">new_value</span> <span class="o">=</span> <span class="n">val</span>
-                <span class="k">elif</span> <span class="n">env_var</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;CACHE_DIR&quot;</span><span class="p">):</span>
-                    <span class="n">new_value</span> <span class="o">=</span> <span class="n">val</span>
-                <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;BAYBE_</span><span class="si">{</span><span class="p">(</span><span class="n">fld</span><span class="o">.</span><span class="n">alias</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="n">fld</span><span class="o">.</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_value</span>
+                    <span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;true&quot;</span> <span class="k">if</span> <span class="n">_to_bool</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="k">else</span> <span class="s2">&quot;false&quot;</span>
+                <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;BAYBE_</span><span class="si">{</span><span class="p">(</span><span class="n">fld</span><span class="o">.</span><span class="n">alias</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="n">fld</span><span class="o">.</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
         <span class="c1"># &lt;&lt;&lt;&lt;&lt; Deprecation</span>
 
-        <span class="n">env_vars</span> <span class="o">=</span> <span class="p">{</span><span class="n">name</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span> <span class="k">if</span> <span class="n">name</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;BAYBE_&quot;</span><span class="p">)}</span>
-        <span class="n">unknown</span> <span class="o">=</span> <span class="n">env_vars</span> <span class="o">-</span> <span class="p">(</span>
-            <span class="p">{</span><span class="sa">f</span><span class="s2">&quot;BAYBE_</span><span class="si">{</span><span class="n">attr</span><span class="o">.</span><span class="n">alias</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">attr</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_settings_attributes</span><span class="p">}</span>
-            <span class="o">|</span> <span class="n">_ENV_VARS_WHITELIST</span>
+        <span class="n">known_env_vars</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="sa">f</span><span class="s2">&quot;BAYBE_</span><span class="si">{</span><span class="n">attr</span><span class="o">.</span><span class="n">alias</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">attr</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_settings_attributes</span>
+        <span class="p">}</span>
+        <span class="n">_validate_whitelist_env_vars</span><span class="p">(</span>
+            <span class="p">{</span>
+                <span class="n">k</span><span class="p">:</span> <span class="n">v</span>
+                <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+                <span class="k">if</span> <span class="n">k</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;BAYBE_&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">known_env_vars</span>
+            <span class="p">}</span>
         <span class="p">)</span>
-        <span class="k">if</span> <span class="n">unknown</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unknown environment variables: </span><span class="si">{</span><span class="n">unknown</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Settings</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">activate</span><span class="p">()</span>
