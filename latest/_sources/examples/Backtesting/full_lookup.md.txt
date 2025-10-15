@@ -158,7 +158,7 @@ scenarios = {
 RDKit2DDescriptorsFingerprint())
 
 
-    _________________________________molecule_to_fingerprint_features - 1.2s, 0.0min
+    _________________________________molecule_to_fingerprint_features - 1.4s, 0.0min
     ________________________________________________________________________________
     [Memory] Calling baybe.utils.chemistry._molecule_to_fingerprint_features...
     _molecule_to_fingerprint_features('O=C([O-])C(C)(C)C.[Cs+]',
@@ -404,10 +404,6 @@ results = simulate_scenarios(
     n_mc_iterations=N_MC_ITERATIONS,
 )
 ```
-
-    
-
-    
 
     
 
