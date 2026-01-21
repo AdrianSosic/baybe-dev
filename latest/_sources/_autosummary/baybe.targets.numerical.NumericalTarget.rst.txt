@@ -18,12 +18,16 @@ NumericalTarget
       ~NumericalTarget.abs
       ~NumericalTarget.clamp
       ~NumericalTarget.exp
+      ~NumericalTarget.from_constructor_info
       ~NumericalTarget.from_dict
       ~NumericalTarget.from_json
       ~NumericalTarget.from_legacy_interface
       ~NumericalTarget.from_modern_interface
       ~NumericalTarget.get_codomain
       ~NumericalTarget.get_image
+      ~NumericalTarget.hold_output_left_from
+      ~NumericalTarget.hold_output_outside
+      ~NumericalTarget.hold_output_right_from
       ~NumericalTarget.log
       ~NumericalTarget.match_absolute
       ~NumericalTarget.match_bell
@@ -51,6 +55,7 @@ NumericalTarget
    
       ~NumericalTarget.transformation
       ~NumericalTarget.minimize
+      ~NumericalTarget.constructor_info
       ~NumericalTarget.description
       ~NumericalTarget.is_normalized
       ~NumericalTarget.metadata

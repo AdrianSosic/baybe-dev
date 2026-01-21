@@ -90,16 +90,6 @@ constraint = DiscreteDependenciesConstraint(
 searchspace = SearchSpace.from_product(parameters=parameters, constraints=[constraint])
 ```
 
-    ________________________________________________________________________________
-    [Memory] Calling baybe.utils.chemistry._molecule_to_fingerprint_features...
-    _molecule_to_fingerprint_features('C', MordredFingerprint())
-    _________________________________molecule_to_fingerprint_features - 0.1s, 0.0min
-    ________________________________________________________________________________
-    [Memory] Calling baybe.utils.chemistry._molecule_to_fingerprint_features...
-    _molecule_to_fingerprint_features('O', MordredFingerprint())
-    _________________________________molecule_to_fingerprint_features - 0.0s, 0.0min
-
-
 
 ```python
 objective = SingleTargetObjective(target=NumericalTarget(name="Target_1"))
@@ -178,9 +168,10 @@ NaN
           Recommender
              BotorchRecommender
                 Surrogate
-                   GaussianProcessSurrogate
-                      Supports Transfer Learning: True
-                      Kernel factory: DefaultKernelFactory()
+                   CompositeSurrogate(surrogates=_ReplicationMapping(template=GaussianPr
+ocessSurrogate(_searchspace=None, _objective=None, _measurements_hash=None,
+_input_scaler=None, _output_scaler=None, kernel_factory=DefaultKernelFactory(),
+_model=None), _data={}), _modeled_quantity_names=None)
                 Acquisition function: None
                 Compatibility: SearchSpaceType.HYBRID
                 Sequential continuous: True

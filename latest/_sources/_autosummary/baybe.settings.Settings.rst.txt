@@ -29,11 +29,11 @@ Settings
    
       ~Settings.cache_campaign_recommendations
       ~Settings.cache_directory
-      ~Settings.float_precision_numpy
-      ~Settings.float_precision_torch
-      ~Settings.parallelize_simulations
+      ~Settings.parallelize_simulation_runs
       ~Settings.preprocess_dataframes
       ~Settings.random_seed
+      ~Settings.use_single_precision_numpy
+      ~Settings.use_single_precision_torch
       ~Settings.DTypeFloatNumpy
       ~Settings.DTypeFloatTorch
       ~Settings.use_fpsample

@@ -103,20 +103,6 @@ campaign. If the config is invalid an exception will be thrown.
 campaign = Campaign.from_config(CONFIG)
 ```
 
-    ________________________________________________________________________________
-    [Memory] Calling baybe.utils.chemistry._molecule_to_fingerprint_features...
-    _molecule_to_fingerprint_features('CCCCC', MordredFingerprint())
-    _________________________________molecule_to_fingerprint_features - 0.1s, 0.0min
-    ________________________________________________________________________________
-    [Memory] Calling baybe.utils.chemistry._molecule_to_fingerprint_features...
-    _molecule_to_fingerprint_features('COCOC', MordredFingerprint())
-    _________________________________molecule_to_fingerprint_features - 0.1s, 0.0min
-    ________________________________________________________________________________
-    [Memory] Calling baybe.utils.chemistry._molecule_to_fingerprint_features...
-    _molecule_to_fingerprint_features('CCOCCOCCN', MordredFingerprint())
-    _________________________________molecule_to_fingerprint_features - 0.1s, 0.0min
-
-
 We now perform a recommendation as usual and print it.
 
 

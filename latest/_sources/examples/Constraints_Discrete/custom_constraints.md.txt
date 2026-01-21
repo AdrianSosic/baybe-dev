@@ -135,40 +135,6 @@ future version. Use 'RDKIT2DDESCRIPTORS' instead.
       warnings.warn(
 
 
-    ________________________________________________________________________________
-    [Memory] Calling baybe.utils.chemistry._molecule_to_fingerprint_features...
-    _molecule_to_fingerprint_features('C', RDKit2DDescriptorsFingerprint())
-    _________________________________molecule_to_fingerprint_features - 0.2s, 0.0min
-    ________________________________________________________________________________
-    [Memory] Calling baybe.utils.chemistry._molecule_to_fingerprint_features...
-    _molecule_to_fingerprint_features('CC', RDKit2DDescriptorsFingerprint())
-    _________________________________molecule_to_fingerprint_features - 0.0s, 0.0min
-    ________________________________________________________________________________
-    [Memory] Calling baybe.utils.chemistry._molecule_to_fingerprint_features...
-    _molecule_to_fingerprint_features('CCC', RDKit2DDescriptorsFingerprint())
-    _________________________________molecule_to_fingerprint_features - 0.0s, 0.0min
-    ________________________________________________________________________________
-    [Memory] Calling baybe.utils.chemistry._molecule_to_fingerprint_features...
-    _molecule_to_fingerprint_features('CCCC', RDKit2DDescriptorsFingerprint())
-    _________________________________molecule_to_fingerprint_features - 0.0s, 0.0min
-    ________________________________________________________________________________
-    [Memory] Calling baybe.utils.chemistry._molecule_to_fingerprint_features...
-    _molecule_to_fingerprint_features('CCCCC', RDKit2DDescriptorsFingerprint())
-    _________________________________molecule_to_fingerprint_features - 0.0s, 0.0min
-    ________________________________________________________________________________
-    [Memory] Calling baybe.utils.chemistry._molecule_to_fingerprint_features...
-    _molecule_to_fingerprint_features('CCCCCC', RDKit2DDescriptorsFingerprint())
-    _________________________________molecule_to_fingerprint_features - 0.0s, 0.0min
-    ________________________________________________________________________________
-    [Memory] Calling baybe.utils.chemistry._molecule_to_fingerprint_features...
-    _molecule_to_fingerprint_features('c1ccccc1', RDKit2DDescriptorsFingerprint())
-    _________________________________molecule_to_fingerprint_features - 0.0s, 0.0min
-    ________________________________________________________________________________
-    [Memory] Calling baybe.utils.chemistry._molecule_to_fingerprint_features...
-    _molecule_to_fingerprint_features('O', RDKit2DDescriptorsFingerprint())
-    _________________________________molecule_to_fingerprint_features - 0.0s, 0.0min
-
-
 
 ```python
 objective = SingleTargetObjective(target=NumericalTarget(name="yield"))
@@ -243,9 +209,10 @@ None           NaN
           Recommender
              BotorchRecommender
                 Surrogate
-                   GaussianProcessSurrogate
-                      Supports Transfer Learning: True
-                      Kernel factory: DefaultKernelFactory()
+                   CompositeSurrogate(surrogates=_ReplicationMapping(template=GaussianPr
+ocessSurrogate(_searchspace=None, _objective=None, _measurements_hash=None,
+_input_scaler=None, _output_scaler=None, kernel_factory=DefaultKernelFactory(),
+_model=None), _data={}), _modeled_quantity_names=None)
                 Acquisition function: None
                 Compatibility: SearchSpaceType.HYBRID
                 Sequential continuous: True

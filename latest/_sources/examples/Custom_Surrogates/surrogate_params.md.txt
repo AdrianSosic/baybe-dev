@@ -111,20 +111,6 @@ campaign = Campaign(
 )
 ```
 
-    ________________________________________________________________________________
-    [Memory] Calling baybe.utils.chemistry._molecule_to_fingerprint_features...
-    _molecule_to_fingerprint_features('COC', MordredFingerprint())
-    _________________________________molecule_to_fingerprint_features - 0.1s, 0.0min
-    ________________________________________________________________________________
-    [Memory] Calling baybe.utils.chemistry._molecule_to_fingerprint_features...
-    _molecule_to_fingerprint_features('CCC', MordredFingerprint())
-    _________________________________molecule_to_fingerprint_features - 0.1s, 0.0min
-    ________________________________________________________________________________
-    [Memory] Calling baybe.utils.chemistry._molecule_to_fingerprint_features...
-    _molecule_to_fingerprint_features('CS(=O)C', MordredFingerprint())
-    _________________________________molecule_to_fingerprint_features - 0.1s, 0.0min
-
-
 ## Iterate with recommendations and measurements
 
 We can print the surrogate model object
@@ -155,7 +141,7 @@ print(recommendation)
 
     Recommendation from campaign:
         Granularity  Pressure[bar]  Temperature[degree_C]    Solvent
-    331      medium           10.0             122.222222  Solvent D
+    333      medium           10.0             133.333333  Solvent B
 
 
 

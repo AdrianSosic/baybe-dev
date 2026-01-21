@@ -7,13 +7,29 @@ These settings can be adjusted using environment variables or by modifying the
 
 ## Available Settings
 
-For more information on which settings are available, their roles and allowed value
-types, have a look at the {class}`~baybe.settings.Settings` class documentation.
+The following settings are available:
+
+| Setting | Description |
+|--------:|-------------|
+| {attr}`~baybe.settings.Settings.cache_campaign_recommendations` | Controls if {class}`~baybe.campaign.Campaign` objects cache their latest set of recommendations. |
+| {attr}`~baybe.settings.Settings.cache_directory` | The directory used for persistent caching on disk. Set to ``""`` or ``None`` to disable caching. |
+| {attr}`~baybe.settings.Settings.parallelize_simulation_runs` | Controls if simulation runs with [`xyzpy`](https://xyzpy.readthedocs.io/) are executed in parallel. |
+| {attr}`~baybe.settings.Settings.preprocess_dataframes` | Controls if incoming user dataframes are preprocessed (i.e., dtype-converted and validated) before use. |
+| {attr}`~baybe.settings.Settings.random_seed` | The used random seed. |
+| {class}`use_fpsample <baybe.settings.Settings>` | Controls if [`fpsample`](https://github.com/leonardodalinky/fpsample) acceleration is to be used, if available. |
+| {class}`use_polars_for_constraints <baybe.settings.Settings>` | Controls if [`polars`](https://pola.rs/) acceleration is to be used for discrete constraints, if available. |
+| {attr}`~baybe.settings.Settings.use_single_precision_numpy` | Controls the floating point precision used for [`numpy`](https://numpy.org/) arrays. |
+| {attr}`~baybe.settings.Settings.use_single_precision_torch` | Controls the floating point precision used for [`torch`](https://pytorch.org/) tensors. |
+
+For more information, click on the respective link or have a look at the
+{class}`~baybe.settings.Settings` class documentation.
 
 ## Changing Settings
 
 BayBE offers flexible control over its settings, allowing you to adjust them in
-different ways, adapted to your specific needs and use cases.
+different ways, adapted to your specific needs and use cases. If you want to understand
+the underlying mechanism in detail, have a look [here](#activation-logic). Otherwise,
+simply choose the most suitable option from the following alternatives:
  
 ### Direct Assignment
 You can change any specific setting by directly assigning a new value to the
@@ -49,17 +65,17 @@ with pytest.raises(TypeError):
 While you can change several settings one at a time using direct assignment, a more
 convenient way is to instantiate a {class}`baybe.settings.Settings` object, which allows
 to define multiple settings at once. In order for the settings to take effect,
-call its :meth:`~baybe.settings.Settings.activate` method:
+call its {meth}`~baybe.settings.Settings.activate` method:
 
 ```python
 from baybe import Settings, active_settings
 
-assert active_settings.parallelize_simulations is True
+assert active_settings.parallelize_simulation_runs is True
 assert active_settings.use_polars_for_constraints is True
 
-Settings(parallelize_simulations=False, use_polars_for_constraints=False).activate()
+Settings(parallelize_simulation_runs=False, use_polars_for_constraints=False).activate()
 
-assert active_settings.parallelize_simulations is False
+assert active_settings.parallelize_simulation_runs is False
 assert active_settings.use_polars_for_constraints is False
 ```
 
@@ -92,6 +108,7 @@ fast_and_furious.restore_previous()
 assert active_settings.preprocess_dataframes is True
 ```
 
+(RESTORING_SETTINGS)=
 ```{admonition} Restoring Previous Settings
 :class: important
 
@@ -148,11 +165,11 @@ assert active_settings.preprocess_dataframes is True
 
 
 @fast_and_furious
-def validate_dataframes_carefully():
+def regret_nothing():
     assert active_settings.preprocess_dataframes is False
 
 
-validate_dataframes_carefully()  # <-- the assert passes
+regret_nothing()  # <-- the assert passes
 
 assert active_settings.preprocess_dataframes is True
 ```
@@ -174,19 +191,32 @@ initialization of the {data}`~baybe.settings.active_settings` at startup time, h
 look at our [initialization precedence](#initialization-precedence) section.
 
 
-## Inspecting Settings
-To inspect either the current active settings or any particular settings object,
-you can simply print the corresponding object:
+## Activation Logic
+The activation of settings follows two simple rules that allow you to understand the
+implications of modifying {class}`~baybe.settings.Settings` objects:
+1. When executing code, BayBE always reads the current value of settings from the
+   {data}`~baybe.settings.active_settings` object, meaning that any changes to this
+   object immediately take effect.
+2. An {meth}`~baybe.settings.Settings.activate` call on a
+   {class}`~baybe.settings.Settings` object copies its attribute values to those of the
+   global {data}`~baybe.settings.active_settings` object and stores a copy of the
+   previously active values in the object on which the call was made. 
 
-```python
-from baybe import active_settings, Settings
+This explains, for instance, why:
+* Direct assignments to attributes of {data}`~baybe.settings.active_settings` take
+  immediate global effect.
+* Calling {meth}`~baybe.settings.Settings.activate` on a
+  {class}`~baybe.settings.Settings` object is equivalent to [directly
+  assigning](#direct-assignment) all of its attribute values to the
+  {data}`~baybe.settings.active_settings` object one by one.
+* Adjusting the attribute of any {class}`~baybe.settings.Settings` object other than
+  {data}`~baybe.settings.active_settings` has no immediate effect on the 
+  global settings until its {meth}`~baybe.settings.Settings.activate` method is called,
+  no matter if it has been activated before or not.
+* You can [restore](#restoring_settings) the settings that were active previous to an 
+  {meth}`~baybe.settings.Settings.activate` call using the
+  {meth}`~baybe.settings.Settings.restore_previous` method. 
 
-# Inspect current settings
-print(active_settings)
-
-# Inspect a specific configuration object
-print(Settings(preprocess_dataframes=True, use_polars_for_constraints=True))
-```
 
 ## Initialization Precedence
 Initializing a new {class}`~baybe.settings.Settings` object follows a specific order of

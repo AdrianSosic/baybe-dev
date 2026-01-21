@@ -23,10 +23,15 @@ SigmoidTransformation
       ~SigmoidTransformation.from_json
       ~SigmoidTransformation.get_codomain
       ~SigmoidTransformation.get_image
+      ~SigmoidTransformation.hold_output_left_from
+      ~SigmoidTransformation.hold_output_outside
+      ~SigmoidTransformation.hold_output_right_from
+      ~SigmoidTransformation.hshift
       ~SigmoidTransformation.negate
       ~SigmoidTransformation.to_botorch_objective
       ~SigmoidTransformation.to_dict
       ~SigmoidTransformation.to_json
+      ~SigmoidTransformation.vshift
    
    
 

@@ -57,5 +57,7 @@ baybe.utils
 
    scaling
 
+   torch
+
    validation
 

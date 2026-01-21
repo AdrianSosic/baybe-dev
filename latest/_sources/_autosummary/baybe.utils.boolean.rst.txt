@@ -17,6 +17,7 @@ baybe.utils.boolean
       check_if_in
       is_abstract
       strtobool
+      to_bool
    
    
 

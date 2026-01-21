@@ -22,10 +22,15 @@ Transformation
       ~Transformation.from_json
       ~Transformation.get_codomain
       ~Transformation.get_image
+      ~Transformation.hold_output_left_from
+      ~Transformation.hold_output_outside
+      ~Transformation.hold_output_right_from
+      ~Transformation.hshift
       ~Transformation.negate
       ~Transformation.to_botorch_objective
       ~Transformation.to_dict
       ~Transformation.to_json
+      ~Transformation.vshift
    
    
 
