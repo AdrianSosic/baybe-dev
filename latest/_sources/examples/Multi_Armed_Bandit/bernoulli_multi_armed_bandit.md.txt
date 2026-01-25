@@ -239,8 +239,8 @@ for acqf in ACQFS:
     qThompsonSampling
     -----------------
     Optimal win rate: 0.8
-    Achieved win rate: 0.98
-    Mean squared error (last iteration): 0.2794204161140564
+    Achieved win rate: 0.62
+    Mean squared error (last iteration): 0.1381325940926448
     
     
 
@@ -248,8 +248,8 @@ for acqf in ACQFS:
     PosteriorStandardDeviation
     --------------------------
     Optimal win rate: 0.8
-    Achieved win rate: 0.6
-    Mean squared error (last iteration): 0.33222224738862904
+    Achieved win rate: 0.5066666666666667
+    Mean squared error (last iteration): 0.10030469692230562
     
     
 

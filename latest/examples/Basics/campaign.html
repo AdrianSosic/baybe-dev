@@ -480,6 +480,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../_autosummary/baybe.exceptions.NoMeasurementsError.html">baybe.exceptions.NoMeasurementsError</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../_autosummary/baybe.exceptions.NoRecommendersLeftError.html">baybe.exceptions.NoRecommendersLeftError</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../_autosummary/baybe.exceptions.NonGaussianityError.html">baybe.exceptions.NonGaussianityError</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/baybe.exceptions.NotAllowedError.html">baybe.exceptions.NotAllowedError</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../_autosummary/baybe.exceptions.NotEnoughPointsLeftError.html">baybe.exceptions.NotEnoughPointsLeftError</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../_autosummary/baybe.exceptions.NothingToSimulateError.html">baybe.exceptions.NothingToSimulateError</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../_autosummary/baybe.exceptions.NumericalUnderflowError.html">baybe.exceptions.NumericalUnderflowError</a></li>
@@ -1185,9 +1186,9 @@ objective.</p>
 </pre></div>
 </div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Recommended measurements with batch_size = 2: 
-           Solvent             Base         Ligand  Temperature  Concentration
-136  Butyornitrile  Cesium pivalate  (t-Bu)PhCPhos         90.0          0.100
-218           DMAc   Cesium acetate  (t-Bu)PhCPhos         90.0          0.153
+      Solvent               Base         Ligand  Temperature  Concentration
+380  p-Xylene  Potassium acetate  (t-Bu)PhCPhos         90.0          0.153
+352  p-Xylene    Cesium pivalate  (t-Bu)PhCPhos         90.0          0.100
 </pre></div>
 </div>
 <p>Adding target values is done by creating a new column in the <code class="docutils literal notranslate"><span class="pre">recommendation</span></code>
@@ -1200,13 +1201,13 @@ We then update the campaign by adding the measurements.</p>
 </pre></div>
 </div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Recommended experiments with fake measured values: 
-           Solvent             Base         Ligand  Temperature  \
-136  Butyornitrile  Cesium pivalate  (t-Bu)PhCPhos         90.0   
-218           DMAc   Cesium acetate  (t-Bu)PhCPhos         90.0   
+      Solvent               Base         Ligand  Temperature  Concentration  \
+380  p-Xylene  Potassium acetate  (t-Bu)PhCPhos         90.0          0.153   
+352  p-Xylene    Cesium pivalate  (t-Bu)PhCPhos         90.0          0.100   
 
-     Concentration      yield  
-136          0.100 -92.275489  
-218          0.153  43.519571  
+         yield  
+380 -45.271319  
+352  42.598864  
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">campaign</span><span class="o">.</span><span class="n">add_measurements</span><span class="p">(</span><span class="n">recommendation</span><span class="p">)</span>

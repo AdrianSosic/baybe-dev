@@ -480,6 +480,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../_autosummary/baybe.exceptions.NoMeasurementsError.html">baybe.exceptions.NoMeasurementsError</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../_autosummary/baybe.exceptions.NoRecommendersLeftError.html">baybe.exceptions.NoRecommendersLeftError</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../_autosummary/baybe.exceptions.NonGaussianityError.html">baybe.exceptions.NonGaussianityError</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/baybe.exceptions.NotAllowedError.html">baybe.exceptions.NotAllowedError</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../_autosummary/baybe.exceptions.NotEnoughPointsLeftError.html">baybe.exceptions.NotEnoughPointsLeftError</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../_autosummary/baybe.exceptions.NothingToSimulateError.html">baybe.exceptions.NothingToSimulateError</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../_autosummary/baybe.exceptions.NumericalUnderflowError.html">baybe.exceptions.NumericalUnderflowError</a></li>
@@ -1368,8 +1369,8 @@ create and compare some recommendations in both campaigns.</p>
 </div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Recommendation from original object:
    Granularity  Pressure[bar]  Temperature[degree_C]
-23      coarse           10.0             133.333333
-69      medium            1.0             200.000000
+87      medium           10.0             177.777778
+30        fine            1.0             100.000000
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Recommendation from recreated object:&quot;</span><span class="p">)</span>
@@ -1378,8 +1379,8 @@ create and compare some recommendations in both campaigns.</p>
 </div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Recommendation from recreated object:
    Granularity  Pressure[bar]  Temperature[degree_C]
-0       coarse            1.0                  100.0
-89      medium           10.0                  200.0
+14      coarse            5.0             144.444444
+89      medium           10.0             200.000000
 </pre></div>
 </div>
 </section>

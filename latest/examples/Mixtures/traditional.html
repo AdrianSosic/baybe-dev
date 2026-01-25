@@ -480,6 +480,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../_autosummary/baybe.exceptions.NoMeasurementsError.html">baybe.exceptions.NoMeasurementsError</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../_autosummary/baybe.exceptions.NoRecommendersLeftError.html">baybe.exceptions.NoRecommendersLeftError</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../_autosummary/baybe.exceptions.NonGaussianityError.html">baybe.exceptions.NonGaussianityError</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/baybe.exceptions.NotAllowedError.html">baybe.exceptions.NotAllowedError</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../_autosummary/baybe.exceptions.NotEnoughPointsLeftError.html">baybe.exceptions.NotEnoughPointsLeftError</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../_autosummary/baybe.exceptions.NothingToSimulateError.html">baybe.exceptions.NothingToSimulateError</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../_autosummary/baybe.exceptions.NumericalUnderflowError.html">baybe.exceptions.NumericalUnderflowError</a></li>
@@ -1200,16 +1201,16 @@ random points from the search space:</p>
 </pre></div>
 </div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>       Base1      Base2  PhaseAgent1  PhaseAgent2   Solvent1   Solvent2
-0  17.563891   8.841142     3.857271     0.832740  15.959889  52.945067
-1  11.107134  11.718829     1.753190     0.463377  14.313622  60.643847
-2  19.029973   4.492481     2.051189     1.301013  48.206101  24.919243
-3  12.797860   2.786525     0.074381     3.462708  79.870472   1.008055
-4   2.724651  15.620424     4.349900     0.093392  18.012952  59.198681
-5   6.937395   6.880386     2.099221     2.165098   6.938920  74.978980
-6  14.273167   6.724498     0.534467     0.592223  19.849541  58.026104
-7   2.338421   9.740214     0.500757     0.450251  56.481463  30.488894
-8   3.007962   8.071779     1.109425     0.160477  50.789382  36.860975
-9   4.533874   8.919401     0.471498     2.762581  27.071296  56.241350
+0   1.379276  19.479388     0.836845     2.630379  50.276300  25.397812
+1   5.597903   4.694320     2.704196     1.683950  57.380300  27.939331
+2  14.871210   1.885788     1.773595     2.184158  29.993788  49.291460
+3  11.156489  11.600842     1.460442     2.329170  42.449577  31.003481
+4   7.458914   7.561836     1.738574     0.422188  32.139017  50.679471
+5  14.856111   2.908399     0.257504     3.216205  32.988034  45.773746
+6   2.795792   7.305906     0.944846     0.374036  22.089390  66.490030
+7  12.083560  14.309841     2.282830     1.716399  23.609290  45.998079
+8   5.977855  10.701772     1.522439     1.479324  28.335571  51.983039
+9   9.608077   6.573365     4.502250     0.257674   8.110939  70.947694
 </pre></div>
 </div>
 <p>Computing the respective row sums reveals the expected result:</p>
@@ -1224,16 +1225,16 @@ random points from the search space:</p>
 </pre></div>
 </div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>   Total  Total_Bases  Total_Phase_Agents
-0  100.0    26.405034            4.690011
-1  100.0    22.825963            2.216567
-2  100.0    23.522454            3.352202
-3  100.0    15.584385            3.537089
-4  100.0    18.345075            4.443292
-5  100.0    13.817781            4.264319
-6  100.0    20.997666            1.126690
-7  100.0    12.078634            0.951009
-8  100.0    11.079741            1.269902
-9  100.0    13.453275            3.234079
+0  100.0    20.858665            3.467224
+1  100.0    10.292222            4.388147
+2  100.0    16.756998            3.957754
+3  100.0    22.757331            3.789612
+4  100.0    15.020750            2.160762
+5  100.0    17.764510            3.473709
+6  100.0    10.101698            1.318882
+7  100.0    26.393402            3.999229
+8  100.0    16.679627            3.001764
+9  100.0    16.181442            4.759925
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">stats</span><span class="p">[</span><span class="s2">&quot;Total&quot;</span><span class="p">],</span> <span class="mi">100</span><span class="p">)</span>

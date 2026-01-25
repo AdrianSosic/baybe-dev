@@ -479,6 +479,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../_autosummary/baybe.exceptions.NoMeasurementsError.html">baybe.exceptions.NoMeasurementsError</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../_autosummary/baybe.exceptions.NoRecommendersLeftError.html">baybe.exceptions.NoRecommendersLeftError</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../_autosummary/baybe.exceptions.NonGaussianityError.html">baybe.exceptions.NonGaussianityError</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/baybe.exceptions.NotAllowedError.html">baybe.exceptions.NotAllowedError</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../_autosummary/baybe.exceptions.NotEnoughPointsLeftError.html">baybe.exceptions.NotEnoughPointsLeftError</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../_autosummary/baybe.exceptions.NothingToSimulateError.html">baybe.exceptions.NothingToSimulateError</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../_autosummary/baybe.exceptions.NumericalUnderflowError.html">baybe.exceptions.NumericalUnderflowError</a></li>
@@ -1110,7 +1111,7 @@
 <span class="kn">from</span><span class="w"> </span><span class="nn">typing_extensions</span><span class="w"> </span><span class="kn">import</span> <span class="n">Self</span>
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">baybe._optional.info</span><span class="w"> </span><span class="kn">import</span> <span class="n">FPSAMPLE_INSTALLED</span><span class="p">,</span> <span class="n">POLARS_INSTALLED</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">baybe.exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">OptionalImportError</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">baybe.exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">NotAllowedError</span><span class="p">,</span> <span class="n">OptionalImportError</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">baybe.utils.basic</span><span class="w"> </span><span class="kn">import</span> <span class="n">classproperty</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">baybe.utils.boolean</span><span class="w"> </span><span class="kn">import</span> <span class="n">AutoBool</span><span class="p">,</span> <span class="n">to_bool</span>
 
@@ -1120,10 +1121,7 @@
 
     <span class="n">_TSeed</span> <span class="o">=</span> <span class="n">TypeVar</span><span class="p">(</span><span class="s2">&quot;_TSeed&quot;</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
 
-
-<span class="k">class</span><span class="w"> </span><span class="nc">_AdoptedRandomSeed</span><span class="p">(</span><span class="nb">int</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Marker class to indicate if a random seed has been adopted from other sources.&quot;&quot;&quot;</span>
-
+<span class="n">_RANDOM_SEED_ATTRIBUTE_NAME</span> <span class="o">=</span> <span class="s2">&quot;random_seed&quot;</span>
 
 <span class="c1"># The temporary assignment to `None` is needed because the object is already referenced</span>
 <span class="c1"># in the `Settings` class body</span>
@@ -1182,7 +1180,7 @@
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Replace default values with the appropriate source, controlled via flags.&quot;&quot;&quot;</span>
     <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">fld</span> <span class="ow">in</span> <span class="n">fields</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">fld</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_non_setting_attributes</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">fld</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="p">(</span><span class="o">*</span><span class="bp">cls</span><span class="o">.</span><span class="n">_non_setting_attributes</span><span class="p">,</span> <span class="n">_RANDOM_SEED_ATTRIBUTE_NAME</span><span class="p">):</span>
             <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fld</span><span class="p">)</span>
             <span class="k">continue</span>
 
@@ -1207,13 +1205,6 @@
                     <span class="c1"># the default happens when the global settings object is itself</span>
                     <span class="c1"># being created)</span>
                     <span class="n">default</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">active_settings</span><span class="p">,</span> <span class="n">fld</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">fld</span><span class="o">.</span><span class="n">default</span><span class="p">)</span>
-
-                    <span class="c1"># Special handling for the random seed:</span>
-                    <span class="c1"># When adopting the value from the active settings (since</span>
-                    <span class="c1"># unspecified by the user), activating the settings should *not*</span>
-                    <span class="c1"># reset the random state to that seed!</span>
-                    <span class="k">if</span> <span class="n">fld</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;random_seed&quot;</span> <span class="ow">and</span> <span class="n">default</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-                        <span class="n">default</span> <span class="o">=</span> <span class="n">_AdoptedRandomSeed</span><span class="p">(</span><span class="n">default</span><span class="p">)</span>  <span class="c1"># type: ignore[assignment]</span>
 
                 <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_restore_environment</span><span class="p">:</span>
                     <span class="c1"># If enabled, the environment values take precedence for the default</span>
@@ -1290,18 +1281,10 @@
 
 <span class="k">def</span><span class="w"> </span><span class="nf">_on_set_random_seed</span><span class="p">(</span><span class="n">instance</span><span class="p">:</span> <span class="n">Settings</span><span class="p">,</span> <span class="n">__</span><span class="p">:</span> <span class="n">Attribute</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">_TSeed</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">_TSeed</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Activate the given random seed on attribute change.&quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="nb">id</span><span class="p">(</span><span class="n">instance</span><span class="p">)</span> <span class="o">==</span> <span class="n">Settings</span><span class="o">.</span><span class="n">_global_settings_id</span> <span class="ow">and</span> <span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">_RandomState</span><span class="o">.</span><span class="n">activate_from_seed</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
 
-    <span class="n">activate</span> <span class="o">=</span> <span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">instance</span><span class="p">)</span> <span class="o">==</span> <span class="n">Settings</span><span class="o">.</span><span class="n">_global_settings_id</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span>
-        <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">_AdoptedRandomSeed</span><span class="p">)</span>
-    <span class="p">)</span>
-    <span class="n">value_int</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
-
-    <span class="k">if</span> <span class="n">activate</span><span class="p">:</span>
-        <span class="n">_RandomState</span><span class="o">.</span><span class="n">activate_from_seed</span><span class="p">(</span><span class="n">value_int</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">value_int</span>
+    <span class="k">return</span> <span class="n">value</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">_convert_cache_directory</span><span class="p">(</span>
@@ -1333,6 +1316,9 @@
 
     <span class="n">_previous_settings</span><span class="p">:</span> <span class="n">Settings</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">init</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;The previously active settings (used for context management).&quot;&quot;&quot;</span>
+
+    <span class="n">_previous_random_state</span><span class="p">:</span> <span class="n">_RandomState</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">init</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The previous random state (used for context management).&quot;&quot;&quot;</span>
 
     <span class="c1"># ----- Control flags ----- #</span>
     <span class="n">_restore_defaults</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">validator</span><span class="o">=</span><span class="n">instance_of</span><span class="p">(</span><span class="nb">bool</span><span class="p">))</span>
@@ -1487,6 +1473,7 @@
         <span class="k">return</span> <span class="nb">frozenset</span><span class="p">(</span>
             <span class="p">{</span>
                 <span class="s2">&quot;_previous_settings&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;_previous_random_state&quot;</span><span class="p">,</span>
                 <span class="s2">&quot;_restore_defaults&quot;</span><span class="p">,</span>
                 <span class="s2">&quot;_restore_environment&quot;</span><span class="p">,</span>
             <span class="p">}</span>
@@ -1505,7 +1492,14 @@
 <a class="viewcode-back" href="../../_autosummary/baybe.settings.Settings.html#baybe.settings.Settings.activate">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">activate</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Settings</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Activate the settings globally.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">id</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">==</span> <span class="n">Settings</span><span class="o">.</span><span class="n">_global_settings_id</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotAllowedError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Calling &#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">activate</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&#39; on the global settings &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;object is not allowed since it is always active.&quot;</span>
+            <span class="p">)</span>
+
         <span class="bp">self</span><span class="o">.</span><span class="n">_previous_settings</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">active_settings</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_previous_random_state</span> <span class="o">=</span> <span class="n">_RandomState</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">overwrite</span><span class="p">(</span><span class="n">active_settings</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span></div>
 
@@ -1514,32 +1508,74 @@
 <a class="viewcode-back" href="../../_autosummary/baybe.settings.Settings.html#baybe.settings.Settings.restore_previous">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">restore_previous</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Restore the previous settings.&quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_previous_settings</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">id</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">==</span> <span class="n">Settings</span><span class="o">.</span><span class="n">_global_settings_id</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotAllowedError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Calling &#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">restore_previous</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&#39; on the global settings &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;object is not supported.&quot;</span>
+            <span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_previous_settings</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_previous_random_state</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span>
                 <span class="s2">&quot;The settings have not yet been activated, &quot;</span>
                 <span class="s2">&quot;so there are no previous settings to restore.&quot;</span>
             <span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_previous_settings</span><span class="o">.</span><span class="n">overwrite</span><span class="p">(</span><span class="n">active_settings</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_previous_settings</span> <span class="o">=</span> <span class="kc">None</span></div>
+
+        <span class="c1"># When restoring, we do not want to re-sync the random state back to</span>
+        <span class="c1"># the seed value of the previous setting, since the random state has</span>
+        <span class="c1"># potentially progressed in the meantime ...</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_previous_settings</span><span class="o">.</span><span class="n">overwrite</span><span class="p">(</span><span class="n">active_settings</span><span class="p">,</span> <span class="n">keep_random_state</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="c1"># ... Instead, we restore the random state from setting activatino time, but</span>
+        <span class="c1"># only when randomness control was actually part of the settings configurations</span>
+        <span class="c1"># and the state was altered in the first place.</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">random_seed</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_previous_random_state</span><span class="o">.</span><span class="n">activate</span><span class="p">()</span>
+
+        <span class="c1"># Clear backup attributes</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_previous_settings</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_previous_random_state</span> <span class="o">=</span> <span class="kc">None</span></div>
 
 
 <div class="viewcode-block" id="Settings.overwrite">
 <a class="viewcode-back" href="../../_autosummary/baybe.settings.Settings.html#baybe.settings.Settings.overwrite">[docs]</a>
-    <span class="k">def</span><span class="w"> </span><span class="nf">overwrite</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target</span><span class="p">:</span> <span class="n">Settings</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">overwrite</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target</span><span class="p">:</span> <span class="n">Settings</span><span class="p">,</span> <span class="n">keep_random_state</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Overwrite the settings of another :class:`Settings` object.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">keep_random_state</span><span class="p">:</span>
+            <span class="n">state</span> <span class="o">=</span> <span class="n">_RandomState</span><span class="p">()</span>
+
         <span class="k">for</span> <span class="n">fld</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_settings_attributes</span><span class="p">:</span>
-            <span class="nb">setattr</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">fld</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fld</span><span class="o">.</span><span class="n">name</span><span class="p">))</span></div>
+            <span class="nb">setattr</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">fld</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fld</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="n">keep_random_state</span><span class="p">:</span>
+            <span class="n">state</span><span class="o">.</span><span class="n">activate</span><span class="p">()</span></div>
 </div>
 
 
+
+<span class="c1"># Since there is critical code hardcoded against the attribute name, we</span>
+<span class="c1"># ensure that the attribute exists as a sanity check (in case of future name edits)</span>
+<span class="k">assert</span> <span class="n">_RANDOM_SEED_ATTRIBUTE_NAME</span> <span class="ow">in</span> <span class="p">(</span><span class="n">fld</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">fld</span> <span class="ow">in</span> <span class="n">fields</span><span class="p">(</span><span class="n">Settings</span><span class="p">))</span>
 
 <span class="c1"># Collect leftover original slotted classes processed by `attrs.define`</span>
 <span class="n">gc</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
 
 
 <span class="n">active_settings</span> <span class="o">=</span> <span class="n">Settings</span><span class="p">(</span><span class="n">restore_environment</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">Settings</span><span class="o">.</span><span class="n">_global_settings_id</span> <span class="o">=</span> <span class="nb">id</span><span class="p">(</span><span class="n">active_settings</span><span class="p">)</span>
 <span class="sd">&quot;&quot;&quot;The currently active global settings instance.&quot;&quot;&quot;</span>
+
+<span class="c1"># Set the global settings id for later reference</span>
+<span class="n">Settings</span><span class="o">.</span><span class="n">_global_settings_id</span> <span class="o">=</span> <span class="nb">id</span><span class="p">(</span><span class="n">active_settings</span><span class="p">)</span>
+
+<span class="c1"># Special handling of the random seed:</span>
+<span class="c1"># The automatic adoption of seed values from the environment or the active settings</span>
+<span class="c1"># object as default value for new settings objects is skipped in the class logic to</span>
+<span class="c1"># enable proper progression of random states. However, we still want that a given</span>
+<span class="c1"># environmental seed populates the active settings object (and *only* that object) upon</span>
+<span class="c1"># session start, so we manually set it here.</span>
+<span class="k">if</span> <span class="p">(</span>
+    <span class="n">_seed</span> <span class="o">:=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;BAYBE_</span><span class="si">{</span><span class="n">_RANDOM_SEED_ATTRIBUTE_NAME</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">active_settings</span><span class="o">.</span><span class="n">random_seed</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">_seed</span><span class="p">)</span>
 </pre></div>
         </article>
       </div>
