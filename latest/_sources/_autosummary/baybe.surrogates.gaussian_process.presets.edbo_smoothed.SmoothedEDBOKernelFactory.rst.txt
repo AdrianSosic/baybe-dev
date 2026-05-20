@@ -1,0 +1,30 @@
+SmoothedEDBOKernelFactory
+=========================
+
+.. currentmodule:: baybe.surrogates.gaussian_process.presets.edbo_smoothed
+
+.. autoclass:: SmoothedEDBOKernelFactory
+   :members:                              
+   :show-inheritance:                 
+   :inherited-members:
+
+   
+   
+   .. rubric:: Public methods
+
+   .. autosummary::
+   
+      ~SmoothedEDBOKernelFactory.__init__
+      ~SmoothedEDBOKernelFactory.get_parameter_names
+   
+   
+
+   
+   
+   .. rubric:: Public attributes and properties
+
+   .. autosummary::
+   
+      ~SmoothedEDBOKernelFactory.parameter_selector
+   
+   

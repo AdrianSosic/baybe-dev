@@ -42,12 +42,14 @@ baybe.exceptions
       NonGaussianityError
       NotAllowedError
       NotEnoughPointsLeftError
+      NothingToComputeError
       NothingToSimulateError
       NumericalUnderflowError
       OptionalImportError
       SearchSpaceMatchWarning
       UnidentifiedSubclassError
       UnmatchedAttributeError
+      UnsupportedEarlyFilteringError
       UnusedObjectWarning
    
    

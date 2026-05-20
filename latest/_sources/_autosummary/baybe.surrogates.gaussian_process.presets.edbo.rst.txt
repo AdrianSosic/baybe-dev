@@ -5,6 +5,15 @@ baybe.surrogates.gaussian\_process.presets.edbo
   
    
    
+   .. rubric:: Module Attributes
+
+   .. autosummary::
+      :toctree: 
+      :template: custom-attribute-template.rst                               
+   
+      EDBOMeanFactory
+      EDBOFitCriterionFactory
+   
    
 
    
@@ -20,6 +29,7 @@ baybe.surrogates.gaussian\_process.presets.edbo
       :template: custom-class-template.rst              
    
       EDBOKernelFactory
+      EDBOLikelihoodFactory
    
    
 

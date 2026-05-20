@@ -23,6 +23,7 @@ Campaign
       ~Campaign.from_json
       ~Campaign.get_acquisition_function
       ~Campaign.get_surrogate
+      ~Campaign.identify_non_dominated_configurations
       ~Campaign.joint_acquisition_value
       ~Campaign.posterior
       ~Campaign.posterior_stats
@@ -44,11 +45,11 @@ Campaign
       ~Campaign.searchspace
       ~Campaign.objective
       ~Campaign.recommender
+      ~Campaign.n_batches_done
+      ~Campaign.n_fits_done
       ~Campaign.allow_recommending_already_measured
       ~Campaign.allow_recommending_already_recommended
       ~Campaign.allow_recommending_pending_experiments
-      ~Campaign.n_batches_done
-      ~Campaign.n_fits_done
       ~Campaign.measurements
       ~Campaign.parameters
       ~Campaign.targets

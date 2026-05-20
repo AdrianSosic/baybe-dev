@@ -1,0 +1,30 @@
+BayBEKernelFactory
+==================
+
+.. currentmodule:: baybe.surrogates.gaussian_process.presets.baybe
+
+.. autoclass:: BayBEKernelFactory
+   :members:                              
+   :show-inheritance:                 
+   :inherited-members:
+
+   
+   
+   .. rubric:: Public methods
+
+   .. autosummary::
+   
+      ~BayBEKernelFactory.__init__
+      ~BayBEKernelFactory.get_parameter_names
+   
+   
+
+   
+   
+   .. rubric:: Public attributes and properties
+
+   .. autosummary::
+   
+      ~BayBEKernelFactory.parameter_selector
+   
+   

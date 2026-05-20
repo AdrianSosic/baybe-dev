@@ -1,0 +1,7 @@
+baybe.surrogates.gaussian\_process.presets.edbo.EDBOMeanFactory
+===============================================================
+
+.. currentmodule:: baybe.surrogates.gaussian_process.presets.edbo
+
+
+.. autoclass:: EDBOMeanFactory

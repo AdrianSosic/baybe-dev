@@ -1,0 +1,30 @@
+BotorchKernelFactory
+====================
+
+.. currentmodule:: baybe.surrogates.gaussian_process.presets.botorch
+
+.. autoclass:: BotorchKernelFactory
+   :members:                              
+   :show-inheritance:                 
+   :inherited-members:
+
+   
+   
+   .. rubric:: Public methods
+
+   .. autosummary::
+   
+      ~BotorchKernelFactory.__init__
+      ~BotorchKernelFactory.get_parameter_names
+   
+   
+
+   
+   
+   .. rubric:: Public attributes and properties
+
+   .. autosummary::
+   
+      ~BotorchKernelFactory.parameter_selector
+   
+   

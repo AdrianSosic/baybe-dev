@@ -1,0 +1,23 @@
+BotorchMeanFactory
+==================
+
+.. currentmodule:: baybe.surrogates.gaussian_process.presets.botorch
+
+.. autoclass:: BotorchMeanFactory
+   :members:                              
+   :show-inheritance:                 
+   :inherited-members:
+
+   
+   
+   .. rubric:: Public methods
+
+   .. autosummary::
+   
+      ~BotorchMeanFactory.__init__
+   
+   
+
+   
+   
+   

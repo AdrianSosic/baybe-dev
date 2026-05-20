@@ -1,0 +1,43 @@
+baybe.surrogates.gaussian\_process.presets.baybe
+================================================
+
+.. automodule:: baybe.surrogates.gaussian_process.presets.baybe
+  
+   
+   
+   .. rubric:: Module Attributes
+
+   .. autosummary::
+      :toctree: 
+      :template: custom-attribute-template.rst                               
+   
+      BayBENumericalKernelFactory
+      BayBEMeanFactory
+      BayBELikelihoodFactory
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree:                                       
+      :template: custom-class-template.rst              
+   
+      BayBEFitCriterionFactory
+      BayBEKernelFactory
+      BayBETaskKernelFactory
+   
+   
+
+   
+   
+   
+
+
+

@@ -1,0 +1,30 @@
+CHENKernelFactory
+=================
+
+.. currentmodule:: baybe.surrogates.gaussian_process.presets.chen
+
+.. autoclass:: CHENKernelFactory
+   :members:                              
+   :show-inheritance:                 
+   :inherited-members:
+
+   
+   
+   .. rubric:: Public methods
+
+   .. autosummary::
+   
+      ~CHENKernelFactory.__init__
+      ~CHENKernelFactory.get_parameter_names
+   
+   
+
+   
+   
+   .. rubric:: Public attributes and properties
+
+   .. autosummary::
+   
+      ~CHENKernelFactory.parameter_selector
+   
+   
