@@ -11,7 +11,6 @@ baybe.surrogates.gaussian\_process.presets.edbo
       :toctree: 
       :template: custom-attribute-template.rst                               
    
-      EDBOMeanFactory
       EDBOFitCriterionFactory
    
    
@@ -30,6 +29,7 @@ baybe.surrogates.gaussian\_process.presets.edbo
    
       EDBOKernelFactory
       EDBOLikelihoodFactory
+      EDBOMeanFactory
    
    
 

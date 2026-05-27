@@ -15,7 +15,11 @@ CHENKernelFactory
    .. autosummary::
    
       ~CHENKernelFactory.__init__
+      ~CHENKernelFactory.from_dict
+      ~CHENKernelFactory.from_json
       ~CHENKernelFactory.get_parameter_names
+      ~CHENKernelFactory.to_dict
+      ~CHENKernelFactory.to_json
    
    
 

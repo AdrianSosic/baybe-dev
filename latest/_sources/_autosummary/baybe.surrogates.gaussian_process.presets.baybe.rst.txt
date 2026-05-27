@@ -5,16 +5,6 @@ baybe.surrogates.gaussian\_process.presets.baybe
   
    
    
-   .. rubric:: Module Attributes
-
-   .. autosummary::
-      :toctree: 
-      :template: custom-attribute-template.rst                               
-   
-      BayBENumericalKernelFactory
-      BayBEMeanFactory
-      BayBELikelihoodFactory
-   
    
 
    
@@ -31,7 +21,8 @@ baybe.surrogates.gaussian\_process.presets.baybe
    
       BayBEFitCriterionFactory
       BayBEKernelFactory
-      BayBETaskKernelFactory
+      BayBELikelihoodFactory
+      BayBEMeanFactory
    
    
 

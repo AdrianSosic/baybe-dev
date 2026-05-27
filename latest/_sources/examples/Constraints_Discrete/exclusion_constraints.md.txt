@@ -212,8 +212,7 @@ NaN
 ocessSurrogate(_searchspace=None, _objective=None, _measurements_hash=None,
 _input_scaler=None, _output_scaler=None,
 kernel_factory=BayBEKernelFactory(parameter_selector=None),
-mean_factory=LazyConstantMeanFactory(),
-likelihood_factory=SmoothedEDBOLikelihoodFactory(),
+mean_factory=BayBEMeanFactory(), likelihood_factory=BayBELikelihoodFactory(),
 fit_criterion_factory=BayBEFitCriterionFactory(), _model=None), _data={}),
 _modeled_quantity_names=None)
                 Acquisition function: None

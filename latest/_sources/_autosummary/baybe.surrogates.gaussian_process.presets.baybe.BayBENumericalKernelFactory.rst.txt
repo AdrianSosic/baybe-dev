@@ -1,7 +1,0 @@
-baybe.surrogates.gaussian\_process.presets.baybe.BayBENumericalKernelFactory
-============================================================================
-
-.. currentmodule:: baybe.surrogates.gaussian_process.presets.baybe
-
-
-.. autoclass:: BayBENumericalKernelFactory

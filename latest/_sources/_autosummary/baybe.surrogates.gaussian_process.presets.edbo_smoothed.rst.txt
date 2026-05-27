@@ -11,7 +11,7 @@ baybe.surrogates.gaussian\_process.presets.edbo\_smoothed
       :toctree: 
       :template: custom-attribute-template.rst                               
    
-      SmoothedEDBOMeanFactory
+      SmoothedEDBOKernelFactory
       SmoothedEDBOFitCriterionFactory
    
    
@@ -30,6 +30,7 @@ baybe.surrogates.gaussian\_process.presets.edbo\_smoothed
    
       SmoothedEDBOKernelFactory
       SmoothedEDBOLikelihoodFactory
+      SmoothedEDBOMeanFactory
    
    
 

@@ -1,4 +1,4 @@
-SmoothedEDBOKernelFactory
+﻿SmoothedEDBOKernelFactory
 =========================
 
 .. currentmodule:: baybe.surrogates.gaussian_process.presets.edbo_smoothed
@@ -15,7 +15,11 @@ SmoothedEDBOKernelFactory
    .. autosummary::
    
       ~SmoothedEDBOKernelFactory.__init__
+      ~SmoothedEDBOKernelFactory.from_dict
+      ~SmoothedEDBOKernelFactory.from_json
       ~SmoothedEDBOKernelFactory.get_parameter_names
+      ~SmoothedEDBOKernelFactory.to_dict
+      ~SmoothedEDBOKernelFactory.to_json
    
    
 

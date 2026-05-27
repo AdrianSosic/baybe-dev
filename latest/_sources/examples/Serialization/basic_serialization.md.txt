@@ -149,8 +149,7 @@ Temperature[degr
 ocessSurrogate(_searchspace=None, _objective=None, _measurements_hash=None,
 _input_scaler=None, _output_scaler=None,
 kernel_factory=BayBEKernelFactory(parameter_selector=None),
-mean_factory=LazyConstantMeanFactory(),
-likelihood_factory=SmoothedEDBOLikelihoodFactory(),
+mean_factory=BayBEMeanFactory(), likelihood_factory=BayBELikelihoodFactory(),
 fit_criterion_factory=BayBEFitCriterionFactory(), _model=None), _data={}),
 _modeled_quantity_names=None)
                 Acquisition function: None
@@ -257,8 +256,7 @@ Temperature[degr
 ocessSurrogate(_searchspace=None, _objective=None, _measurements_hash=None,
 _input_scaler=None, _output_scaler=None,
 kernel_factory=BayBEKernelFactory(parameter_selector=None),
-mean_factory=LazyConstantMeanFactory(),
-likelihood_factory=SmoothedEDBOLikelihoodFactory(),
+mean_factory=BayBEMeanFactory(), likelihood_factory=BayBELikelihoodFactory(),
 fit_criterion_factory=BayBEFitCriterionFactory(), _model=None), _data={}),
 _modeled_quantity_names=None)
                 Acquisition function: None
@@ -303,8 +301,8 @@ print(recommendation_orig)
 
     Recommendation from original object:
        Granularity  Pressure[bar]  Temperature[degree_C]
-    84      medium           10.0             144.444444
-    39        fine            1.0             200.000000
+    32        fine            1.0             122.222222
+    89      medium           10.0             200.000000
 
 
 
@@ -315,6 +313,6 @@ print(recommendation_recreate)
 
     Recommendation from recreated object:
        Granularity  Pressure[bar]  Temperature[degree_C]
-    23      coarse           10.0             133.333333
-    69      medium            1.0             200.000000
+    30        fine            1.0                  100.0
+    89      medium           10.0                  200.0
 
